@@ -35,6 +35,7 @@ export function LeadCreateeditForm(props: LeadCreateeditFormProps) {
 
   const [form, setForm] = useState<Omit<Lead, "id" | "createdAt" | "updatedAt">>(emptyLead());
   const [saved, setSaved] = useState(false);
+  const [errors, setErrors] = useState<Record<string, string>>({});
 
   useEffect(() => {
     if (existing) {
@@ -53,13 +54,33 @@ export function LeadCreateeditForm(props: LeadCreateeditFormProps) {
     } else {
       setForm(emptyLead());
     }
+    setErrors({});
   }, [existing, state.editingLeadId]);
 
   const update = <K extends keyof typeof form>(key: K, value: (typeof form)[K]) => {
     setForm((f) => ({ ...f, [key]: value }));
+    if (errors[key]) {
+      setErrors((e) => { const next = { ...e }; delete next[key]; return next; });
+    }
+  };
+
+  const validate = (): boolean => {
+    const next: Record<string, string> = {};
+    if (!form.firstName.trim()) next.firstName = "First name is required";
+    if (!form.lastName.trim()) next.lastName = "Last name is required";
+    if (!form.company.trim()) next.company = "Company is required";
+    if (!form.email.trim()) {
+      next.email = "Email is required";
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) {
+      next.email = "Please enter a valid email address";
+    }
+    if (form.estimatedValue < 0) next.estimatedValue = "Value cannot be negative";
+    setErrors(next);
+    return Object.keys(next).length === 0;
   };
 
   const submit = () => {
+    if (!validate()) return;
     if (isEdit && state.editingLeadId) {
       actions.updateLead(state.editingLeadId, { ...form });
     } else {
@@ -122,49 +143,53 @@ export function LeadCreateeditForm(props: LeadCreateeditFormProps) {
       <div className="flex flex-col gap-xs">
       <label className="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider" htmlFor="first_name">First Name</label>
       <input
-        className="h-touch-target rounded-lg border border-outline-variant bg-surface px-md font-body-md text-body-md text-on-surface placeholder:text-outline focus:border-primary focus:ring-2 focus:ring-primary focus:outline-none transition-shadow"
+        className={`h-touch-target rounded-lg border bg-surface px-md font-body-md text-body-md text-on-surface placeholder:text-outline focus:border-primary focus:ring-2 focus:ring-primary focus:outline-none transition-shadow ${errors.firstName ? "border-error focus:ring-error" : "border-outline-variant"}`}
         id="first_name"
         placeholder="e.g. Jane"
         type="text"
         value={form.firstName}
         onChange={(e) => update("firstName", e.target.value)}
       />
+      {errors.firstName && <span className="font-body-sm text-body-sm text-error">{errors.firstName}</span>}
       </div>
       {/* Input: Last Name */}
       <div className="flex flex-col gap-xs">
       <label className="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider" htmlFor="last_name">Last Name</label>
       <input
-        className="h-touch-target rounded-lg border border-outline-variant bg-surface px-md font-body-md text-body-md text-on-surface placeholder:text-outline focus:border-primary focus:ring-2 focus:ring-primary focus:outline-none transition-shadow"
+        className={`h-touch-target rounded-lg border bg-surface px-md font-body-md text-body-md text-on-surface placeholder:text-outline focus:border-primary focus:ring-2 focus:ring-primary focus:outline-none transition-shadow ${errors.lastName ? "border-error focus:ring-error" : "border-outline-variant"}`}
         id="last_name"
         placeholder="e.g. Doe"
         type="text"
         value={form.lastName}
         onChange={(e) => update("lastName", e.target.value)}
       />
+      {errors.lastName && <span className="font-body-sm text-body-sm text-error">{errors.lastName}</span>}
       </div>
       {/* Input: Company */}
       <div className="flex flex-col gap-xs md:col-span-2">
       <label className="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider" htmlFor="company">Company</label>
       <input
-        className="h-touch-target rounded-lg border border-outline-variant bg-surface px-md font-body-md text-body-md text-on-surface placeholder:text-outline focus:border-primary focus:ring-2 focus:ring-primary focus:outline-none transition-shadow"
+        className={`h-touch-target rounded-lg border bg-surface px-md font-body-md text-body-md text-on-surface placeholder:text-outline focus:border-primary focus:ring-2 focus:ring-primary focus:outline-none transition-shadow ${errors.company ? "border-error focus:ring-error" : "border-outline-variant"}`}
         id="company"
         placeholder="e.g. Acme Corp"
         type="text"
         value={form.company}
         onChange={(e) => update("company", e.target.value)}
       />
+      {errors.company && <span className="font-body-sm text-body-sm text-error">{errors.company}</span>}
       </div>
       {/* Input: Email */}
       <div className="flex flex-col gap-xs">
       <label className="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider" htmlFor="email">Email Address</label>
       <input
-        className="h-touch-target rounded-lg border border-outline-variant bg-surface px-md font-body-md text-body-md text-on-surface placeholder:text-outline focus:border-primary focus:ring-2 focus:ring-primary focus:outline-none transition-shadow"
+        className={`h-touch-target rounded-lg border bg-surface px-md font-body-md text-body-md text-on-surface placeholder:text-outline focus:border-primary focus:ring-2 focus:ring-primary focus:outline-none transition-shadow ${errors.email ? "border-error focus:ring-error" : "border-outline-variant"}`}
         id="email"
         placeholder="jane@example.com"
         type="email"
         value={form.email}
         onChange={(e) => update("email", e.target.value)}
       />
+      {errors.email && <span className="font-body-sm text-body-sm text-error">{errors.email}</span>}
       </div>
       {/* Input: Phone */}
       <div className="flex flex-col gap-xs">
@@ -198,6 +223,7 @@ export function LeadCreateeditForm(props: LeadCreateeditFormProps) {
       <option value="referral">Referral</option>
       <option value="trade_show">Trade Show</option>
       <option value="cold_call">Cold Call</option>
+      <option value="event">Event</option>
       </select>
       <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-sm text-outline">
       <span className="material-symbols-outlined">expand_more</span>
@@ -208,13 +234,15 @@ export function LeadCreateeditForm(props: LeadCreateeditFormProps) {
       <div className="flex flex-col gap-xs">
       <label className="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider" htmlFor="value">Estimated Value ($)</label>
       <input
-        className="h-touch-target rounded-lg border border-outline-variant bg-surface px-md font-body-md text-body-md text-on-surface placeholder:text-outline focus:border-primary focus:ring-2 focus:ring-primary focus:outline-none transition-shadow"
+        className={`h-touch-target rounded-lg border bg-surface px-md font-body-md text-body-md text-on-surface placeholder:text-outline focus:border-primary focus:ring-2 focus:ring-primary focus:outline-none transition-shadow ${errors.estimatedValue ? "border-error focus:ring-error" : "border-outline-variant"}`}
         id="value"
         placeholder="0.00"
+        min={0}
         type="number"
         value={form.estimatedValue || ""}
         onChange={(e) => update("estimatedValue", Number(e.target.value))}
       />
+      {errors.estimatedValue && <span className="font-body-sm text-body-sm text-error">{errors.estimatedValue}</span>}
       </div>
       {/* Select: Status */}
       <div className="flex flex-col gap-xs">
