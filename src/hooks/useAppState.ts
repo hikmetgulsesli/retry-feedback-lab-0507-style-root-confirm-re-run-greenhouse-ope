@@ -200,8 +200,57 @@ export interface AppActions {
   dismissStorageError: () => void;
 }
 
+const screenPaths: Record<AppScreen, string> = {
+  leads: "/leads",
+  pipeline: "/pipeline",
+  insights: "/insights",
+  settings: "/settings",
+  "create-lead": "/create-lead",
+  "edit-lead": "/edit-lead",
+  empty: "/empty",
+  "storage-error": "/storage-error",
+};
+
+function screenFromPath(pathname: string): AppScreen {
+  const path = pathname.replace(/\/+$/, "") || "/";
+  switch (path) {
+    case "/":
+    case "/leads":
+      return "leads";
+    case "/pipeline":
+      return "pipeline";
+    case "/insights":
+      return "insights";
+    case "/settings":
+      return "settings";
+    case "/create-lead":
+      return "create-lead";
+    case "/edit-lead":
+      return "edit-lead";
+    case "/empty":
+      return "empty";
+    case "/storage-error":
+      return "storage-error";
+    default:
+      return "leads";
+  }
+}
+
+function currentPathScreen(): AppScreen {
+  if (typeof window === "undefined") return "leads";
+  return screenFromPath(window.location.pathname);
+}
+
+function pushScreenPath(screen: AppScreen) {
+  if (typeof window === "undefined") return;
+  const nextPath = screenPaths[screen];
+  if (window.location.pathname !== nextPath) {
+    window.history.pushState({ screen }, "", nextPath);
+  }
+}
+
 export function useAppState() {
-  const [screen, setScreen] = useState<AppScreen>("leads");
+  const [screen, setScreen] = useState<AppScreen>(() => currentPathScreen());
   const [previousScreen, setPreviousScreen] = useState<AppScreen>("leads");
   const [leads, setLeads] = useState<Lead[]>(defaultLeads);
   const [settings, setSettings] = useState<AppSettings>(defaultSettings);
@@ -213,6 +262,17 @@ export function useAppState() {
   const [profileOpen, setProfileOpen] = useState(false);
   const [storageError, setStorageError] = useState<{ code: string; message: string } | null>(null);
   const [editingLeadId, setEditingLeadId] = useState<string | null>(null);
+
+  useEffect(() => {
+    const handlePopState = () => {
+      setPreviousScreen(screen);
+      setScreen(screenFromPath(window.location.pathname));
+      setEditingLeadId(null);
+    };
+
+    window.addEventListener("popstate", handlePopState);
+    return () => window.removeEventListener("popstate", handlePopState);
+  }, [screen]);
 
   // Load from localStorage on mount
   useEffect(() => {
@@ -260,6 +320,7 @@ export function useAppState() {
       setPreviousScreen(screen);
       setScreen(next);
       setEditingLeadId(editId ?? null);
+      pushScreenPath(next);
     },
     [screen]
   );
@@ -267,6 +328,7 @@ export function useAppState() {
   const goBack = useCallback(() => {
     setScreen(previousScreen);
     setEditingLeadId(null);
+    pushScreenPath(previousScreen);
   }, [previousScreen]);
 
   const addLead = useCallback(

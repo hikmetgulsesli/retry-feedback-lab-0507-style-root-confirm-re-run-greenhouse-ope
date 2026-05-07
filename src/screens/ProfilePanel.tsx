@@ -28,9 +28,9 @@ export function ProfilePanel(props: ProfilePanelProps) {
       <header className="flex justify-between items-center h-[64px] px-lg w-full border-b border-outline-variant bg-surface">
       <div className="font-h2 text-h2 text-primary">Greenhouse Console</div>
       <div className="flex items-center gap-md">
-      <span className="material-symbols-outlined text-on-surface-variant">search</span>
-      <span className="material-symbols-outlined text-on-surface-variant">notifications</span>
-      <span className="material-symbols-outlined text-on-surface-variant">help_outline</span>
+      <span className="material-symbols-outlined text-on-surface-variant" aria-hidden="true">search</span>
+      <span className="material-symbols-outlined text-on-surface-variant" aria-hidden="true">notifications</span>
+      <span className="material-symbols-outlined text-on-surface-variant" aria-hidden="true">help_outline</span>
       </div>
       </header>
       <div className="p-lg grid grid-cols-12 gap-gutter">
@@ -51,7 +51,7 @@ export function ProfilePanel(props: ProfilePanelProps) {
         className="w-[44px] h-[44px] flex items-center justify-center rounded-full hover:bg-surface-container-high transition-colors text-on-surface-variant cursor-pointer"
         onClick={actions.toggleProfile}
       >
-      <span className="material-symbols-outlined">close</span>
+      <span className="material-symbols-outlined" aria-hidden="true">close</span>
       </button>
       </div>
       {/* Scrollable Content */}
@@ -112,7 +112,7 @@ export function ProfilePanel(props: ProfilePanelProps) {
       <option value="est">EST (Eastern Standard Time)</option>
       <option value="pst">PST (Pacific Standard Time)</option>
       </select>
-      <span className="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-outline pointer-events-none">expand_more</span>
+      <span className="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-outline pointer-events-none" aria-hidden="true">expand_more</span>
       </div>
       <p className="font-body-sm text-body-sm text-on-surface-variant">Forces console timestamps to a specific timezone.</p>
       </div>
@@ -173,14 +173,14 @@ export function ProfilePanel(props: ProfilePanelProps) {
         className="flex items-center gap-3 px-4 h-[44px] rounded-lg hover:bg-surface-container-high transition-colors text-on-surface text-left cursor-pointer"
         onClick={() => actions.navigateTo("settings")}
       >
-      <span className="material-symbols-outlined text-outline">help</span>
+      <span className="material-symbols-outlined text-outline" aria-hidden="true">help</span>
       <span className="font-body-md text-body-md flex-1">Help & Documentation</span>
       </button>
       <button
         className="flex items-center gap-3 px-4 h-[44px] rounded-lg hover:bg-surface-container-high transition-colors text-on-surface text-left cursor-pointer"
         onClick={() => actions.navigateTo("settings")}
       >
-      <span className="material-symbols-outlined text-outline">verified_user</span>
+      <span className="material-symbols-outlined text-outline" aria-hidden="true">verified_user</span>
       <span className="font-body-md text-body-md flex-1">Security Settings</span>
       </button>
       </div>
@@ -191,7 +191,7 @@ export function ProfilePanel(props: ProfilePanelProps) {
         className="w-full flex items-center justify-center gap-2 h-[44px] bg-error-container text-on-error-container rounded-lg hover:bg-[#ffcdc9] transition-colors font-label-md text-label-md cursor-pointer"
         onClick={() => { actions.toggleProfile(); actions.navigateTo("empty"); }}
       >
-      <span className="material-symbols-outlined">logout</span>
+      <span className="material-symbols-outlined" aria-hidden="true">logout</span>
                       Sign Out
                   </button>
       </div>

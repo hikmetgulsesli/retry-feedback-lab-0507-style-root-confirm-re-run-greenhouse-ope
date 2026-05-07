@@ -66,7 +66,7 @@ export function PipelineBoard(props: PipelineBoardProps) {
         onClick={() => actions.navigateTo("leads")}
         disabled={state.screen === "leads" || state.screen === "empty"}
       >
-      <span className="material-symbols-outlined">person_search</span>
+      <span className="material-symbols-outlined" aria-hidden="true">person_search</span>
                       Leads
                   </button>
       <button
@@ -74,7 +74,7 @@ export function PipelineBoard(props: PipelineBoardProps) {
         onClick={() => actions.navigateTo("pipeline")}
         disabled={state.screen === "pipeline"}
       >
-      <span className="material-symbols-outlined">view_kanban</span>
+      <span className="material-symbols-outlined" aria-hidden="true">view_kanban</span>
                       Pipeline
                   </button>
       <button
@@ -82,7 +82,7 @@ export function PipelineBoard(props: PipelineBoardProps) {
         onClick={() => actions.navigateTo("insights")}
         disabled={state.screen === "insights"}
       >
-      <span className="material-symbols-outlined">monitoring</span>
+      <span className="material-symbols-outlined" aria-hidden="true">monitoring</span>
                       Insights
                   </button>
       <button
@@ -90,7 +90,7 @@ export function PipelineBoard(props: PipelineBoardProps) {
         onClick={() => actions.navigateTo("settings")}
         disabled={state.screen === "settings"}
       >
-      <span className="material-symbols-outlined">settings</span>
+      <span className="material-symbols-outlined" aria-hidden="true">settings</span>
                       Settings
                   </button>
       </div>
@@ -102,7 +102,7 @@ export function PipelineBoard(props: PipelineBoardProps) {
       <div className="font-h2 text-h2 text-primary font-bold">Greenhouse Console</div>
       <div className="flex items-center gap-lg">
       <div className="relative focus-within:ring-2 focus-within:ring-primary rounded-lg">
-      <span className="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+      <span className="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant" aria-hidden="true">search</span>
       <input
         className="pl-10 pr-4 py-2 bg-surface-container-high border-none rounded-lg font-body-sm text-body-sm text-on-surface placeholder:text-on-surface-variant focus:ring-0"
         placeholder="Search..."
@@ -117,7 +117,7 @@ export function PipelineBoard(props: PipelineBoardProps) {
         onClick={() => actions.navigateTo("storage-error")}
         aria-label="Notifications"
       >
-      <span className="material-symbols-outlined">notifications</span>
+      <span className="material-symbols-outlined" aria-hidden="true">notifications</span>
       </button>
       <button
         className="hover:text-primary transition-opacity p-2 min-h-touch-target min-w-touch-target flex items-center justify-center rounded-full"
@@ -125,7 +125,7 @@ export function PipelineBoard(props: PipelineBoardProps) {
         onClick={() => actions.navigateTo("settings")}
         aria-label="Help"
       >
-      <span className="material-symbols-outlined">help_outline</span>
+      <span className="material-symbols-outlined" aria-hidden="true">help_outline</span>
       </button>
       <button onClick={actions.toggleProfile} className="w-10 h-10 rounded-full border border-outline-variant overflow-hidden cursor-pointer" aria-label="Open profile panel">
       <img alt="Manager Profile" className="w-full h-full object-cover" src={state.profile.avatarUrl} />
@@ -145,7 +145,7 @@ export function PipelineBoard(props: PipelineBoardProps) {
         className="bg-primary-container text-on-primary min-h-touch-target px-md rounded-lg font-label-md text-label-md flex items-center gap-2 hover:bg-primary transition-colors cursor-pointer"
         onClick={() => actions.navigateTo("create-lead")}
       >
-      <span className="material-symbols-outlined text-[20px]">add</span>
+      <span className="material-symbols-outlined text-[20px]" aria-hidden="true">add</span>
                           New Lead
                       </button>
       </div>
@@ -177,7 +177,7 @@ export function PipelineBoard(props: PipelineBoardProps) {
               onClick={(e) => { e.stopPropagation(); actions.navigateTo("edit-lead", lead.id); }}
               aria-label="Edit"
             >
-            <span className="material-symbols-outlined text-[20px]">more_horiz</span>
+            <span className="material-symbols-outlined text-[20px]" aria-hidden="true">more_horiz</span>
             </button>
             </div>
             <div className="font-h3 text-h3 text-on-surface mb-3">${lead.estimatedValue.toLocaleString()}</div>
@@ -196,7 +196,7 @@ export function PipelineBoard(props: PipelineBoardProps) {
         className="w-80 flex flex-col bg-surface-container-lowest border border-dashed border-outline-variant rounded-xl items-center justify-center hover:bg-surface-container-low transition-colors text-on-surface-variant cursor-pointer"
         onClick={() => actions.navigateTo("create-lead")}
       >
-      <span className="material-symbols-outlined mb-2 text-[32px]">add_circle</span>
+      <span className="material-symbols-outlined mb-2 text-[32px]" aria-hidden="true">add_circle</span>
       <span className="font-label-md text-label-md">Add Status</span>
       </button>
       </div>

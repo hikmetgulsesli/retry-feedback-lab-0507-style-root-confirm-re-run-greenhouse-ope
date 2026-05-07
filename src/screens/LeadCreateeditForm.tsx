@@ -107,7 +107,7 @@ export function LeadCreateeditForm(props: LeadCreateeditFormProps) {
         className="h-touch-target w-touch-target flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors rounded-full hover:bg-surface-container-high focus-within:ring-2 focus-within:ring-primary focus:outline-none cursor-pointer"
         onClick={actions.goBack}
       >
-      <span className="material-symbols-outlined">arrow_back</span>
+      <span className="material-symbols-outlined" aria-hidden="true">arrow_back</span>
       </button>
       <h1 className="font-h2 text-h2 text-on-surface">{title}</h1>
       </div>
@@ -226,7 +226,7 @@ export function LeadCreateeditForm(props: LeadCreateeditFormProps) {
       <option value="event">Event</option>
       </select>
       <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-sm text-outline">
-      <span className="material-symbols-outlined">expand_more</span>
+      <span className="material-symbols-outlined" aria-hidden="true">expand_more</span>
       </div>
       </div>
       </div>
@@ -263,7 +263,7 @@ export function LeadCreateeditForm(props: LeadCreateeditFormProps) {
       <option value="lost">Lost</option>
       </select>
       <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-sm text-outline">
-      <span className="material-symbols-outlined">expand_more</span>
+      <span className="material-symbols-outlined" aria-hidden="true">expand_more</span>
       </div>
       </div>
       </div>

@@ -9,6 +9,8 @@ describe("App - Primary Workflow Screens", () => {
     vi.clearAllMocks();
     // Ensure localStorage is clean
     window.localStorage.clear();
+    window.history.pushState({}, "", "/");
+    delete window.app;
   });
 
   it("renders LeadsDashboard by default when leads exist", () => {
@@ -57,6 +59,7 @@ describe("App - Primary Workflow Screens", () => {
     const pipelineBtn = screen.getAllByText("Pipeline")[0];
     fireEvent.click(pipelineBtn);
     expect(screen.getByText("Pipeline Overview")).toBeInTheDocument();
+    expect(window.location.pathname).toBe("/pipeline");
   });
 
   it("navigates to insights dashboard", () => {
@@ -71,6 +74,39 @@ describe("App - Primary Workflow Screens", () => {
     const settingsBtn = screen.getAllByText("Settings")[0];
     fireEvent.click(settingsBtn);
     expect(screen.getByText("System Settings")).toBeInTheDocument();
+  });
+
+  it("renders pipeline from a direct URL", () => {
+    window.history.pushState({}, "", "/pipeline");
+    render(<App />);
+    expect(screen.getByText("Pipeline Overview")).toBeInTheDocument();
+  });
+
+  it("renders insights from a direct URL", () => {
+    window.history.pushState({}, "", "/insights");
+    render(<App />);
+    expect(screen.getByText("Insights Dashboard")).toBeInTheDocument();
+  });
+
+  it("renders the storage error screen from a direct URL", () => {
+    window.history.pushState({}, "", "/storage-error");
+    render(<App />);
+    expect(screen.getByText("Local Storage Error")).toBeInTheDocument();
+  });
+
+  it("exposes runtime state and actions on window.app", async () => {
+    render(<App />);
+
+    await waitFor(() => {
+      expect(window.app?.state.screen).toBe("leads");
+      expect(typeof window.app?.actions.navigateTo).toBe("function");
+    });
+
+    fireEvent.click(screen.getAllByText("Pipeline")[0]);
+
+    await waitFor(() => {
+      expect(window.app?.state.screen).toBe("pipeline");
+    });
   });
 
   it("opens profile panel", () => {

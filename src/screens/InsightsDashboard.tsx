@@ -45,7 +45,7 @@ export function InsightsDashboard(props: InsightsDashboardProps) {
         onClick={() => actions.navigateTo("leads")}
         disabled={state.screen === "leads" || state.screen === "empty"}
       >
-      <span className="material-symbols-outlined">person_search</span>
+      <span className="material-symbols-outlined" aria-hidden="true">person_search</span>
                       Leads
                   </button>
       <button
@@ -53,7 +53,7 @@ export function InsightsDashboard(props: InsightsDashboardProps) {
         onClick={() => actions.navigateTo("pipeline")}
         disabled={state.screen === "pipeline"}
       >
-      <span className="material-symbols-outlined">view_kanban</span>
+      <span className="material-symbols-outlined" aria-hidden="true">view_kanban</span>
                       Pipeline
                   </button>
       <button
@@ -61,7 +61,7 @@ export function InsightsDashboard(props: InsightsDashboardProps) {
         onClick={() => actions.navigateTo("insights")}
         disabled={state.screen === "insights"}
       >
-      <span className="material-symbols-outlined" style={{fontVariationSettings: "'FILL' 1"}}>monitoring</span>
+      <span className="material-symbols-outlined" aria-hidden="true" style={{fontVariationSettings: "'FILL' 1"}}>monitoring</span>
                       Insights
                   </button>
       <button
@@ -69,7 +69,7 @@ export function InsightsDashboard(props: InsightsDashboardProps) {
         onClick={() => actions.navigateTo("settings")}
         disabled={state.screen === "settings"}
       >
-      <span className="material-symbols-outlined">settings</span>
+      <span className="material-symbols-outlined" aria-hidden="true">settings</span>
                       Settings
                   </button>
       </div>
@@ -83,7 +83,7 @@ export function InsightsDashboard(props: InsightsDashboardProps) {
       </div>
       <div className="flex items-center gap-lg">
       <div className="relative focus-within:ring-2 focus-within:ring-primary rounded-full">
-      <span className="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+      <span className="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant" aria-hidden="true">search</span>
       <input
         className="pl-10 pr-4 py-2 bg-surface-container rounded-full border-none font-body-sm text-body-sm w-64 focus:outline-none"
         placeholder="Search..."
@@ -98,7 +98,7 @@ export function InsightsDashboard(props: InsightsDashboardProps) {
         onClick={() => actions.navigateTo("storage-error")}
         aria-label="Notifications"
       >
-      <span className="material-symbols-outlined">notifications</span>
+      <span className="material-symbols-outlined" aria-hidden="true">notifications</span>
       </button>
       <button
         className="text-on-surface-variant hover:text-primary transition-opacity w-[44px] h-[44px] flex items-center justify-center rounded-full"
@@ -106,7 +106,7 @@ export function InsightsDashboard(props: InsightsDashboardProps) {
         onClick={() => actions.navigateTo("settings")}
         aria-label="Help"
       >
-      <span className="material-symbols-outlined">help_outline</span>
+      <span className="material-symbols-outlined" aria-hidden="true">help_outline</span>
       </button>
       <button onClick={actions.toggleProfile} className="w-10 h-10 rounded-full border border-outline-variant object-cover overflow-hidden cursor-pointer" aria-label="Open profile panel">
       <img alt="Manager Profile" className="w-full h-full object-cover" src={state.profile.avatarUrl} />
@@ -147,7 +147,7 @@ export function InsightsDashboard(props: InsightsDashboardProps) {
           URL.revokeObjectURL(url);
         }}
       >
-      <span className="material-symbols-outlined">download</span>
+      <span className="material-symbols-outlined" aria-hidden="true">download</span>
                               Export Report
                           </button>
       </div>
@@ -159,13 +159,13 @@ export function InsightsDashboard(props: InsightsDashboardProps) {
       <div className="flex justify-between items-start mb-md">
       <span className="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Total Leads</span>
       <div className="w-8 h-8 rounded-full bg-secondary-container text-primary flex items-center justify-center">
-      <span className="material-symbols-outlined text-[18px]">group</span>
+      <span className="material-symbols-outlined text-[18px]" aria-hidden="true">group</span>
       </div>
       </div>
       <div>
       <div className="font-h1 text-h1 text-on-surface">{metrics.total}</div>
       <div className="flex items-center gap-xs mt-unit text-[#16a34a]">
-      <span className="material-symbols-outlined text-[16px]">trending_up</span>
+      <span className="material-symbols-outlined text-[16px]" aria-hidden="true">trending_up</span>
       <span className="font-body-sm text-body-sm">+12% vs last month</span>
       </div>
       </div>
@@ -174,7 +174,7 @@ export function InsightsDashboard(props: InsightsDashboardProps) {
       <div className="flex justify-between items-start mb-md">
       <span className="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Won / Lost</span>
       <div className="w-8 h-8 rounded-full bg-secondary-container text-primary flex items-center justify-center">
-      <span className="material-symbols-outlined text-[18px]">fact_check</span>
+      <span className="material-symbols-outlined text-[18px]" aria-hidden="true">fact_check</span>
       </div>
       </div>
       <div>
@@ -188,13 +188,13 @@ export function InsightsDashboard(props: InsightsDashboardProps) {
       <div className="flex justify-between items-start mb-md">
       <span className="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Conversion Rate</span>
       <div className="w-8 h-8 rounded-full bg-secondary-container text-primary flex items-center justify-center">
-      <span className="material-symbols-outlined text-[18px]">pie_chart</span>
+      <span className="material-symbols-outlined text-[18px]" aria-hidden="true">pie_chart</span>
       </div>
       </div>
       <div>
       <div className="font-h1 text-h1 text-on-surface">{metrics.conversionRate}%</div>
       <div className="flex items-center gap-xs mt-unit text-[#16a34a]">
-      <span className="material-symbols-outlined text-[16px]">trending_up</span>
+      <span className="material-symbols-outlined text-[16px]" aria-hidden="true">trending_up</span>
       <span className="font-body-sm text-body-sm">+2.1% vs last month</span>
       </div>
       </div>
@@ -203,13 +203,13 @@ export function InsightsDashboard(props: InsightsDashboardProps) {
       <div className="flex justify-between items-start mb-md">
       <span className="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Pipeline Value</span>
       <div className="w-8 h-8 rounded-full bg-secondary-container text-primary flex items-center justify-center">
-      <span className="material-symbols-outlined text-[18px]">attach_money</span>
+      <span className="material-symbols-outlined text-[18px]" aria-hidden="true">attach_money</span>
       </div>
       </div>
       <div>
       <div className="font-h1 text-h1 text-on-surface">${(pipelineValue / 1000).toFixed(0)}k</div>
       <div className="flex items-center gap-xs mt-unit text-error">
-      <span className="material-symbols-outlined text-[16px]">trending_down</span>
+      <span className="material-symbols-outlined text-[16px]" aria-hidden="true">trending_down</span>
       <span className="font-body-sm text-body-sm">-5% vs last week</span>
       </div>
       </div>
@@ -283,7 +283,7 @@ export function InsightsDashboard(props: InsightsDashboardProps) {
       <div className="flex-1 overflow-y-auto pr-sm space-y-md">
       <div className="flex items-start gap-md p-md rounded-lg border border-surface-container-high bg-surface-bright">
       <div className="w-10 h-10 rounded-full bg-green-100 text-[#16a34a] flex items-center justify-center shrink-0">
-      <span className="material-symbols-outlined">check_circle</span>
+      <span className="material-symbols-outlined" aria-hidden="true">check_circle</span>
       </div>
       <div>
       <h4 className="font-label-md text-label-md text-on-surface">AgriCorp East - Zone B</h4>
@@ -293,7 +293,7 @@ export function InsightsDashboard(props: InsightsDashboardProps) {
       </div>
       <div className="flex items-start gap-md p-md rounded-lg border border-surface-container-high bg-surface-bright">
       <div className="w-10 h-10 rounded-full bg-green-100 text-[#16a34a] flex items-center justify-center shrink-0">
-      <span className="material-symbols-outlined">check_circle</span>
+      <span className="material-symbols-outlined" aria-hidden="true">check_circle</span>
       </div>
       <div>
       <h4 className="font-label-md text-label-md text-on-surface">Valley Farms Co.</h4>
@@ -303,7 +303,7 @@ export function InsightsDashboard(props: InsightsDashboardProps) {
       </div>
       <div className="flex items-start gap-md p-md rounded-lg border border-surface-container-high bg-surface-bright">
       <div className="w-10 h-10 rounded-full bg-blue-100 text-primary flex items-center justify-center shrink-0">
-      <span className="material-symbols-outlined">handshake</span>
+      <span className="material-symbols-outlined" aria-hidden="true">handshake</span>
       </div>
       <div>
       <h4 className="font-label-md text-label-md text-on-surface">Sunlight Growers</h4>

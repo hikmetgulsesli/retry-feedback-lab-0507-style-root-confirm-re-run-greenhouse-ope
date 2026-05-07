@@ -22,7 +22,7 @@ export function StorageErrorState(props: StorageErrorStateProps) {
       <main className="w-full max-w-md bg-surface-container-lowest dark:bg-inverse-surface border border-error/20 dark:border-error/30 rounded-xl p-xl shadow-[0px_4px_12px_rgba(15,23,42,0.08)] flex flex-col items-center text-center mx-auto mt-16">
       {/* Error Icon */}
       <div className="w-16 h-16 rounded-full bg-error-container/50 dark:bg-error-container/10 flex items-center justify-center mb-lg">
-      <span className="material-symbols-outlined text-error text-4xl">storage</span>
+      <span className="material-symbols-outlined text-error text-4xl" aria-hidden="true">storage</span>
       </div>
       {/* Typography */}
       <h1 className="font-h2 text-h2 text-on-surface dark:text-surface-container-lowest mb-sm">Local Storage Error</h1>
@@ -36,7 +36,7 @@ export function StorageErrorState(props: StorageErrorStateProps) {
         onClick={() => setExpanded((prev) => !prev)}
       >
       <span className="font-label-sm text-label-sm text-on-surface dark:text-surface-container-highest uppercase">Error Details</span>
-      <span className={`material-symbols-outlined text-outline text-sm transition-transform ${expanded ? "rotate-180" : ""}`}>expand_more</span>
+      <span aria-hidden="true" className={`material-symbols-outlined text-outline text-sm transition-transform ${expanded ? "rotate-180" : ""}`}>expand_more</span>
       </button>
       {expanded && (
         <code className="font-body-sm text-body-sm text-error block bg-surface dark:bg-on-surface/5 p-sm rounded border border-error/10">
@@ -50,20 +50,20 @@ export function StorageErrorState(props: StorageErrorStateProps) {
         className="w-full h-touch-target flex items-center justify-center bg-primary-container text-on-primary rounded-lg font-label-md text-label-md hover:bg-primary transition-colors focus:ring-2 focus:ring-primary focus:outline-none cursor-pointer"
         onClick={actions.retryStorage}
       >
-      <span className="material-symbols-outlined mr-sm text-xl">refresh</span>
+      <span className="material-symbols-outlined mr-sm text-xl" aria-hidden="true">refresh</span>
                       Retry Connection
                   </button>
       <button
         className="w-full h-touch-target flex items-center justify-center bg-transparent text-secondary dark:text-secondary-fixed-dim border border-outline-variant dark:border-outline/50 rounded-lg font-label-md text-label-md hover:bg-surface-container-high dark:hover:bg-surface-container transition-colors focus:ring-2 focus:ring-outline focus:outline-none cursor-pointer"
         onClick={actions.resetStorage}
       >
-      <span className="material-symbols-outlined mr-sm text-xl">delete_sweep</span>
+      <span className="material-symbols-outlined mr-sm text-xl" aria-hidden="true">delete_sweep</span>
                       Reset Local Data
                   </button>
       </div>
       <div className="mt-lg">
       <a className="font-label-sm text-label-sm text-primary dark:text-primary-fixed-dim hover:underline flex items-center justify-center gap-xs" href="mailto:support@ecogrowth.ops">
-      <span className="material-symbols-outlined text-sm">help</span>
+      <span className="material-symbols-outlined text-sm" aria-hidden="true">help</span>
                        Contact IT Support
                    </a>
       </div>

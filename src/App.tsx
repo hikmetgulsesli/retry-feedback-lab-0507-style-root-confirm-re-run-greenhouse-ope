@@ -1,4 +1,4 @@
-import { useMemo } from "react";
+import { useEffect, useMemo } from "react";
 import { AppContext } from "./contexts/AppContext";
 import { useAppState } from "./hooks/useAppState";
 
@@ -11,8 +11,23 @@ import { SettingsScreen } from "./screens/SettingsScreen";
 import { ProfilePanel } from "./screens/ProfilePanel";
 import { LeadCreateeditForm } from "./screens/LeadCreateeditForm";
 
+type AppRuntime = ReturnType<typeof useAppState>;
+
+declare global {
+  interface Window {
+    app?: AppRuntime;
+  }
+}
+
 export default function App() {
   const { state, actions } = useAppState();
+
+  useEffect(() => {
+    window.app = { state, actions };
+    return () => {
+      delete window.app;
+    };
+  }, [state, actions]);
 
   const currentScreen = useMemo(() => {
     if (state.storageError) return <StorageErrorState />;

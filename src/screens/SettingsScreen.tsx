@@ -50,28 +50,28 @@ export function SettingsScreen(props: SettingsScreenProps) {
         className={`flex items-center gap-3 px-4 py-3 rounded-lg font-body-md text-body-md transition-colors ${state.screen === "leads" || state.screen === "empty" ? "text-on-surface-variant dark:text-outline-variant hover:bg-surface-container-high dark:hover:bg-surface-container" : "text-on-surface-variant dark:text-outline-variant hover:bg-surface-container-high dark:hover:bg-surface-container"}`}
         onClick={() => actions.navigateTo("leads")}
       >
-      <span className="material-symbols-outlined">person_search</span>
+      <span className="material-symbols-outlined" aria-hidden="true">person_search</span>
                       Leads
                   </button>
       <button
         className={`flex items-center gap-3 px-4 py-3 rounded-lg font-body-md text-body-md transition-colors ${state.screen === "pipeline" ? "text-primary dark:text-primary-fixed-dim bg-secondary-container dark:bg-on-secondary-fixed-variant" : "text-on-surface-variant dark:text-outline-variant hover:bg-surface-container-high dark:hover:bg-surface-container"}`}
         onClick={() => actions.navigateTo("pipeline")}
       >
-      <span className="material-symbols-outlined">view_kanban</span>
+      <span className="material-symbols-outlined" aria-hidden="true">view_kanban</span>
                       Pipeline
                   </button>
       <button
         className={`flex items-center gap-3 px-4 py-3 rounded-lg font-body-md text-body-md transition-colors ${state.screen === "insights" ? "text-primary dark:text-primary-fixed-dim bg-secondary-container dark:bg-on-secondary-fixed-variant" : "text-on-surface-variant dark:text-outline-variant hover:bg-surface-container-high dark:hover:bg-surface-container"}`}
         onClick={() => actions.navigateTo("insights")}
       >
-      <span className="material-symbols-outlined">monitoring</span>
+      <span className="material-symbols-outlined" aria-hidden="true">monitoring</span>
                       Insights
                   </button>
       <button
         className={`flex items-center gap-3 px-4 py-3 rounded-lg font-body-md text-body-md transition-colors ${state.screen === "settings" ? "text-primary dark:text-primary-fixed-dim bg-secondary-container dark:bg-on-secondary-fixed-variant active:scale-[0.98] duration-150" : "text-on-surface-variant dark:text-outline-variant hover:bg-surface-container-high dark:hover:bg-surface-container"}`}
         onClick={() => actions.navigateTo("settings")}
       >
-      <span className="material-symbols-outlined" style={{fontVariationSettings: "'FILL' 1"}}>settings</span>
+      <span className="material-symbols-outlined" aria-hidden="true" style={{fontVariationSettings: "'FILL' 1"}}>settings</span>
                       Settings
                   </button>
       </div>
@@ -83,12 +83,12 @@ export function SettingsScreen(props: SettingsScreenProps) {
       <div className="flex items-center gap-md">
       <div className="font-h2 text-h2 text-primary dark:text-primary-fixed-dim hidden md:block">Greenhouse Console</div>
       <button className="md:hidden text-on-surface p-sm" onClick={() => actions.navigateTo("leads")}>
-      <span className="material-symbols-outlined">menu</span>
+      <span className="material-symbols-outlined" aria-hidden="true">menu</span>
       </button>
       </div>
       <div className="flex items-center gap-md">
       <div className="relative focus-within:ring-2 focus-within:ring-primary rounded-lg">
-      <span className="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+      <span className="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant" aria-hidden="true">search</span>
       <input className="pl-10 pr-4 py-2 bg-surface-container-low border border-outline-variant rounded-lg font-body-sm text-body-sm text-on-surface focus:outline-none w-64 h-[44px]" placeholder="Search settings..." type="text" value={search} onChange={(e) => setSearch(e.target.value)} />
       </div>
       <button
@@ -96,7 +96,7 @@ export function SettingsScreen(props: SettingsScreenProps) {
         onClick={() => actions.navigateTo("storage-error")}
         aria-label="Notifications"
       >
-      <span className="material-symbols-outlined">notifications</span>
+      <span className="material-symbols-outlined" aria-hidden="true">notifications</span>
       </button>
       <button
         className="text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-opacity p-sm w-[44px] h-[44px] flex items-center justify-center rounded-full hover:bg-surface-container-high"
@@ -104,7 +104,7 @@ export function SettingsScreen(props: SettingsScreenProps) {
         onClick={() => actions.navigateTo("settings")}
         aria-label="Help"
       >
-      <span className="material-symbols-outlined">help_outline</span>
+      <span className="material-symbols-outlined" aria-hidden="true">help_outline</span>
       </button>
       <button onClick={actions.toggleProfile} className="w-10 h-10 rounded-full bg-surface-variant overflow-hidden border border-outline-variant ml-sm cursor-pointer" aria-label="Open profile panel">
       <img alt="Manager Profile" className="w-full h-full object-cover" src={state.profile.avatarUrl} />
@@ -123,7 +123,7 @@ export function SettingsScreen(props: SettingsScreenProps) {
       {/* Appearance Card */}
       <div className="bg-surface border border-outline-variant rounded-xl p-lg flex flex-col gap-md">
       <div className="flex items-center gap-sm">
-      <span className="material-symbols-outlined text-primary">palette</span>
+      <span className="material-symbols-outlined text-primary" aria-hidden="true">palette</span>
       <h3 className="font-h3 text-h3 text-on-surface">Appearance</h3>
       </div>
       <div className="space-y-md">
@@ -158,7 +158,7 @@ export function SettingsScreen(props: SettingsScreenProps) {
       {/* Localization Card */}
       <div className="bg-surface border border-outline-variant rounded-xl p-lg flex flex-col gap-md">
       <div className="flex items-center gap-sm">
-      <span className="material-symbols-outlined text-primary">language</span>
+      <span className="material-symbols-outlined text-primary" aria-hidden="true">language</span>
       <h3 className="font-h3 text-h3 text-on-surface">Localization</h3>
       </div>
       <div className="space-y-md">
@@ -182,7 +182,7 @@ export function SettingsScreen(props: SettingsScreenProps) {
       {/* Notifications Card */}
       <div className="bg-surface border border-outline-variant rounded-xl p-lg flex flex-col gap-md lg:col-span-2">
       <div className="flex items-center gap-sm">
-      <span className="material-symbols-outlined text-primary">notifications_active</span>
+      <span className="material-symbols-outlined text-primary" aria-hidden="true">notifications_active</span>
       <h3 className="font-h3 text-h3 text-on-surface">Notifications & Alerts</h3>
       </div>
       <div className="space-y-4 divide-y divide-outline-variant">
@@ -221,7 +221,7 @@ export function SettingsScreen(props: SettingsScreenProps) {
       {/* Data Persistence Card */}
       <div className="bg-surface border border-outline-variant rounded-xl p-lg flex flex-col gap-md lg:col-span-2 border-l-4 border-l-error">
       <div className="flex items-center gap-sm">
-      <span className="material-symbols-outlined text-error">database</span>
+      <span className="material-symbols-outlined text-error" aria-hidden="true">database</span>
       <h3 className="font-h3 text-h3 text-on-surface">Data Management</h3>
       </div>
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-md bg-error-container/20 p-md rounded-lg border border-error-container">

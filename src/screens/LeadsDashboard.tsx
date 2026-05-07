@@ -81,7 +81,7 @@ export function LeadsDashboard(props: LeadsDashboardProps) {
         onClick={() => actions.navigateTo("leads")}
         disabled={state.screen === "leads" || state.screen === "empty"}
       >
-      <span className="material-symbols-outlined" style={{fontVariationSettings: "'FILL' 1"}}>person_search</span>
+      <span className="material-symbols-outlined" aria-hidden="true" style={{fontVariationSettings: "'FILL' 1"}}>person_search</span>
                       Leads
                   </button>
       <button
@@ -89,7 +89,7 @@ export function LeadsDashboard(props: LeadsDashboardProps) {
         onClick={() => actions.navigateTo("pipeline")}
         disabled={state.screen === "pipeline"}
       >
-      <span className="material-symbols-outlined">view_kanban</span>
+      <span className="material-symbols-outlined" aria-hidden="true">view_kanban</span>
                       Pipeline
                   </button>
       <button
@@ -97,7 +97,7 @@ export function LeadsDashboard(props: LeadsDashboardProps) {
         onClick={() => actions.navigateTo("insights")}
         disabled={state.screen === "insights"}
       >
-      <span className="material-symbols-outlined">monitoring</span>
+      <span className="material-symbols-outlined" aria-hidden="true">monitoring</span>
                       Insights
                   </button>
       <button
@@ -105,7 +105,7 @@ export function LeadsDashboard(props: LeadsDashboardProps) {
         onClick={() => actions.navigateTo("settings")}
         disabled={state.screen === "settings"}
       >
-      <span className="material-symbols-outlined">settings</span>
+      <span className="material-symbols-outlined" aria-hidden="true">settings</span>
                       Settings
                   </button>
       </div>
@@ -115,7 +115,7 @@ export function LeadsDashboard(props: LeadsDashboardProps) {
       <div className="flex items-center gap-md">
       <div className="font-h2 text-h2 text-primary dark:text-primary-fixed-dim">Greenhouse Console</div>
       <div className="relative hidden lg:flex items-center focus-within:ring-2 focus-within:ring-primary rounded-DEFAULT">
-      <span className="material-symbols-outlined absolute left-sm text-on-surface-variant">search</span>
+      <span className="material-symbols-outlined absolute left-sm text-on-surface-variant" aria-hidden="true">search</span>
       <input
         className="pl-xl pr-sm py-sm rounded-DEFAULT border border-outline-variant bg-surface-container-lowest text-on-surface focus:outline-none font-body-sm text-body-sm h-touch-target"
         placeholder="Search..."
@@ -132,7 +132,7 @@ export function LeadsDashboard(props: LeadsDashboardProps) {
         onClick={() => actions.navigateTo("storage-error")}
         aria-label="Notifications"
       >
-      <span className="material-symbols-outlined">notifications</span>
+      <span className="material-symbols-outlined" aria-hidden="true">notifications</span>
       </button>
       <button
         className="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-opacity w-touch-target h-touch-target flex items-center justify-center rounded-full"
@@ -140,7 +140,7 @@ export function LeadsDashboard(props: LeadsDashboardProps) {
         onClick={() => actions.navigateTo("settings")}
         aria-label="Help"
       >
-      <span className="material-symbols-outlined">help_outline</span>
+      <span className="material-symbols-outlined" aria-hidden="true">help_outline</span>
       </button>
       <button onClick={actions.toggleProfile} className="w-[40px] h-[40px] rounded-full object-cover border border-outline-variant overflow-hidden cursor-pointer" aria-label="Open profile panel">
       <img alt="Manager Profile" className="w-full h-full object-cover" src={state.profile.avatarUrl} />
@@ -159,7 +159,7 @@ export function LeadsDashboard(props: LeadsDashboardProps) {
         className="bg-primary-container text-on-primary h-touch-target px-md rounded-DEFAULT font-label-md text-label-md flex items-center gap-sm hover:bg-primary transition-colors cursor-pointer"
         onClick={() => actions.navigateTo("create-lead")}
       >
-      <span className="material-symbols-outlined">add</span>
+      <span className="material-symbols-outlined" aria-hidden="true">add</span>
                       New Lead
                   </button>
       </div>
@@ -179,7 +179,7 @@ export function LeadsDashboard(props: LeadsDashboardProps) {
       <option value="proposal">Proposal</option>
       <option value="negotiating">Negotiating</option>
       </select>
-      <span className="material-symbols-outlined absolute right-sm top-1/2 -translate-y-1/2 text-outline pointer-events-none">expand_more</span>
+      <span className="material-symbols-outlined absolute right-sm top-1/2 -translate-y-1/2 text-outline pointer-events-none" aria-hidden="true">expand_more</span>
       </div>
       <div className="relative">
       <select
@@ -193,7 +193,7 @@ export function LeadsDashboard(props: LeadsDashboardProps) {
       <option value="trade_show">Trade Show</option>
       <option value="cold_call">Cold Call</option>
       </select>
-      <span className="material-symbols-outlined absolute right-sm top-1/2 -translate-y-1/2 text-outline pointer-events-none">expand_more</span>
+      <span className="material-symbols-outlined absolute right-sm top-1/2 -translate-y-1/2 text-outline pointer-events-none" aria-hidden="true">expand_more</span>
       </div>
       </div>
       <div className="flex items-center gap-sm">
@@ -202,7 +202,7 @@ export function LeadsDashboard(props: LeadsDashboardProps) {
         onClick={() => { actions.setStatusFilter(""); actions.setSourceFilter(""); actions.setSearchQuery(""); setLocalSearch(""); setPage(1); }}
         aria-label="Clear filters"
       >
-      <span className="material-symbols-outlined">filter_list</span>
+      <span className="material-symbols-outlined" aria-hidden="true">filter_list</span>
       </button>
       <button
         className="w-touch-target h-touch-target flex items-center justify-center border border-outline-variant rounded-DEFAULT text-on-surface hover:bg-surface-container transition-colors cursor-pointer"
@@ -221,7 +221,7 @@ export function LeadsDashboard(props: LeadsDashboardProps) {
         }}
         aria-label="Export"
       >
-      <span className="material-symbols-outlined">download</span>
+      <span className="material-symbols-outlined" aria-hidden="true">download</span>
       </button>
       </div>
       </div>
@@ -263,7 +263,7 @@ export function LeadsDashboard(props: LeadsDashboardProps) {
           onClick={() => actions.navigateTo("edit-lead", lead.id)}
           aria-label="Edit lead"
         >
-        <span className="material-symbols-outlined">more_vert</span>
+        <span className="material-symbols-outlined" aria-hidden="true">more_vert</span>
         </button>
         </td>
         </tr>
@@ -288,7 +288,7 @@ export function LeadsDashboard(props: LeadsDashboardProps) {
         disabled={page <= 1}
         onClick={() => setPage((p) => Math.max(1, p - 1))}
       >
-      <span className="material-symbols-outlined">chevron_left</span>
+      <span className="material-symbols-outlined" aria-hidden="true">chevron_left</span>
       </button>
       {Array.from({ length: totalPages }, (_, i) => i + 1).map((p) => (
         <button
@@ -304,7 +304,7 @@ export function LeadsDashboard(props: LeadsDashboardProps) {
         disabled={page >= totalPages}
         onClick={() => setPage((p) => Math.min(totalPages, p + 1))}
       >
-      <span className="material-symbols-outlined">chevron_right</span>
+      <span className="material-symbols-outlined" aria-hidden="true">chevron_right</span>
       </button>
       </div>
       </div>

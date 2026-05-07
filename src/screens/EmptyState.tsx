@@ -30,7 +30,7 @@ export function EmptyState(props: EmptyStateProps) {
         onClick={() => actions.navigateTo("leads")}
         disabled={state.screen === "leads" || state.screen === "empty"}
       >
-      <span className="material-symbols-outlined" style={{fontVariationSettings: "'FILL' 1"}}>person_search</span>
+      <span className="material-symbols-outlined" aria-hidden="true" style={{fontVariationSettings: "'FILL' 1"}}>person_search</span>
       <span className="font-label-md text-label-md">Leads</span>
       </button>
       <button
@@ -38,7 +38,7 @@ export function EmptyState(props: EmptyStateProps) {
         onClick={() => actions.navigateTo("pipeline")}
         disabled={state.screen === "pipeline"}
       >
-      <span className="material-symbols-outlined">view_kanban</span>
+      <span className="material-symbols-outlined" aria-hidden="true">view_kanban</span>
       <span className="font-label-md text-label-md">Pipeline</span>
       </button>
       <button
@@ -46,7 +46,7 @@ export function EmptyState(props: EmptyStateProps) {
         onClick={() => actions.navigateTo("insights")}
         disabled={state.screen === "insights"}
       >
-      <span className="material-symbols-outlined">monitoring</span>
+      <span className="material-symbols-outlined" aria-hidden="true">monitoring</span>
       <span className="font-label-md text-label-md">Insights</span>
       </button>
       <button
@@ -54,7 +54,7 @@ export function EmptyState(props: EmptyStateProps) {
         onClick={() => actions.navigateTo("settings")}
         disabled={state.screen === "settings"}
       >
-      <span className="material-symbols-outlined">settings</span>
+      <span className="material-symbols-outlined" aria-hidden="true">settings</span>
       <span className="font-label-md text-label-md">Settings</span>
       </button>
       </div>
@@ -66,7 +66,7 @@ export function EmptyState(props: EmptyStateProps) {
       <div className="font-h2 text-h2 text-primary">Greenhouse Console</div>
       <div className="flex items-center gap-md">
       <div className="relative focus-within:ring-2 focus-within:ring-primary rounded-full">
-      <span className="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+      <span className="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant" aria-hidden="true">search</span>
       <input
         className="bg-surface-container-low border border-outline-variant rounded-full pl-10 pr-4 py-2 font-body-sm text-body-sm focus:outline-none w-64"
         placeholder="Search leads..."
@@ -81,7 +81,7 @@ export function EmptyState(props: EmptyStateProps) {
         onClick={() => actions.navigateTo("storage-error")}
         aria-label="Notifications"
       >
-      <span className="material-symbols-outlined">notifications</span>
+      <span className="material-symbols-outlined" aria-hidden="true">notifications</span>
       </button>
       <button
         className="text-on-surface-variant hover:text-primary transition-opacity h-touch-target w-touch-target flex items-center justify-center rounded-full"
@@ -89,7 +89,7 @@ export function EmptyState(props: EmptyStateProps) {
         onClick={() => actions.navigateTo("settings")}
         aria-label="Help"
       >
-      <span className="material-symbols-outlined">help_outline</span>
+      <span className="material-symbols-outlined" aria-hidden="true">help_outline</span>
       </button>
       <button onClick={actions.toggleProfile} className="h-8 w-8 rounded-full bg-surface-container-highest border border-outline-variant overflow-hidden cursor-pointer" aria-label="Open profile panel">
       <img alt="Manager Profile" className="w-full h-full object-cover" src={state.profile.avatarUrl} />
@@ -100,7 +100,7 @@ export function EmptyState(props: EmptyStateProps) {
       <main className="flex-1 bg-background p-margin overflow-y-auto flex items-center justify-center">
       <div className="max-w-md w-full bg-surface border border-outline-variant rounded-xl p-xl flex flex-col items-center text-center">
       <div className="w-24 h-24 bg-surface-container rounded-full flex items-center justify-center mb-md">
-      <span className="material-symbols-outlined text-outline text-5xl">person_search</span>
+      <span className="material-symbols-outlined text-outline text-5xl" aria-hidden="true">person_search</span>
       </div>
       <h1 className="font-h2 text-h2 text-on-surface mb-sm">No leads yet</h1>
       <p className="font-body-md text-body-md text-on-surface-variant mb-xl">Your lead pipeline is currently empty. Start growing your network by adding a new lead to monitor.</p>
@@ -108,7 +108,7 @@ export function EmptyState(props: EmptyStateProps) {
         className="bg-primary-container text-on-primary font-label-md text-label-md h-touch-target px-lg rounded-lg flex items-center justify-center gap-sm hover:opacity-90 transition-opacity cursor-pointer"
         onClick={() => actions.navigateTo("create-lead")}
       >
-      <span className="material-symbols-outlined" style={{fontVariationSettings: "'FILL' 1"}}>add</span>
+      <span className="material-symbols-outlined" aria-hidden="true" style={{fontVariationSettings: "'FILL' 1"}}>add</span>
                           Create Lead
                       </button>
       </div>
