@@ -99,8 +99,9 @@ export function SettingsScreen(props: SettingsScreenProps) {
       <span className="material-symbols-outlined">notifications</span>
       </button>
       <button
-        className="text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-opacity p-sm w-[44px] h-[44px] flex items-center justify-center rounded-full hover:bg-surface-container-high"
+        className="text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-opacity p-sm w-[44px] h-[44px] flex items-center justify-center rounded-full hover:bg-surface-container-high disabled:opacity-40 disabled:cursor-not-allowed"
         aria-label="Help"
+        disabled
       >
       <span className="material-symbols-outlined">help_outline</span>
       </button>
