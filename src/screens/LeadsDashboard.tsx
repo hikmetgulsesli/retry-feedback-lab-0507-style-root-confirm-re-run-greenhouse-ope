@@ -79,6 +79,7 @@ export function LeadsDashboard(props: LeadsDashboardProps) {
       <button
         className={`flex items-center gap-3 px-4 py-3 rounded-lg font-body-md text-body-md transition-colors ${state.screen === "leads" || state.screen === "empty" ? "text-primary dark:text-primary-fixed-dim bg-secondary-container dark:bg-on-secondary-fixed-variant active:scale-[0.98] duration-150" : "text-on-surface-variant dark:text-outline-variant hover:bg-surface-container-high dark:hover:bg-surface-container"}`}
         onClick={() => actions.navigateTo("leads")}
+        disabled={state.screen === "leads" || state.screen === "empty"}
       >
       <span className="material-symbols-outlined" style={{fontVariationSettings: "'FILL' 1"}}>person_search</span>
                       Leads
