@@ -27,7 +27,7 @@ export type AppState = {
   statusFilter: LeadStatus | "";
   sourceFilter: LeadSource | "";
   profileOpen: boolean;
-  storageError: boolean;
+  storageError: { code: string; message: string } | null;
   editingLeadId: string | null;
 };
 
@@ -211,13 +211,13 @@ export function useAppState() {
   const [statusFilter, setStatusFilterState] = useState<LeadStatus | "">("");
   const [sourceFilter, setSourceFilterState] = useState<LeadSource | "">("");
   const [profileOpen, setProfileOpen] = useState(false);
-  const [storageError, setStorageError] = useState(false);
+  const [storageError, setStorageError] = useState<{ code: string; message: string } | null>(null);
   const [editingLeadId, setEditingLeadId] = useState<string | null>(null);
 
   // Load from localStorage on mount
   useEffect(() => {
     if (!isStorageAvailable()) {
-      setStorageError(true);
+      setStorageError({ code: "ERR_STORAGE_UNAVAILABLE", message: "localStorage is not available in this browser" });
       return;
     }
     try {
@@ -228,8 +228,11 @@ export function useAppState() {
         setProfile(stored.profile ?? defaultProfile);
         setNotifications(stored.notifications ?? defaultNotifications);
       }
-    } catch {
-      setStorageError(true);
+    } catch (e) {
+      setStorageError({
+        code: e instanceof StorageError ? e.code : "ERR_READ_FAILED",
+        message: e instanceof Error ? e.message : "Failed to load stored data",
+      });
     }
   }, []);
 
@@ -244,8 +247,11 @@ export function useAppState() {
         profile,
         notifications,
       });
-    } catch {
-      setStorageError(true);
+    } catch (e) {
+      setStorageError({
+        code: e instanceof StorageError ? e.code : "ERR_WRITE_FAILED",
+        message: e instanceof Error ? e.message : "Failed to save data",
+      });
     }
   }, [leads, settings, profile, notifications, storageError]);
 
@@ -320,7 +326,7 @@ export function useAppState() {
   }, []);
 
   const retryStorage = useCallback(() => {
-    setStorageError(false);
+    setStorageError(null);
     try {
       const stored = loadFromStorage();
       if (stored) {
@@ -330,8 +336,11 @@ export function useAppState() {
         setNotifications(stored.notifications ?? defaultNotifications);
       }
       setScreen(previousScreen);
-    } catch {
-      setStorageError(true);
+    } catch (e) {
+      setStorageError({
+        code: e instanceof StorageError ? e.code : "ERR_READ_FAILED",
+        message: e instanceof Error ? e.message : "Failed to retry storage",
+      });
     }
   }, [previousScreen]);
 
@@ -342,14 +351,17 @@ export function useAppState() {
       setSettings(defaultSettings);
       setProfile(defaultProfile);
       setNotifications(defaultNotifications);
-      setStorageError(false);
-    } catch {
-      setStorageError(true);
+      setStorageError(null);
+    } catch (e) {
+      setStorageError({
+        code: e instanceof StorageError ? e.code : "ERR_CLEAR_FAILED",
+        message: e instanceof Error ? e.message : "Failed to clear storage",
+      });
     }
   }, []);
 
   const dismissStorageError = useCallback(() => {
-    setStorageError(false);
+    setStorageError(null);
     setScreen(previousScreen);
   }, [previousScreen]);
 

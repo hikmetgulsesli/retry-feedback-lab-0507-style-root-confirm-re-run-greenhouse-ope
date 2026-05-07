@@ -15,6 +15,7 @@ interface SettingsScreenProps {}
 export function SettingsScreen(props: SettingsScreenProps) {
   const { state, actions } = useAppContext();
   const [draft, setDraft] = useState({ ...state.settings });
+  const [search, setSearch] = useState("");
   const [showCleared, setShowCleared] = useState(false);
 
   const save = () => {
@@ -88,7 +89,7 @@ export function SettingsScreen(props: SettingsScreenProps) {
       <div className="flex items-center gap-md">
       <div className="relative focus-within:ring-2 focus-within:ring-primary rounded-lg">
       <span className="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
-      <input className="pl-10 pr-4 py-2 bg-surface-container-low border border-outline-variant rounded-lg font-body-sm text-body-sm text-on-surface focus:outline-none w-64 h-[44px]" placeholder="Search settings..." type="text" />
+      <input className="pl-10 pr-4 py-2 bg-surface-container-low border border-outline-variant rounded-lg font-body-sm text-body-sm text-on-surface focus:outline-none w-64 h-[44px]" placeholder="Search settings..." type="text" value={search} onChange={(e) => setSearch(e.target.value)} />
       </div>
       <button
         className="text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-opacity p-sm w-[44px] h-[44px] flex items-center justify-center rounded-full hover:bg-surface-container-high"

@@ -282,7 +282,7 @@ export function LeadsDashboard(props: LeadsDashboardProps) {
         </button>
       ))}
       <button
-        className="w-touch-target h-touch-target flex items-center justify-center text-on-surface hover:bg-surface-container rounded-DEFAULT cursor-pointer"
+        className="w-touch-target h-touch-target flex items-center justify-center text-on-surface hover:bg-surface-container rounded-DEFAULT cursor-pointer disabled:opacity-50"
         disabled={page >= totalPages}
         onClick={() => setPage((p) => Math.min(totalPages, p + 1))}
       >

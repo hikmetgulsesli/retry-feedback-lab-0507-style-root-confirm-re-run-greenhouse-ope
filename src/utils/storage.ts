@@ -27,9 +27,10 @@ export function loadFromStorage(): StorageData | null {
     }
     return parsed;
   } catch (e) {
+    const code = e instanceof SyntaxError ? "ERR_PARSE_FAILED" : "ERR_READ_FAILED";
     throw new StorageError(
       "Failed to read local cache data",
-      "ERR_QUOTA_EXCEEDED"
+      code
     );
   }
 }

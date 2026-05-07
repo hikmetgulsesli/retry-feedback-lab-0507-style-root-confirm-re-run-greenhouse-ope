@@ -98,7 +98,8 @@ export function LeadCreateeditForm(props: LeadCreateeditFormProps) {
                           Cancel
                       </button>
       <button
-        className="h-touch-target px-lg rounded-lg bg-primary-container text-on-primary font-label-md text-label-md hover:bg-primary transition-colors focus:outline-none focus-within:ring-2 focus-within:ring-primary-container ring-offset-2 ring-offset-background cursor-pointer"
+        className="h-touch-target px-lg rounded-lg bg-primary-container text-on-primary font-label-md text-label-md hover:bg-primary transition-colors focus:outline-none focus-within:ring-2 focus-within:ring-primary-container ring-offset-2 ring-offset-background cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
+        disabled={saved}
         onClick={submit}
       >
                           {isEdit ? "Save Changes" : "Save Lead"}

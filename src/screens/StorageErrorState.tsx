@@ -13,7 +13,7 @@ import { useAppContext } from "../contexts/AppContext";
 interface StorageErrorStateProps {}
 
 export function StorageErrorState(props: StorageErrorStateProps) {
-  const { actions } = useAppContext();
+  const { state, actions } = useAppContext();
   const [expanded, setExpanded] = useState(false);
 
   return (
@@ -39,7 +39,9 @@ export function StorageErrorState(props: StorageErrorStateProps) {
       <span className={`material-symbols-outlined text-outline text-sm transition-transform ${expanded ? "rotate-180" : ""}`}>expand_more</span>
       </button>
       {expanded && (
-        <code className="font-body-sm text-body-sm text-error block bg-surface dark:bg-on-surface/5 p-sm rounded border border-error/10">ERR_QUOTA_EXCEEDED (Code: 1042)</code>
+        <code className="font-body-sm text-body-sm text-error block bg-surface dark:bg-on-surface/5 p-sm rounded border border-error/10">
+          {state.storageError?.message ?? "Unknown error"} (Code: {state.storageError?.code ?? "UNKNOWN"})
+        </code>
       )}
       </div>
       {/* Actions */}
