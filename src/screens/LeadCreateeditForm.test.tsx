@@ -1,7 +1,7 @@
 /// <reference types="vitest/globals" />
 /// <reference types="@testing-library/jest-dom" />
 import React from "react";
-import { render, screen, fireEvent, waitFor } from "@testing-library/react";
+import { render, screen, fireEvent, waitFor, act } from "@testing-library/react";
 import { LeadCreateeditForm } from "./LeadCreateeditForm";
 import { AppContext } from "../contexts/AppContext";
 import type { AppState, AppActions } from "../hooks/useAppState";
@@ -131,7 +131,9 @@ describe("LeadCreateeditForm - Create Mode", () => {
     expect(saved.estimatedValue).toBe(45000);
     expect(saved.status).toBe("new");
 
-    vi.advanceTimersByTime(700);
+    act(() => {
+      vi.advanceTimersByTime(700);
+    });
     expect(mockGoBack).toHaveBeenCalled();
   });
 

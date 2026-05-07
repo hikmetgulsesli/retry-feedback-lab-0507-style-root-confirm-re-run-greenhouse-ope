@@ -55,18 +55,3 @@ export interface Notification {
   read: boolean;
   timestamp: string;
 }
-
-export interface AppState {
-  screen: AppScreen;
-  previousScreen: AppScreen;
-  leads: Lead[];
-  settings: AppSettings;
-  profile: UserProfile;
-  notifications: Notification[];
-  searchQuery: string;
-  statusFilter: LeadStatus | "";
-  sourceFilter: LeadSource | "";
-  profileOpen: boolean;
-  storageError: boolean;
-  editingLeadId: string | null;
-}
