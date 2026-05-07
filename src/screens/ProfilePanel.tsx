@@ -73,6 +73,7 @@ export function ProfilePanel(props: ProfilePanelProps) {
             if (file) {
               const url = URL.createObjectURL(file);
               setDraft((d) => ({ ...d, avatarUrl: url }));
+              actions.updateProfile({ avatarUrl: url });
             }
           }}
         />
@@ -100,7 +101,11 @@ export function ProfilePanel(props: ProfilePanelProps) {
       <select
         className="w-full h-[44px] appearance-none bg-surface border border-outline-variant rounded-lg px-4 font-body-md text-body-md text-on-surface focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary cursor-pointer"
         value={draft.timezone ?? state.settings.timezone}
-        onChange={(e) => setDraft((d) => ({ ...d, timezone: e.target.value as typeof state.settings.timezone }))}
+        onChange={(e) => {
+          const value = e.target.value as typeof state.settings.timezone;
+          setDraft((d) => ({ ...d, timezone: value }));
+          actions.updateProfile({ timezone: value });
+        }}
       >
       <option value="auto">Auto-detect (Current: PST)</option>
       <option value="utc">UTC (Coordinated Universal Time)</option>

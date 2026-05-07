@@ -73,6 +73,11 @@ function renderWithContext(state: AppState) {
 describe("ProfilePanel", () => {
   beforeEach(() => {
     vi.clearAllMocks();
+    global.URL.createObjectURL = vi.fn(() => "blob:mock-avatar-url");
+  });
+
+  afterEach(() => {
+    vi.restoreAllMocks();
   });
 
   it("renders profile panel with user name", () => {
@@ -142,9 +147,18 @@ describe("ProfilePanel", () => {
     expect(mockNavigateTo).toHaveBeenCalledWith("empty");
   });
 
-  it("has photo upload input", () => {
+  it("calls updateProfile when timezone changes", () => {
     renderWithContext(createMockState());
-    const fileInput = screen.getByLabelText("Change photo")?.querySelector("input[type='file']");
-    expect(fileInput).toBeInTheDocument();
+    const select = screen.getByDisplayValue("Auto-detect (Current: PST)") as HTMLSelectElement;
+    fireEvent.change(select, { target: { value: "utc" } });
+    expect(mockUpdateProfile).toHaveBeenCalledWith(expect.objectContaining({ timezone: "utc" }));
+  });
+
+  it("calls updateProfile when avatar changes", () => {
+    renderWithContext(createMockState());
+    const fileInput = screen.getByLabelText("Change photo")?.querySelector("input[type='file']") as HTMLInputElement;
+    const file = new File(["dummy"], "avatar.png", { type: "image/png" });
+    fireEvent.change(fileInput, { target: { files: [file] } });
+    expect(mockUpdateProfile).toHaveBeenCalledTimes(1);
   });
 });
