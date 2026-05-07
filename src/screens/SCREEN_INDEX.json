@@ -1,0 +1,74 @@
+[
+  {
+    "screenId": "236c8c5cfed2490a9244a58f643c7895",
+    "title": "Lead Create/Edit Form",
+    "componentName": "LeadCreateeditForm",
+    "file": "src/screens/LeadCreateeditForm.tsx",
+    "buttons": 3,
+    "inputs": 7,
+    "links": 0
+  },
+  {
+    "screenId": "a1461399cfc74fed98b9997ea4db13e4",
+    "title": "Storage Error State",
+    "componentName": "StorageErrorState",
+    "file": "src/screens/StorageErrorState.tsx",
+    "buttons": 2,
+    "inputs": 0,
+    "links": 1
+  },
+  {
+    "screenId": "0f78ca839e6b46d9bdfa552162dbe47f",
+    "title": "Empty State",
+    "componentName": "EmptyState",
+    "file": "src/screens/EmptyState.tsx",
+    "buttons": 3,
+    "inputs": 1,
+    "links": 4
+  },
+  {
+    "screenId": "be9f6db9115e40aab8bfbcae92a1aac2",
+    "title": "Leads Dashboard",
+    "componentName": "LeadsDashboard",
+    "file": "src/screens/LeadsDashboard.tsx",
+    "buttons": 13,
+    "inputs": 1,
+    "links": 4
+  },
+  {
+    "screenId": "30e43c0578c84c79957869bada7885f1",
+    "title": "Insights Dashboard",
+    "componentName": "InsightsDashboard",
+    "file": "src/screens/InsightsDashboard.tsx",
+    "buttons": 4,
+    "inputs": 1,
+    "links": 4
+  },
+  {
+    "screenId": "c5f6cb4b803d4520a34685fbc6902e9b",
+    "title": "Settings Screen",
+    "componentName": "SettingsScreen",
+    "file": "src/screens/SettingsScreen.tsx",
+    "buttons": 6,
+    "inputs": 5,
+    "links": 4
+  },
+  {
+    "screenId": "e152544b1ad346baa4d0e8d5d251e883",
+    "title": "Profile Panel",
+    "componentName": "ProfilePanel",
+    "file": "src/screens/ProfilePanel.tsx",
+    "buttons": 5,
+    "inputs": 3,
+    "links": 0
+  },
+  {
+    "screenId": "ae246c4d2e004b19a3cff15f43525772",
+    "title": "Pipeline Board",
+    "componentName": "PipelineBoard",
+    "file": "src/screens/PipelineBoard.tsx",
+    "buttons": 3,
+    "inputs": 1,
+    "links": 4
+  }
+]
