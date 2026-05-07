@@ -200,7 +200,19 @@ export function LeadsDashboard(props: LeadsDashboardProps) {
       </button>
       <button
         className="w-touch-target h-touch-target flex items-center justify-center border border-outline-variant rounded-DEFAULT text-on-surface hover:bg-surface-container transition-colors cursor-pointer"
-        onClick={() => alert("Export functionality coming in a future update.")}
+        onClick={() => {
+          const csv = [
+            ["Company", "First Name", "Last Name", "Email", "Source", "Status", "Estimated Value"],
+            ...state.leads.map(l => [l.company, l.firstName, l.lastName, l.email, l.source, l.status, String(l.estimatedValue)]),
+          ].map(row => row.map(cell => `"${String(cell).replace(/"/g, '""')}"`).join(",")).join("\n");
+          const blob = new Blob([csv], { type: "text/csv" });
+          const url = URL.createObjectURL(blob);
+          const a = document.createElement("a");
+          a.href = url;
+          a.download = `leads-export-${new Date().toISOString().slice(0, 10)}.csv`;
+          a.click();
+          URL.revokeObjectURL(url);
+        }}
         aria-label="Export"
       >
       <span className="material-symbols-outlined">download</span>

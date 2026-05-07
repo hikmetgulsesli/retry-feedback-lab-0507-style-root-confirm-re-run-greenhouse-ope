@@ -60,13 +60,24 @@ export function ProfilePanel(props: ProfilePanelProps) {
       <div className="flex flex-col items-center text-center gap-md">
       <div className="relative w-[120px] h-[120px] rounded-full bg-surface-container-high overflow-hidden border-2 border-primary-fixed">
       <img alt="Manager Profile" className="w-full h-full object-cover" src={state.profile.avatarUrl} />
-      <button
+      <label
         aria-label="Change photo"
-        className="absolute bottom-0 left-0 right-0 bg-inverse-surface/80 text-inverse-on-surface py-1 font-label-sm text-label-sm hover:bg-inverse-surface transition-colors cursor-pointer"
-        onClick={() => alert("Photo upload coming soon")}
+        className="absolute bottom-0 left-0 right-0 bg-inverse-surface/80 text-inverse-on-surface py-1 font-label-sm text-label-sm hover:bg-inverse-surface transition-colors cursor-pointer text-center"
       >
+        <input
+          accept="image/*"
+          className="sr-only"
+          type="file"
+          onChange={(e) => {
+            const file = e.target.files?.[0];
+            if (file) {
+              const url = URL.createObjectURL(file);
+              setDraft((d) => ({ ...d, avatarUrl: url }));
+            }
+          }}
+        />
                               Edit
-                          </button>
+      </label>
       </div>
       <div>
       <h3 className="font-h2 text-h2 text-on-surface">{state.profile.firstName} {state.profile.lastName}</h3>

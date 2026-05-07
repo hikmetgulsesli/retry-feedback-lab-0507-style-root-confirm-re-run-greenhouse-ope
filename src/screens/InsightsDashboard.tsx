@@ -127,7 +127,19 @@ export function InsightsDashboard(props: InsightsDashboardProps) {
       </select>
       <button
         className="h-[44px] px-6 bg-primary-container text-on-primary rounded-lg font-label-md text-label-md flex items-center gap-sm hover:opacity-90 transition-opacity cursor-pointer"
-        onClick={() => alert(`Export report for ${period} — functionality coming soon`)}
+        onClick={() => {
+          const csv = [
+            ["Company", "First Name", "Last Name", "Email", "Source", "Status", "Estimated Value"],
+            ...state.leads.map(l => [l.company, l.firstName, l.lastName, l.email, l.source, l.status, String(l.estimatedValue)]),
+          ].map(row => row.map(cell => `"${String(cell).replace(/"/g, '""')}"`).join(",")).join("\n");
+          const blob = new Blob([csv], { type: "text/csv" });
+          const url = URL.createObjectURL(blob);
+          const a = document.createElement("a");
+          a.href = url;
+          a.download = `insights-export-${new Date().toISOString().slice(0, 10)}.csv`;
+          a.click();
+          URL.revokeObjectURL(url);
+        }}
       >
       <span className="material-symbols-outlined">download</span>
                               Export Report
