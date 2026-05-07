@@ -81,7 +81,7 @@ export function SettingsScreen(props: SettingsScreenProps) {
       {/* TopNavBar */}
       <header className="flex justify-between items-center h-[64px] px-lg w-full bg-surface dark:bg-surface-dim border-b border-outline-variant dark:border-outline">
       <div className="flex items-center gap-md">
-      <h2 className="font-h2 text-h2 text-primary dark:text-primary-fixed-dim hidden md:block">Greenhouse Console</h2>
+      <h1 className="font-h2 text-h2 text-primary dark:text-primary-fixed-dim hidden md:block">Greenhouse Console</h1>
       <button className="md:hidden text-on-surface p-sm" onClick={() => actions.navigateTo("leads")}>
       <span className="material-symbols-outlined">menu</span>
       </button>
@@ -105,7 +105,7 @@ export function SettingsScreen(props: SettingsScreenProps) {
       >
       <span className="material-symbols-outlined">help_outline</span>
       </button>
-      <button onClick={actions.toggleProfile} className="w-10 h-10 rounded-full bg-surface-variant overflow-hidden border border-outline-variant ml-sm cursor-pointer">
+      <button onClick={actions.toggleProfile} className="w-10 h-10 rounded-full bg-surface-variant overflow-hidden border border-outline-variant ml-sm cursor-pointer" aria-label="Open profile panel">
       <img alt="Manager Profile" className="w-full h-full object-cover" src={state.profile.avatarUrl} />
       </button>
       </div>

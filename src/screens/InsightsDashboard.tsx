@@ -43,6 +43,7 @@ export function InsightsDashboard(props: InsightsDashboardProps) {
       <button
         className={`flex items-center gap-3 px-4 py-3 rounded-lg font-body-md text-body-md transition-colors ${state.screen === "leads" || state.screen === "empty" ? "text-primary bg-secondary-container active:scale-[0.98] duration-150" : "text-on-surface-variant hover:bg-surface-container-high"}`}
         onClick={() => actions.navigateTo("leads")}
+        disabled={state.screen === "leads" || state.screen === "empty"}
       >
       <span className="material-symbols-outlined">person_search</span>
                       Leads
@@ -50,6 +51,7 @@ export function InsightsDashboard(props: InsightsDashboardProps) {
       <button
         className={`flex items-center gap-3 px-4 py-3 rounded-lg font-body-md text-body-md transition-colors ${state.screen === "pipeline" ? "text-primary bg-secondary-container active:scale-[0.98] duration-150" : "text-on-surface-variant hover:bg-surface-container-high"}`}
         onClick={() => actions.navigateTo("pipeline")}
+        disabled={state.screen === "pipeline"}
       >
       <span className="material-symbols-outlined">view_kanban</span>
                       Pipeline
@@ -57,6 +59,7 @@ export function InsightsDashboard(props: InsightsDashboardProps) {
       <button
         className={`flex items-center gap-3 px-4 py-3 rounded-lg font-body-md text-body-md transition-colors ${state.screen === "insights" ? "text-primary bg-secondary-container active:scale-[0.98] duration-150" : "text-on-surface-variant hover:bg-surface-container-high"}`}
         onClick={() => actions.navigateTo("insights")}
+        disabled={state.screen === "insights"}
       >
       <span className="material-symbols-outlined" style={{fontVariationSettings: "'FILL' 1"}}>monitoring</span>
                       Insights
@@ -64,6 +67,7 @@ export function InsightsDashboard(props: InsightsDashboardProps) {
       <button
         className={`flex items-center gap-3 px-4 py-3 rounded-lg font-body-md text-body-md transition-colors ${state.screen === "settings" ? "text-primary bg-secondary-container active:scale-[0.98] duration-150" : "text-on-surface-variant hover:bg-surface-container-high"}`}
         onClick={() => actions.navigateTo("settings")}
+        disabled={state.screen === "settings"}
       >
       <span className="material-symbols-outlined">settings</span>
                       Settings
@@ -75,7 +79,7 @@ export function InsightsDashboard(props: InsightsDashboardProps) {
       {/* TopNavBar */}
       <header className="bg-surface flex justify-between items-center h-[64px] px-lg w-full border-b border-outline-variant z-10 shrink-0">
       <div className="flex items-center gap-md">
-      <h2 className="font-h2 text-h2 text-primary font-bold">Greenhouse Console</h2>
+      <h1 className="font-h2 text-h2 text-primary font-bold">Greenhouse Console</h1>
       </div>
       <div className="flex items-center gap-lg">
       <div className="relative focus-within:ring-2 focus-within:ring-primary rounded-full">
@@ -99,10 +103,12 @@ export function InsightsDashboard(props: InsightsDashboardProps) {
       <button
         className="text-on-surface-variant hover:text-primary transition-opacity w-[44px] h-[44px] flex items-center justify-center rounded-full"
         aria-label="Help"
+        disabled
+        aria-disabled="true"
       >
       <span className="material-symbols-outlined">help_outline</span>
       </button>
-      <button onClick={actions.toggleProfile} className="w-10 h-10 rounded-full border border-outline-variant object-cover overflow-hidden cursor-pointer">
+      <button onClick={actions.toggleProfile} className="w-10 h-10 rounded-full border border-outline-variant object-cover overflow-hidden cursor-pointer" aria-label="Open profile panel">
       <img alt="Manager Profile" className="w-full h-full object-cover" src={state.profile.avatarUrl} />
       </button>
       </div>
@@ -112,7 +118,7 @@ export function InsightsDashboard(props: InsightsDashboardProps) {
       <main className="flex-1 overflow-y-auto p-margin">
       <div className="mb-xl flex justify-between items-end">
       <div>
-      <h2 className="font-h1 text-h1 text-on-surface">Insights Dashboard</h2>
+      <h1 className="font-h1 text-h1 text-on-surface">Insights Dashboard</h1>
       <p className="font-body-md text-body-md text-on-surface-variant mt-unit">Real-time overview of lead generation and pipeline health.</p>
       </div>
       <div className="flex gap-md">

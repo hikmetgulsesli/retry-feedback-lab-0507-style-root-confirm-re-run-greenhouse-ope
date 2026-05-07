@@ -64,6 +64,7 @@ export function PipelineBoard(props: PipelineBoardProps) {
       <button
         className={`flex items-center gap-3 px-4 py-3 rounded-lg font-body-md text-body-md transition-colors ${state.screen === "leads" || state.screen === "empty" ? "text-primary bg-secondary-container scale-[0.98] duration-150" : "text-on-surface-variant hover:bg-surface-container-high"}`}
         onClick={() => actions.navigateTo("leads")}
+        disabled={state.screen === "leads" || state.screen === "empty"}
       >
       <span className="material-symbols-outlined">person_search</span>
                       Leads
@@ -71,6 +72,7 @@ export function PipelineBoard(props: PipelineBoardProps) {
       <button
         className={`flex items-center gap-3 px-4 py-3 rounded-lg font-body-md text-body-md transition-colors ${state.screen === "pipeline" ? "text-primary bg-secondary-container scale-[0.98] duration-150" : "text-on-surface-variant hover:bg-surface-container-high"}`}
         onClick={() => actions.navigateTo("pipeline")}
+        disabled={state.screen === "pipeline"}
       >
       <span className="material-symbols-outlined">view_kanban</span>
                       Pipeline
@@ -78,6 +80,7 @@ export function PipelineBoard(props: PipelineBoardProps) {
       <button
         className={`flex items-center gap-3 px-4 py-3 rounded-lg font-body-md text-body-md transition-colors ${state.screen === "insights" ? "text-primary bg-secondary-container scale-[0.98] duration-150" : "text-on-surface-variant hover:bg-surface-container-high"}`}
         onClick={() => actions.navigateTo("insights")}
+        disabled={state.screen === "insights"}
       >
       <span className="material-symbols-outlined">monitoring</span>
                       Insights
@@ -85,6 +88,7 @@ export function PipelineBoard(props: PipelineBoardProps) {
       <button
         className={`flex items-center gap-3 px-4 py-3 rounded-lg font-body-md text-body-md transition-colors ${state.screen === "settings" ? "text-primary bg-secondary-container scale-[0.98] duration-150" : "text-on-surface-variant hover:bg-surface-container-high"}`}
         onClick={() => actions.navigateTo("settings")}
+        disabled={state.screen === "settings"}
       >
       <span className="material-symbols-outlined">settings</span>
                       Settings
@@ -95,7 +99,7 @@ export function PipelineBoard(props: PipelineBoardProps) {
       <div className="flex-1 md:ml-64 flex flex-col min-h-screen">
       {/* TopNavBar */}
       <header className="flex justify-between items-center h-[64px] px-lg w-full bg-surface border-b border-outline-variant sticky top-0 z-10">
-      <div className="font-h2 text-h2 text-primary font-bold">Greenhouse Console</div>
+      <h1 className="font-h2 text-h2 text-primary font-bold">Greenhouse Console</h1>
       <div className="flex items-center gap-lg">
       <div className="relative focus-within:ring-2 focus-within:ring-primary rounded-lg">
       <span className="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
@@ -118,10 +122,12 @@ export function PipelineBoard(props: PipelineBoardProps) {
       <button
         className="hover:text-primary transition-opacity p-2 min-h-touch-target min-w-touch-target flex items-center justify-center rounded-full"
         aria-label="Help"
+        disabled
+        aria-disabled="true"
       >
       <span className="material-symbols-outlined">help_outline</span>
       </button>
-      <button onClick={actions.toggleProfile} className="w-10 h-10 rounded-full border border-outline-variant overflow-hidden cursor-pointer">
+      <button onClick={actions.toggleProfile} className="w-10 h-10 rounded-full border border-outline-variant overflow-hidden cursor-pointer" aria-label="Open profile panel">
       <img alt="Manager Profile" className="w-full h-full object-cover" src={state.profile.avatarUrl} />
       </button>
       </div>
@@ -132,7 +138,7 @@ export function PipelineBoard(props: PipelineBoardProps) {
       {/* Page Header */}
       <div className="mb-lg flex justify-between items-end">
       <div>
-      <h2 className="font-h1 text-h1 text-on-surface">Pipeline Overview</h2>
+      <h1 className="font-h1 text-h1 text-on-surface">Pipeline Overview</h1>
       <p className="font-body-md text-body-md text-on-surface-variant mt-1">Track and manage prospective zone integrations.</p>
       </div>
       <button
