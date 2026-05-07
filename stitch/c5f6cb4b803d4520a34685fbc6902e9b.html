@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Greenhouse Operations Console - Settings</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "primary-fixed-dim": "#b4c5ff",
+                      "error-container": "#ffdad6",
+                      "secondary-container": "#d5e3fc",
+                      "surface-container-lowest": "#ffffff",
+                      "on-primary-fixed": "#00174b",
+                      "error": "#ba1a1a",
+                      "inverse-on-surface": "#f0f0fb",
+                      "surface-container-low": "#f3f3fe",
+                      "on-surface-variant": "#434655",
+                      "surface-container-highest": "#e1e2ed",
+                      "surface-variant": "#e1e2ed",
+                      "secondary-fixed-dim": "#b9c7df",
+                      "surface-dim": "#d9d9e5",
+                      "outline-variant": "#c3c6d7",
+                      "surface-bright": "#faf8ff",
+                      "surface-container": "#ededf9",
+                      "on-error": "#ffffff",
+                      "on-primary-container": "#eeefff",
+                      "tertiary-container": "#bc4800",
+                      "on-secondary": "#ffffff",
+                      "on-secondary-container": "#57657a",
+                      "tertiary-fixed-dim": "#ffb596",
+                      "outline": "#737686",
+                      "tertiary-fixed": "#ffdbcd",
+                      "on-tertiary-fixed-variant": "#7d2d00",
+                      "on-primary-fixed-variant": "#003ea8",
+                      "on-error-container": "#93000a",
+                      "inverse-primary": "#b4c5ff",
+                      "tertiary": "#943700",
+                      "on-tertiary-fixed": "#360f00",
+                      "on-secondary-fixed-variant": "#3a485b",
+                      "on-primary": "#ffffff",
+                      "surface-tint": "#0053db",
+                      "on-tertiary-container": "#ffede6",
+                      "on-background": "#191b23",
+                      "surface": "#faf8ff",
+                      "inverse-surface": "#2e3039",
+                      "surface-container-high": "#e7e7f3",
+                      "on-secondary-fixed": "#0d1c2e",
+                      "background": "#faf8ff",
+                      "on-tertiary": "#ffffff",
+                      "on-surface": "#191b23",
+                      "primary-fixed": "#dbe1ff",
+                      "primary-container": "#2563eb",
+                      "primary": "#004ac6",
+                      "secondary": "#515f74",
+                      "secondary-fixed": "#d5e3fc"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "lg": "24px",
+                      "md": "16px",
+                      "unit": "4px",
+                      "touch-target": "44px",
+                      "sm": "8px",
+                      "xs": "4px",
+                      "xl": "32px",
+                      "margin": "32px",
+                      "gutter": "24px"
+              },
+              "fontFamily": {
+                      "body-sm": [
+                              "Inter"
+                      ],
+                      "label-sm": [
+                              "Inter"
+                      ],
+                      "h2": [
+                              "Inter"
+                      ],
+                      "h3": [
+                              "Inter"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ],
+                      "h1": [
+                              "Inter"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "label-md": [
+                              "Inter"
+                      ]
+              },
+              "fontSize": {
+                      "body-sm": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-sm": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "h2": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "h3": [
+                              "20px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "h1": [
+                              "30px",
+                              {
+                                      "lineHeight": "38px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "500"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+</head>
+<body class="bg-surface text-on-surface font-body-md min-h-screen flex">
+<!-- SideNavBar -->
+<nav class="hidden md:flex flex-col h-screen w-64 bg-surface dark:bg-surface-dim border-r border-outline-variant dark:border-outline fixed left-0 top-0">
+<div class="p-lg border-b border-outline-variant dark:border-outline flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container font-h3">
+                EG
+            </div>
+<div>
+<h1 class="font-h3 text-h3 text-primary dark:text-primary-fixed-dim">EcoGrowth Ops</h1>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Precision Monitoring</p>
+</div>
+</div>
+<div class="flex-1 overflow-y-auto py-md px-sm flex flex-col gap-sm">
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant dark:text-outline-variant hover:bg-surface-container-high dark:hover:bg-surface-container transition-colors rounded-lg font-body-md text-body-md" href="#">
+<span class="material-symbols-outlined" data-icon="person_search">person_search</span>
+                Leads
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant dark:text-outline-variant hover:bg-surface-container-high dark:hover:bg-surface-container transition-colors rounded-lg font-body-md text-body-md" href="#">
+<span class="material-symbols-outlined" data-icon="view_kanban">view_kanban</span>
+                Pipeline
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant dark:text-outline-variant hover:bg-surface-container-high dark:hover:bg-surface-container transition-colors rounded-lg font-body-md text-body-md" href="#">
+<span class="material-symbols-outlined" data-icon="monitoring">monitoring</span>
+                Insights
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-primary dark:text-primary-fixed-dim bg-secondary-container dark:bg-on-secondary-fixed-variant rounded-lg font-body-md text-body-md" href="#">
+<span class="material-symbols-outlined" data-icon="settings" style="font-variation-settings: 'FILL' 1;">settings</span>
+                Settings
+            </a>
+</div>
+</nav>
+<!-- Main Content Wrapper -->
+<div class="flex-1 flex flex-col md:ml-64">
+<!-- TopNavBar -->
+<header class="flex justify-between items-center h-[64px] px-lg w-full bg-surface dark:bg-surface-dim border-b border-outline-variant dark:border-outline">
+<div class="flex items-center gap-md">
+<h2 class="font-h2 text-h2 text-primary dark:text-primary-fixed-dim hidden md:block">Greenhouse Console</h2>
+<button class="md:hidden text-on-surface p-sm">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+<div class="flex items-center gap-md">
+<div class="relative focus-within:ring-2 focus-within:ring-primary rounded-lg">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+<input class="pl-10 pr-4 py-2 bg-surface-container-low border border-outline-variant rounded-lg font-body-sm text-body-sm text-on-surface focus:outline-none w-64 h-[44px]" placeholder="Search settings..." type="text"/>
+</div>
+<button class="text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-opacity p-sm w-[44px] h-[44px] flex items-center justify-center rounded-full hover:bg-surface-container-high">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-opacity p-sm w-[44px] h-[44px] flex items-center justify-center rounded-full hover:bg-surface-container-high">
+<span class="material-symbols-outlined" data-icon="help_outline">help_outline</span>
+</button>
+<div class="w-10 h-10 rounded-full bg-surface-variant overflow-hidden border border-outline-variant ml-sm">
+<img alt="Manager Profile" class="w-full h-full object-cover" data-alt="A professional headshot of a middle-aged male manager with short dark hair, wearing a crisp white collared shirt against a muted gray background. The lighting is soft and even, typical of corporate portraiture. The image has a clean, polished feel suitable for a modern business application interface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBHxqyZdmzr0E1FATbVoBDmMlrJbsm2cY0Q5sZDc3RtNpszkHpSLqBEy6MIJ-ZthBw5TLjC4dTyKd8quuQ9fEEzGU0YoDR_SF3sECS03qQmwDHa5wzBDSbjz9-C8MQUVp7IAg2mtTg9uEHtYCSR0KIxUOwxaPu-qTn7gA9Q5bW658678yW9B1L96mhPgmy_AgA7z1CQXfZxCB1ezjGkpYW2qrfKas0HMyPM1una4clhqP4cES93QA-mrxZgZn697MTYf-LTKgsHUfNm"/>
+</div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-1 p-lg bg-surface-container-lowest overflow-y-auto">
+<div class="max-w-4xl mx-auto space-y-lg">
+<div class="pb-md border-b border-outline-variant">
+<h1 class="font-h1 text-h1 text-on-surface">System Settings</h1>
+<p class="font-body-md text-body-md text-on-surface-variant mt-xs">Manage your console preferences and application data.</p>
+</div>
+<!-- Settings Bento Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-lg">
+<!-- Appearance Card -->
+<div class="bg-surface border border-outline-variant rounded-xl p-lg flex flex-col gap-md">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary">palette</span>
+<h3 class="font-h3 text-h3 text-on-surface">Appearance</h3>
+</div>
+<div class="space-y-md">
+<div>
+<label class="font-label-md text-label-md text-on-surface block mb-xs">UI Density</label>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-sm">Adjust the spacing between elements.</p>
+<div class="flex gap-md">
+<label class="flex items-center gap-sm p-3 border border-primary rounded-lg bg-primary-fixed cursor-pointer flex-1">
+<input checked="" class="text-primary focus:ring-primary w-5 h-5" name="density" type="radio"/>
+<span class="font-body-md text-body-md text-on-primary-fixed">Comfortable</span>
+</label>
+<label class="flex items-center gap-sm p-3 border border-outline-variant rounded-lg hover:bg-surface-container-low cursor-pointer flex-1">
+<input class="text-primary focus:ring-primary w-5 h-5" name="density" type="radio"/>
+<span class="font-body-md text-body-md text-on-surface">Compact</span>
+</label>
+</div>
+</div>
+</div>
+</div>
+<!-- Localization Card -->
+<div class="bg-surface border border-outline-variant rounded-xl p-lg flex flex-col gap-md">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary">language</span>
+<h3 class="font-h3 text-h3 text-on-surface">Localization</h3>
+</div>
+<div class="space-y-md">
+<div>
+<label class="font-label-md text-label-md text-on-surface block mb-xs" for="currency">Preferred Currency</label>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-sm">Used for pipeline and revenue metrics.</p>
+<select class="w-full h-[44px] px-3 border border-outline-variant rounded-lg bg-surface font-body-md text-body-md text-on-surface focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary" id="currency">
+<option>USD ($) - US Dollar</option>
+<option>EUR (€) - Euro</option>
+<option>GBP (£) - British Pound</option>
+<option>CAD ($) - Canadian Dollar</option>
+</select>
+</div>
+</div>
+</div>
+<!-- Notifications Card -->
+<div class="bg-surface border border-outline-variant rounded-xl p-lg flex flex-col gap-md lg:col-span-2">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary">notifications_active</span>
+<h3 class="font-h3 text-h3 text-on-surface">Notifications &amp; Alerts</h3>
+</div>
+<div class="space-y-4 divide-y divide-outline-variant">
+<div class="flex items-center justify-between pt-sm">
+<div>
+<p class="font-label-md text-label-md text-on-surface">Critical Zone Alerts</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Immediate notifications for temperature or humidity threshold breaches.</p>
+</div>
+<label class="relative inline-flex items-center cursor-pointer min-w-[44px] min-h-[44px] justify-center">
+<input checked="" class="sr-only peer" type="checkbox" value=""/>
+<div class="w-11 h-6 bg-surface-variant peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-primary-fixed-dim rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[11px] after:left-[4px] after:bg-white after:border-outline-variant after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+<div class="flex items-center justify-between pt-md">
+<div>
+<p class="font-label-md text-label-md text-on-surface">Daily Summary Report</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Receive a daily digest of pipeline changes and insights.</p>
+</div>
+<label class="relative inline-flex items-center cursor-pointer min-w-[44px] min-h-[44px] justify-center">
+<input class="sr-only peer" type="checkbox" value=""/>
+<div class="w-11 h-6 bg-surface-variant peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-primary-fixed-dim rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[11px] after:left-[4px] after:bg-white after:border-outline-variant after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+</div>
+</div>
+<!-- Data Persistence Card -->
+<div class="bg-surface border border-outline-variant rounded-xl p-lg flex flex-col gap-md lg:col-span-2 border-l-4 border-l-error">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-error">database</span>
+<h3 class="font-h3 text-h3 text-on-surface">Data Management</h3>
+</div>
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-md bg-error-container/20 p-md rounded-lg border border-error-container">
+<div>
+<p class="font-label-md text-label-md text-on-surface">Clear Local Cache</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-xs">Forces a full sync with the central server. Useful if dashboard data appears stale.</p>
+</div>
+<button class="h-[44px] px-md bg-surface border border-error text-error font-label-md text-label-md rounded-lg hover:bg-error hover:text-on-error transition-colors whitespace-nowrap">
+                                Clear Data
+                            </button>
+</div>
+</div>
+</div>
+<div class="flex justify-end gap-md pt-lg border-t border-outline-variant mt-xl">
+<button class="h-[44px] px-lg border border-outline-variant text-on-surface font-label-md text-label-md rounded-lg hover:bg-surface-container-low transition-colors">
+                        Cancel
+                    </button>
+<button class="h-[44px] px-lg bg-primary text-on-primary font-label-md text-label-md rounded-lg hover:bg-on-primary-fixed transition-colors">
+                        Save Changes
+                    </button>
+</div>
+</div>
+</main>
+</div>
+</body></html>

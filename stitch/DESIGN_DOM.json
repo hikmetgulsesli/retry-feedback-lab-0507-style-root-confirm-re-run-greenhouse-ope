@@ -1,0 +1,3352 @@
+{
+  "generatedAt": "2026-05-07T06:56:42.165Z",
+  "screenCount": 8,
+  "screens": {
+    "0f78ca839e6b46d9bdfa552162dbe47f": {
+      "screenId": "0f78ca839e6b46d9bdfa552162dbe47f",
+      "materialSymbolsRequired": true,
+      "sections": [
+        {
+          "tag": "nav",
+          "layout": "flex-col",
+          "classes": [
+            "bg-surface",
+            "border-r",
+            "border-outline-variant",
+            "h-screen",
+            "w-64",
+            "flex",
+            "flex-col",
+            "fixed",
+            "left-0",
+            "top-0"
+          ],
+          "childCount": 2
+        },
+        {
+          "tag": "header",
+          "layout": "flex-row",
+          "classes": [
+            "bg-surface",
+            "border-b",
+            "border-outline-variant",
+            "flex",
+            "justify-between",
+            "items-center",
+            "h-[64px]",
+            "px-lg",
+            "w-full",
+            "shrink-0"
+          ],
+          "childCount": 4
+        },
+        {
+          "tag": "main",
+          "layout": "flex-row",
+          "classes": [
+            "flex-1",
+            "bg-background",
+            "p-margin",
+            "overflow-y-auto",
+            "flex",
+            "items-center",
+            "justify-center"
+          ],
+          "childCount": 2
+        }
+      ],
+      "buttons": [
+        {
+          "kind": "button",
+          "label": "notifications",
+          "classes": [
+            "text-on-surface-variant",
+            "hover:text-primary",
+            "transition-opacity",
+            "h-touch-target",
+            "w-touch-target",
+            "flex",
+            "items-center",
+            "justify-center",
+            "rounded-full"
+          ],
+          "icon": "notifications",
+          "action": "navigate",
+          "expectedBehavior": "navigate:/notifications",
+          "expectedRoute": "/notifications",
+          "routeInferred": true
+        },
+        {
+          "kind": "button",
+          "label": "help_outline",
+          "classes": [
+            "text-on-surface-variant",
+            "hover:text-primary",
+            "transition-opacity",
+            "h-touch-target",
+            "w-touch-target",
+            "flex",
+            "items-center",
+            "justify-center",
+            "rounded-full"
+          ],
+          "icon": "help_outline",
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "Create Lead",
+          "classes": [
+            "bg-primary-container",
+            "text-on-primary",
+            "font-label-md",
+            "text-label-md",
+            "h-touch-target",
+            "px-lg",
+            "rounded-lg",
+            "flex",
+            "items-center",
+            "justify-center",
+            "gap-sm",
+            "hover:opacity-90",
+            "transition-opacity"
+          ],
+          "icon": "add",
+          "action": "create",
+          "expectedBehavior": "open create flow or add a new item/state"
+        },
+        {
+          "kind": "button",
+          "label": "EcoGrowth Ops Precision Monitoring",
+          "classes": [],
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        }
+      ],
+      "inputs": [
+        {
+          "kind": "input",
+          "type": "text",
+          "label": "Search leads...",
+          "placeholder": "Search leads...",
+          "name": "",
+          "classes": [
+            "bg-surface-container-low",
+            "border",
+            "border-outline-variant",
+            "rounded-full",
+            "pl-10",
+            "pr-4",
+            "py-2",
+            "font-body-sm",
+            "text-body-sm",
+            "focus:outline-none",
+            "w-64"
+          ],
+          "expectedBehavior": "controlled value with onChange; validation if required by PRD"
+        }
+      ],
+      "navLinks": [
+        {
+          "kind": "link",
+          "label": "Leads",
+          "href": "#",
+          "classes": [
+            "font-label-md",
+            "text-label-md"
+          ],
+          "icon": "person_search",
+          "action": "navigate",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "Pipeline",
+          "href": "#",
+          "classes": [
+            "font-label-md",
+            "text-label-md"
+          ],
+          "icon": "view_kanban",
+          "action": "navigate",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "Insights",
+          "href": "#",
+          "classes": [
+            "font-label-md",
+            "text-label-md"
+          ],
+          "icon": "monitoring",
+          "action": "navigate",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "settings",
+          "href": "#",
+          "classes": [
+            "font-label-md",
+            "text-label-md"
+          ],
+          "icon": "settings",
+          "action": "navigate",
+          "expectedBehavior": "navigate:#"
+        }
+      ],
+      "cards": [],
+      "icons": [
+        "person_search",
+        "view_kanban",
+        "monitoring",
+        "settings",
+        "search",
+        "notifications",
+        "help_outline",
+        "add"
+      ],
+      "images": [
+        {
+          "src": "https://lh3.googleusercontent.com/aida-public/AB6AXuCJe6t2tIGfVeBd3iMRzaz9VXRcPjClWiKOXc5sDIhmbYS3Qequ-gi6NqIFIFwL0hPS_eHooVhlUCvLOEiuz3oz_2Zsrm_ZZ1V7_IEhpUM40q49AFnGuAt8zlgGFlQTt7L40Y_T7e3Chx5yK9I4Jp",
+          "alt": "Manager Profile"
+        }
+      ],
+      "cssVars": {},
+      "colorPalette": {
+        "primary-fixed-dim": "#b4c5ff",
+        "error-container": "#ffdad6",
+        "secondary-container": "#d5e3fc",
+        "surface-container-lowest": "#ffffff",
+        "on-primary-fixed": "#00174b",
+        "error": "#ba1a1a",
+        "inverse-on-surface": "#f0f0fb",
+        "surface-container-low": "#f3f3fe",
+        "on-surface-variant": "#434655",
+        "surface-container-highest": "#e1e2ed",
+        "surface-variant": "#e1e2ed",
+        "secondary-fixed-dim": "#b9c7df",
+        "surface-dim": "#d9d9e5",
+        "outline-variant": "#c3c6d7",
+        "surface-bright": "#faf8ff",
+        "surface-container": "#ededf9",
+        "on-error": "#ffffff",
+        "on-primary-container": "#eeefff",
+        "tertiary-container": "#bc4800",
+        "on-secondary": "#ffffff",
+        "on-secondary-container": "#57657a",
+        "tertiary-fixed-dim": "#ffb596",
+        "outline": "#737686",
+        "tertiary-fixed": "#ffdbcd",
+        "on-tertiary-fixed-variant": "#7d2d00",
+        "on-primary-fixed-variant": "#003ea8",
+        "on-error-container": "#93000a",
+        "inverse-primary": "#b4c5ff",
+        "tertiary": "#943700",
+        "on-tertiary-fixed": "#360f00",
+        "on-secondary-fixed-variant": "#3a485b",
+        "on-primary": "#ffffff",
+        "surface-tint": "#0053db",
+        "on-tertiary-container": "#ffede6",
+        "on-background": "#191b23",
+        "surface": "#faf8ff",
+        "inverse-surface": "#2e3039",
+        "surface-container-high": "#e7e7f3",
+        "on-secondary-fixed": "#0d1c2e",
+        "background": "#faf8ff",
+        "on-tertiary": "#ffffff",
+        "on-surface": "#191b23",
+        "primary-fixed": "#dbe1ff",
+        "primary-container": "#2563eb",
+        "primary": "#004ac6",
+        "secondary": "#515f74",
+        "secondary-fixed": "#d5e3fc"
+      },
+      "fonts": [
+        "Material Symbols Outlined",
+        "Inter"
+      ],
+      "layoutHints": {
+        "flexDirection": "col",
+        "gap": "3"
+      },
+      "behaviorContract": [
+        {
+          "kind": "link",
+          "label": "Leads",
+          "icon": "person_search",
+          "route": "#",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "Pipeline",
+          "icon": "view_kanban",
+          "route": "#",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "Insights",
+          "icon": "monitoring",
+          "route": "#",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "settings",
+          "icon": "settings",
+          "route": "#",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "button",
+          "label": "notifications",
+          "icon": "notifications",
+          "action": "navigate",
+          "route": "/notifications",
+          "expectedBehavior": "navigate:/notifications"
+        },
+        {
+          "kind": "button",
+          "label": "help_outline",
+          "icon": "help_outline",
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "Create Lead",
+          "icon": "add",
+          "action": "create",
+          "expectedBehavior": "open create flow or add a new item/state"
+        },
+        {
+          "kind": "button",
+          "label": "EcoGrowth Ops Precision Monitoring",
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "input",
+          "label": "Search leads...",
+          "type": "text",
+          "placeholder": "Search leads...",
+          "expectedBehavior": "controlled value with onChange; validation if required by PRD"
+        }
+      ],
+      "tabBar": [
+        {
+          "kind": "button",
+          "label": "EcoGrowth Ops Precision Monitoring",
+          "icon": null,
+          "active": true
+        },
+        {
+          "kind": "link",
+          "label": "Leads",
+          "icon": "person_search",
+          "route": "#",
+          "active": true
+        },
+        {
+          "kind": "link",
+          "label": "Pipeline",
+          "icon": "view_kanban",
+          "route": "#",
+          "active": false
+        },
+        {
+          "kind": "link",
+          "label": "Insights",
+          "icon": "monitoring",
+          "route": "#",
+          "active": false
+        },
+        {
+          "kind": "link",
+          "label": "settings",
+          "icon": "settings",
+          "route": "#",
+          "active": false
+        }
+      ],
+      "title": "Empty State"
+    },
+    "236c8c5cfed2490a9244a58f643c7895": {
+      "screenId": "236c8c5cfed2490a9244a58f643c7895",
+      "materialSymbolsRequired": true,
+      "sections": [
+        {
+          "tag": "main",
+          "layout": "flex-col",
+          "classes": [
+            "flex-1",
+            "flex",
+            "flex-col",
+            "h-screen",
+            "overflow-hidden"
+          ],
+          "childCount": 23
+        }
+      ],
+      "buttons": [
+        {
+          "kind": "button",
+          "label": "arrow_back",
+          "classes": [
+            "h-touch-target",
+            "w-touch-target",
+            "flex",
+            "items-center",
+            "justify-center",
+            "text-on-surface-variant",
+            "hover:text-primary",
+            "transition-colors",
+            "rounded-full",
+            "hover:bg-surface-container-high",
+            "focus-within:ring-2",
+            "focus-within:ring-primary",
+            "focus:outline-none"
+          ],
+          "icon": "arrow_back",
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "Cancel",
+          "classes": [
+            "h-touch-target",
+            "px-md",
+            "rounded-lg",
+            "text-secondary",
+            "border",
+            "border-outline-variant",
+            "hover:bg-surface-container-high",
+            "font-label-md",
+            "text-label-md",
+            "transition-colors",
+            "focus:outline-none",
+            "focus-within:ring-2",
+            "focus-within:ring-primary"
+          ],
+          "icon": null,
+          "action": "dismiss",
+          "expectedBehavior": "close dialog/panel or return to previous state"
+        },
+        {
+          "kind": "button",
+          "label": "Save Lead",
+          "classes": [
+            "h-touch-target",
+            "px-lg",
+            "rounded-lg",
+            "bg-primary-container",
+            "text-on-primary",
+            "font-label-md",
+            "text-label-md",
+            "hover:bg-primary",
+            "transition-colors",
+            "focus:outline-none",
+            "focus-within:ring-2",
+            "focus-within:ring-primary-container",
+            "ring-offset-2",
+            "ring-offset-background"
+          ],
+          "icon": null,
+          "action": "form-submit",
+          "expectedBehavior": "validate inputs and submit/apply changes"
+        }
+      ],
+      "inputs": [
+        {
+          "kind": "input",
+          "type": "text",
+          "label": "e.g. Jane",
+          "placeholder": "e.g. Jane",
+          "name": "first_name",
+          "classes": [
+            "h-touch-target",
+            "rounded-lg",
+            "border",
+            "border-outline-variant",
+            "bg-surface",
+            "px-md",
+            "font-body-md",
+            "text-body-md",
+            "text-on-surface",
+            "placeholder:text-outline",
+            "focus:border-primary",
+            "focus:ring-2",
+            "focus:ring-primary",
+            "focus:outline-none",
+            "transition-shadow"
+          ],
+          "expectedBehavior": "controlled value with onChange; validation if required by PRD"
+        },
+        {
+          "kind": "input",
+          "type": "text",
+          "label": "e.g. Doe",
+          "placeholder": "e.g. Doe",
+          "name": "last_name",
+          "classes": [
+            "h-touch-target",
+            "rounded-lg",
+            "border",
+            "border-outline-variant",
+            "bg-surface",
+            "px-md",
+            "font-body-md",
+            "text-body-md",
+            "text-on-surface",
+            "placeholder:text-outline",
+            "focus:border-primary",
+            "focus:ring-2",
+            "focus:ring-primary",
+            "focus:outline-none",
+            "transition-shadow"
+          ],
+          "expectedBehavior": "controlled value with onChange; validation if required by PRD"
+        },
+        {
+          "kind": "input",
+          "type": "text",
+          "label": "e.g. Acme Corp",
+          "placeholder": "e.g. Acme Corp",
+          "name": "company",
+          "classes": [
+            "h-touch-target",
+            "rounded-lg",
+            "border",
+            "border-outline-variant",
+            "bg-surface",
+            "px-md",
+            "font-body-md",
+            "text-body-md",
+            "text-on-surface",
+            "placeholder:text-outline",
+            "focus:border-primary",
+            "focus:ring-2",
+            "focus:ring-primary",
+            "focus:outline-none",
+            "transition-shadow"
+          ],
+          "expectedBehavior": "controlled value with onChange; validation if required by PRD"
+        },
+        {
+          "kind": "input",
+          "type": "email",
+          "label": "jane@example.com",
+          "placeholder": "jane@example.com",
+          "name": "email",
+          "classes": [
+            "h-touch-target",
+            "rounded-lg",
+            "border",
+            "border-outline-variant",
+            "bg-surface",
+            "px-md",
+            "font-body-md",
+            "text-body-md",
+            "text-on-surface",
+            "placeholder:text-outline",
+            "focus:border-primary",
+            "focus:ring-2",
+            "focus:ring-primary",
+            "focus:outline-none",
+            "transition-shadow"
+          ],
+          "expectedBehavior": "controlled value with onChange; validation if required by PRD"
+        },
+        {
+          "kind": "input",
+          "type": "tel",
+          "label": "(555) 123-4567",
+          "placeholder": "(555) 123-4567",
+          "name": "phone",
+          "classes": [
+            "h-touch-target",
+            "rounded-lg",
+            "border",
+            "border-outline-variant",
+            "bg-surface",
+            "px-md",
+            "font-body-md",
+            "text-body-md",
+            "text-on-surface",
+            "placeholder:text-outline",
+            "focus:border-primary",
+            "focus:ring-2",
+            "focus:ring-primary",
+            "focus:outline-none",
+            "transition-shadow"
+          ],
+          "expectedBehavior": "controlled value with onChange; validation if required by PRD"
+        },
+        {
+          "kind": "input",
+          "type": "select",
+          "label": "source",
+          "placeholder": "",
+          "name": "source",
+          "classes": [
+            "w-full",
+            "h-touch-target",
+            "appearance-none",
+            "rounded-lg",
+            "border",
+            "border-outline-variant",
+            "bg-surface",
+            "px-md",
+            "font-body-md",
+            "text-body-md",
+            "text-on-surface",
+            "focus:border-primary",
+            "focus:ring-2",
+            "focus:ring-primary",
+            "focus:outline-none",
+            "transition-shadow",
+            "pr-xl"
+          ],
+          "expectedBehavior": "controlled value with onChange; validation if required by PRD"
+        },
+        {
+          "kind": "input",
+          "type": "number",
+          "label": "0.00",
+          "placeholder": "0.00",
+          "name": "value",
+          "classes": [
+            "h-touch-target",
+            "rounded-lg",
+            "border",
+            "border-outline-variant",
+            "bg-surface",
+            "px-md",
+            "font-body-md",
+            "text-body-md",
+            "text-on-surface",
+            "placeholder:text-outline",
+            "focus:border-primary",
+            "focus:ring-2",
+            "focus:ring-primary",
+            "focus:outline-none",
+            "transition-shadow"
+          ],
+          "expectedBehavior": "controlled value with onChange; validation if required by PRD"
+        },
+        {
+          "kind": "input",
+          "type": "select",
+          "label": "status",
+          "placeholder": "",
+          "name": "status",
+          "classes": [
+            "w-full",
+            "h-touch-target",
+            "appearance-none",
+            "rounded-lg",
+            "border",
+            "border-outline-variant",
+            "bg-surface",
+            "px-md",
+            "font-body-md",
+            "text-body-md",
+            "text-on-surface",
+            "focus:border-primary",
+            "focus:ring-2",
+            "focus:ring-primary",
+            "focus:outline-none",
+            "transition-shadow",
+            "pr-xl"
+          ],
+          "expectedBehavior": "controlled value with onChange; validation if required by PRD"
+        },
+        {
+          "kind": "input",
+          "type": "date",
+          "label": "date",
+          "placeholder": "",
+          "name": "date",
+          "classes": [
+            "h-touch-target",
+            "rounded-lg",
+            "border",
+            "border-outline-variant",
+            "bg-surface",
+            "px-md",
+            "font-body-md",
+            "text-body-md",
+            "text-on-surface",
+            "focus:border-primary",
+            "focus:ring-2",
+            "focus:ring-primary",
+            "focus:outline-none",
+            "transition-shadow"
+          ],
+          "expectedBehavior": "controlled value with onChange; validation if required by PRD"
+        },
+        {
+          "kind": "input",
+          "type": "textarea",
+          "label": "Enter details about next steps or context...",
+          "placeholder": "Enter details about next steps or context...",
+          "name": "notes",
+          "classes": [
+            "rounded-lg",
+            "border",
+            "border-outline-variant",
+            "bg-surface",
+            "p-md",
+            "font-body-md",
+            "text-body-md",
+            "text-on-surface",
+            "placeholder:text-outline",
+            "focus:border-primary",
+            "focus:ring-2",
+            "focus:ring-primary",
+            "focus:outline-none",
+            "transition-shadow",
+            "resize-y"
+          ],
+          "expectedBehavior": "controlled value with onChange; validation if required by PRD"
+        }
+      ],
+      "navLinks": [],
+      "cards": [],
+      "icons": [
+        "arrow_back",
+        "expand_more"
+      ],
+      "images": [],
+      "cssVars": {},
+      "colorPalette": {
+        "primary-fixed-dim": "#b4c5ff",
+        "error-container": "#ffdad6",
+        "secondary-container": "#d5e3fc",
+        "surface-container-lowest": "#ffffff",
+        "on-primary-fixed": "#00174b",
+        "error": "#ba1a1a",
+        "inverse-on-surface": "#f0f0fb",
+        "surface-container-low": "#f3f3fe",
+        "on-surface-variant": "#434655",
+        "surface-container-highest": "#e1e2ed",
+        "surface-variant": "#e1e2ed",
+        "secondary-fixed-dim": "#b9c7df",
+        "surface-dim": "#d9d9e5",
+        "outline-variant": "#c3c6d7",
+        "surface-bright": "#faf8ff",
+        "surface-container": "#ededf9",
+        "on-error": "#ffffff",
+        "on-primary-container": "#eeefff",
+        "tertiary-container": "#bc4800",
+        "on-secondary": "#ffffff",
+        "on-secondary-container": "#57657a",
+        "tertiary-fixed-dim": "#ffb596",
+        "outline": "#737686",
+        "tertiary-fixed": "#ffdbcd",
+        "on-tertiary-fixed-variant": "#7d2d00",
+        "on-primary-fixed-variant": "#003ea8",
+        "on-error-container": "#93000a",
+        "inverse-primary": "#b4c5ff",
+        "tertiary": "#943700",
+        "on-tertiary-fixed": "#360f00",
+        "on-secondary-fixed-variant": "#3a485b",
+        "on-primary": "#ffffff",
+        "surface-tint": "#0053db",
+        "on-tertiary-container": "#ffede6",
+        "on-background": "#191b23",
+        "surface": "#faf8ff",
+        "inverse-surface": "#2e3039",
+        "surface-container-high": "#e7e7f3",
+        "on-secondary-fixed": "#0d1c2e",
+        "background": "#faf8ff",
+        "on-tertiary": "#ffffff",
+        "on-surface": "#191b23",
+        "primary-fixed": "#dbe1ff",
+        "primary-container": "#2563eb",
+        "primary": "#004ac6",
+        "secondary": "#515f74",
+        "secondary-fixed": "#d5e3fc"
+      },
+      "fonts": [
+        "Material Symbols Outlined",
+        "Inter"
+      ],
+      "layoutHints": {
+        "gridCols": 1,
+        "flexDirection": "col"
+      },
+      "behaviorContract": [
+        {
+          "kind": "button",
+          "label": "arrow_back",
+          "icon": "arrow_back",
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "Cancel",
+          "icon": null,
+          "action": "dismiss",
+          "expectedBehavior": "close dialog/panel or return to previous state"
+        },
+        {
+          "kind": "button",
+          "label": "Save Lead",
+          "icon": null,
+          "action": "form-submit",
+          "expectedBehavior": "validate inputs and submit/apply changes"
+        },
+        {
+          "kind": "input",
+          "label": "e.g. Jane",
+          "type": "text",
+          "placeholder": "e.g. Jane",
+          "expectedBehavior": "controlled value with onChange; validation if required by PRD"
+        },
+        {
+          "kind": "input",
+          "label": "e.g. Doe",
+          "type": "text",
+          "placeholder": "e.g. Doe",
+          "expectedBehavior": "controlled value with onChange; validation if required by PRD"
+        },
+        {
+          "kind": "input",
+          "label": "e.g. Acme Corp",
+          "type": "text",
+          "placeholder": "e.g. Acme Corp",
+          "expectedBehavior": "controlled value with onChange; validation if required by PRD"
+        },
+        {
+          "kind": "input",
+          "label": "jane@example.com",
+          "type": "email",
+          "placeholder": "jane@example.com",
+          "expectedBehavior": "controlled value with onChange; validation if required by PRD"
+        },
+        {
+          "kind": "input",
+          "label": "(555) 123-4567",
+          "type": "tel",
+          "placeholder": "(555) 123-4567",
+          "expectedBehavior": "controlled value with onChange; validation if required by PRD"
+        },
+        {
+          "kind": "input",
+          "label": "source",
+          "type": "select",
+          "placeholder": "",
+          "expectedBehavior": "controlled value with onChange; validation if required by PRD"
+        },
+        {
+          "kind": "input",
+          "label": "0.00",
+          "type": "number",
+          "placeholder": "0.00",
+          "expectedBehavior": "controlled value with onChange; validation if required by PRD"
+        },
+        {
+          "kind": "input",
+          "label": "status",
+          "type": "select",
+          "placeholder": "",
+          "expectedBehavior": "controlled value with onChange; validation if required by PRD"
+        },
+        {
+          "kind": "input",
+          "label": "date",
+          "type": "date",
+          "placeholder": "",
+          "expectedBehavior": "controlled value with onChange; validation if required by PRD"
+        },
+        {
+          "kind": "input",
+          "label": "Enter details about next steps or context...",
+          "type": "textarea",
+          "placeholder": "Enter details about next steps or context...",
+          "expectedBehavior": "controlled value with onChange; validation if required by PRD"
+        }
+      ],
+      "tabBar": [],
+      "title": "Lead Create/Edit Form"
+    },
+    "30e43c0578c84c79957869bada7885f1": {
+      "screenId": "30e43c0578c84c79957869bada7885f1",
+      "materialSymbolsRequired": true,
+      "sections": [
+        {
+          "tag": "nav",
+          "layout": "flex-col",
+          "classes": [
+            "bg-surface",
+            "border-r",
+            "border-outline-variant",
+            "h-screen",
+            "w-64",
+            "flex",
+            "flex-col",
+            "fixed",
+            "left-0",
+            "top-0"
+          ],
+          "childCount": 3
+        },
+        {
+          "tag": "header",
+          "layout": "flex-row",
+          "classes": [
+            "bg-surface",
+            "flex",
+            "justify-between",
+            "items-center",
+            "h-[64px]",
+            "px-lg",
+            "w-full",
+            "border-b",
+            "border-outline-variant",
+            "z-10"
+          ],
+          "childCount": 4
+        },
+        {
+          "tag": "main",
+          "layout": "flex-row",
+          "classes": [
+            "flex-1",
+            "overflow-y-auto",
+            "p-margin"
+          ],
+          "childCount": 70
+        }
+      ],
+      "buttons": [
+        {
+          "kind": "button",
+          "label": "notifications",
+          "classes": [
+            "text-on-surface-variant",
+            "hover:text-primary",
+            "transition-opacity",
+            "w-[44px]",
+            "h-[44px]",
+            "flex",
+            "items-center",
+            "justify-center",
+            "rounded-full"
+          ],
+          "icon": "notifications",
+          "action": "navigate",
+          "expectedBehavior": "navigate:/notifications",
+          "expectedRoute": "/notifications",
+          "routeInferred": true
+        },
+        {
+          "kind": "button",
+          "label": "help_outline",
+          "classes": [
+            "text-on-surface-variant",
+            "hover:text-primary",
+            "transition-opacity",
+            "w-[44px]",
+            "h-[44px]",
+            "flex",
+            "items-center",
+            "justify-center",
+            "rounded-full"
+          ],
+          "icon": "help_outline",
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "Export Report",
+          "classes": [
+            "h-[44px]",
+            "px-6",
+            "bg-primary-container",
+            "text-on-primary",
+            "rounded-lg",
+            "font-label-md",
+            "text-label-md",
+            "flex",
+            "items-center",
+            "gap-sm",
+            "hover:opacity-90",
+            "transition-opacity"
+          ],
+          "icon": "download",
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "View All Activity",
+          "classes": [
+            "w-full",
+            "h-[44px]",
+            "mt-md",
+            "border",
+            "border-outline-variant",
+            "text-on-surface",
+            "font-label-md",
+            "text-label-md",
+            "rounded-lg",
+            "hover:bg-surface-container",
+            "transition-colors"
+          ],
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "EcoGrowth Ops Precision Monitoring",
+          "classes": [],
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        }
+      ],
+      "inputs": [
+        {
+          "kind": "input",
+          "type": "text",
+          "label": "Search...",
+          "placeholder": "Search...",
+          "name": "",
+          "classes": [
+            "pl-10",
+            "pr-4",
+            "py-2",
+            "bg-surface-container",
+            "rounded-full",
+            "border-none",
+            "font-body-sm",
+            "text-body-sm",
+            "w-64",
+            "focus:outline-none"
+          ],
+          "expectedBehavior": "controlled value with onChange; validation if required by PRD"
+        },
+        {
+          "kind": "input",
+          "type": "select",
+          "label": "select",
+          "placeholder": "",
+          "name": "",
+          "classes": [
+            "h-[44px]",
+            "px-4",
+            "rounded-lg",
+            "border",
+            "border-outline-variant",
+            "bg-surface",
+            "font-body-sm",
+            "text-body-sm",
+            "text-on-surface",
+            "focus:ring-2",
+            "focus:ring-primary",
+            "focus:border-primary",
+            "outline-none"
+          ],
+          "expectedBehavior": "controlled value with onChange; validation if required by PRD"
+        }
+      ],
+      "navLinks": [
+        {
+          "kind": "link",
+          "label": "Leads",
+          "href": "#",
+          "classes": [
+            "material-symbols-outlined"
+          ],
+          "icon": "person_search",
+          "action": "navigate",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "Pipeline",
+          "href": "#",
+          "classes": [
+            "material-symbols-outlined"
+          ],
+          "icon": "view_kanban",
+          "action": "navigate",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "Insights",
+          "href": "#",
+          "classes": [
+            "material-symbols-outlined"
+          ],
+          "icon": "monitoring",
+          "action": "navigate",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "settings",
+          "href": "#",
+          "classes": [
+            "material-symbols-outlined"
+          ],
+          "icon": "settings",
+          "action": "navigate",
+          "expectedBehavior": "navigate:#"
+        }
+      ],
+      "cards": [],
+      "icons": [
+        "person_search",
+        "view_kanban",
+        "monitoring",
+        "settings",
+        "search",
+        "notifications",
+        "help_outline",
+        "download",
+        "group",
+        "trending_up",
+        "fact_check",
+        "pie_chart",
+        "calendar_today",
+        "trending_down",
+        "check_circle",
+        "handshake"
+      ],
+      "images": [
+        {
+          "src": "https://lh3.googleusercontent.com/aida-public/AB6AXuBN4K1V7N9Rppgla7jpao0H6RKgdhGJiv1z40dPYmPuKDgKW9STMfvQO0b_w_4k-kXytYnrX4WoxOBVImMPD_DY9Ka8AdppxT_m4LptbNs0k8RYbLkIsX3UhfLh1if_qc5vNHh7dje3qga-6cmYzM",
+          "alt": "Greenhouse Operations Logo"
+        },
+        {
+          "src": "https://lh3.googleusercontent.com/aida-public/AB6AXuAJOnLF9AqA2BZ0LpfK9Cnqv-dDSa2Z5BGC3-tb5yvoAi1rlDIBTll-4VHgy9s22mtDDtvBfrNDeXh9ur43oFLHS6rQ7g-wwunlajGtSAZOLeRlH6qAG9LU-pEBCPotCnfdpuvgO9edZL8XbEcgcj",
+          "alt": "Manager Profile"
+        }
+      ],
+      "cssVars": {},
+      "colorPalette": {
+        "primary-fixed-dim": "#b4c5ff",
+        "error-container": "#ffdad6",
+        "secondary-container": "#d5e3fc",
+        "surface-container-lowest": "#ffffff",
+        "on-primary-fixed": "#00174b",
+        "error": "#ba1a1a",
+        "inverse-on-surface": "#f0f0fb",
+        "surface-container-low": "#f3f3fe",
+        "on-surface-variant": "#434655",
+        "surface-container-highest": "#e1e2ed",
+        "surface-variant": "#e1e2ed",
+        "secondary-fixed-dim": "#b9c7df",
+        "surface-dim": "#d9d9e5",
+        "outline-variant": "#c3c6d7",
+        "surface-bright": "#faf8ff",
+        "surface-container": "#ededf9",
+        "on-error": "#ffffff",
+        "on-primary-container": "#eeefff",
+        "tertiary-container": "#bc4800",
+        "on-secondary": "#ffffff",
+        "on-secondary-container": "#57657a",
+        "tertiary-fixed-dim": "#ffb596",
+        "outline": "#737686",
+        "tertiary-fixed": "#ffdbcd",
+        "on-tertiary-fixed-variant": "#7d2d00",
+        "on-primary-fixed-variant": "#003ea8",
+        "on-error-container": "#93000a",
+        "inverse-primary": "#b4c5ff",
+        "tertiary": "#943700",
+        "on-tertiary-fixed": "#360f00",
+        "on-secondary-fixed-variant": "#3a485b",
+        "on-primary": "#ffffff",
+        "surface-tint": "#0053db",
+        "on-tertiary-container": "#ffede6",
+        "on-background": "#191b23",
+        "surface": "#faf8ff",
+        "inverse-surface": "#2e3039",
+        "surface-container-high": "#e7e7f3",
+        "on-secondary-fixed": "#0d1c2e",
+        "background": "#faf8ff",
+        "on-tertiary": "#ffffff",
+        "on-surface": "#191b23",
+        "primary-fixed": "#dbe1ff",
+        "primary-container": "#2563eb",
+        "primary": "#004ac6",
+        "secondary": "#515f74",
+        "secondary-fixed": "#d5e3fc"
+      },
+      "fonts": [
+        "Material Symbols Outlined",
+        "Inter"
+      ],
+      "layoutHints": {
+        "gridCols": 12,
+        "flexDirection": "col",
+        "gap": "3"
+      },
+      "behaviorContract": [
+        {
+          "kind": "link",
+          "label": "Leads",
+          "icon": "person_search",
+          "route": "#",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "Pipeline",
+          "icon": "view_kanban",
+          "route": "#",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "Insights",
+          "icon": "monitoring",
+          "route": "#",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "settings",
+          "icon": "settings",
+          "route": "#",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "button",
+          "label": "notifications",
+          "icon": "notifications",
+          "action": "navigate",
+          "route": "/notifications",
+          "expectedBehavior": "navigate:/notifications"
+        },
+        {
+          "kind": "button",
+          "label": "help_outline",
+          "icon": "help_outline",
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "Export Report",
+          "icon": "download",
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "View All Activity",
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "EcoGrowth Ops Precision Monitoring",
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "input",
+          "label": "Search...",
+          "type": "text",
+          "placeholder": "Search...",
+          "expectedBehavior": "controlled value with onChange; validation if required by PRD"
+        },
+        {
+          "kind": "input",
+          "label": "select",
+          "type": "select",
+          "placeholder": "",
+          "expectedBehavior": "controlled value with onChange; validation if required by PRD"
+        }
+      ],
+      "tabBar": [
+        {
+          "kind": "button",
+          "label": "EcoGrowth Ops Precision Monitoring",
+          "icon": null,
+          "active": true
+        },
+        {
+          "kind": "link",
+          "label": "Leads",
+          "icon": "person_search",
+          "route": "#",
+          "active": false
+        },
+        {
+          "kind": "link",
+          "label": "Pipeline",
+          "icon": "view_kanban",
+          "route": "#",
+          "active": false
+        },
+        {
+          "kind": "link",
+          "label": "Insights",
+          "icon": "monitoring",
+          "route": "#",
+          "active": true
+        },
+        {
+          "kind": "link",
+          "label": "settings",
+          "icon": "settings",
+          "route": "#",
+          "active": false
+        }
+      ],
+      "title": "Insights Dashboard"
+    },
+    "a1461399cfc74fed98b9997ea4db13e4": {
+      "screenId": "a1461399cfc74fed98b9997ea4db13e4",
+      "materialSymbolsRequired": true,
+      "sections": [
+        {
+          "tag": "main",
+          "layout": "block",
+          "classes": [
+            "w-full",
+            "max-w-md",
+            "bg-surface-container-lowest",
+            "dark:bg-inverse-surface",
+            "border",
+            "border-error/20",
+            "dark:border-error/30",
+            "rounded-xl",
+            "p-xl",
+            "shadow-[0px_4px_12px_rgba(15,23,42,0.08)]"
+          ],
+          "childCount": 5
+        }
+      ],
+      "buttons": [
+        {
+          "kind": "button",
+          "label": "Retry Connection",
+          "classes": [
+            "w-full",
+            "h-touch-target",
+            "flex",
+            "items-center",
+            "justify-center",
+            "bg-primary-container",
+            "text-on-primary",
+            "rounded-lg",
+            "font-label-md",
+            "text-label-md",
+            "hover:bg-primary",
+            "transition-colors",
+            "focus:ring-2",
+            "focus:ring-primary",
+            "focus:outline-none"
+          ],
+          "icon": "refresh",
+          "action": "retry",
+          "expectedBehavior": "retry the failed action and show loading/error feedback"
+        },
+        {
+          "kind": "button",
+          "label": "Reset Local Data",
+          "classes": [
+            "w-full",
+            "h-touch-target",
+            "flex",
+            "items-center",
+            "justify-center",
+            "bg-transparent",
+            "text-secondary",
+            "dark:text-secondary-fixed-dim",
+            "border",
+            "border-outline-variant",
+            "dark:border-outline/50",
+            "rounded-lg",
+            "font-label-md",
+            "text-label-md",
+            "hover:bg-surface-container-high",
+            "dark:hover:bg-surface-container",
+            "transition-colors",
+            "focus:ring-2",
+            "focus:ring-outline",
+            "focus:outline-none"
+          ],
+          "icon": "delete_sweep",
+          "action": "destructive",
+          "expectedBehavior": "perform destructive action with visible feedback or confirmation"
+        }
+      ],
+      "inputs": [],
+      "navLinks": [
+        {
+          "kind": "link",
+          "label": "Contact IT Support",
+          "href": "#",
+          "classes": [
+            "material-symbols-outlined",
+            "text-sm"
+          ],
+          "icon": "help",
+          "action": "navigate",
+          "expectedBehavior": "navigate:#"
+        }
+      ],
+      "cards": [],
+      "icons": [
+        "storage",
+        "expand_more",
+        "refresh",
+        "delete_sweep",
+        "help"
+      ],
+      "images": [],
+      "cssVars": {},
+      "colorPalette": {
+        "primary-fixed-dim": "#b4c5ff",
+        "error-container": "#ffdad6",
+        "secondary-container": "#d5e3fc",
+        "surface-container-lowest": "#ffffff",
+        "on-primary-fixed": "#00174b",
+        "error": "#ba1a1a",
+        "inverse-on-surface": "#f0f0fb",
+        "surface-container-low": "#f3f3fe",
+        "on-surface-variant": "#434655",
+        "surface-container-highest": "#e1e2ed",
+        "surface-variant": "#e1e2ed",
+        "secondary-fixed-dim": "#b9c7df",
+        "surface-dim": "#d9d9e5",
+        "outline-variant": "#c3c6d7",
+        "surface-bright": "#faf8ff",
+        "surface-container": "#ededf9",
+        "on-error": "#ffffff",
+        "on-primary-container": "#eeefff",
+        "tertiary-container": "#bc4800",
+        "on-secondary": "#ffffff",
+        "on-secondary-container": "#57657a",
+        "tertiary-fixed-dim": "#ffb596",
+        "outline": "#737686",
+        "tertiary-fixed": "#ffdbcd",
+        "on-tertiary-fixed-variant": "#7d2d00",
+        "on-primary-fixed-variant": "#003ea8",
+        "on-error-container": "#93000a",
+        "inverse-primary": "#b4c5ff",
+        "tertiary": "#943700",
+        "on-tertiary-fixed": "#360f00",
+        "on-secondary-fixed-variant": "#3a485b",
+        "on-primary": "#ffffff",
+        "surface-tint": "#0053db",
+        "on-tertiary-container": "#ffede6",
+        "on-background": "#191b23",
+        "surface": "#faf8ff",
+        "inverse-surface": "#2e3039",
+        "surface-container-high": "#e7e7f3",
+        "on-secondary-fixed": "#0d1c2e",
+        "background": "#faf8ff",
+        "on-tertiary": "#ffffff",
+        "on-surface": "#191b23",
+        "primary-fixed": "#dbe1ff",
+        "primary-container": "#2563eb",
+        "primary": "#004ac6",
+        "secondary": "#515f74",
+        "secondary-fixed": "#d5e3fc"
+      },
+      "fonts": [
+        "Material Symbols Outlined",
+        "Inter"
+      ],
+      "layoutHints": {
+        "flexDirection": "col"
+      },
+      "behaviorContract": [
+        {
+          "kind": "link",
+          "label": "Contact IT Support",
+          "icon": "help",
+          "route": "#",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "button",
+          "label": "Retry Connection",
+          "icon": "refresh",
+          "action": "retry",
+          "expectedBehavior": "retry the failed action and show loading/error feedback"
+        },
+        {
+          "kind": "button",
+          "label": "Reset Local Data",
+          "icon": "delete_sweep",
+          "action": "destructive",
+          "expectedBehavior": "perform destructive action with visible feedback or confirmation"
+        }
+      ],
+      "tabBar": [],
+      "title": "Storage Error State"
+    },
+    "ae246c4d2e004b19a3cff15f43525772": {
+      "screenId": "ae246c4d2e004b19a3cff15f43525772",
+      "materialSymbolsRequired": true,
+      "sections": [
+        {
+          "tag": "nav",
+          "layout": "flex-col",
+          "classes": [
+            "hidden",
+            "md:flex",
+            "flex-col",
+            "h-screen",
+            "w-64",
+            "bg-surface",
+            "border-r",
+            "border-outline-variant",
+            "fixed",
+            "left-0"
+          ],
+          "childCount": 2
+        },
+        {
+          "tag": "header",
+          "layout": "flex-row",
+          "classes": [
+            "flex",
+            "justify-between",
+            "items-center",
+            "h-[64px]",
+            "px-lg",
+            "w-full",
+            "bg-surface",
+            "border-b",
+            "border-outline-variant",
+            "sticky"
+          ],
+          "childCount": 4
+        },
+        {
+          "tag": "main",
+          "layout": "flex-row",
+          "classes": [
+            "flex-1",
+            "p-gutter",
+            "overflow-x-auto",
+            "bg-background"
+          ],
+          "childCount": 33
+        }
+      ],
+      "buttons": [
+        {
+          "kind": "button",
+          "label": "notifications",
+          "classes": [
+            "hover:text-primary",
+            "transition-opacity",
+            "p-2",
+            "min-h-touch-target",
+            "min-w-touch-target",
+            "flex",
+            "items-center",
+            "justify-center",
+            "rounded-full"
+          ],
+          "icon": "notifications",
+          "action": "navigate",
+          "expectedBehavior": "navigate:/notifications",
+          "expectedRoute": "/notifications",
+          "routeInferred": true
+        },
+        {
+          "kind": "button",
+          "label": "help_outline",
+          "classes": [
+            "hover:text-primary",
+            "transition-opacity",
+            "p-2",
+            "min-h-touch-target",
+            "min-w-touch-target",
+            "flex",
+            "items-center",
+            "justify-center",
+            "rounded-full"
+          ],
+          "icon": "help_outline",
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "New Lead",
+          "classes": [
+            "bg-primary-container",
+            "text-on-primary",
+            "min-h-touch-target",
+            "px-md",
+            "rounded-lg",
+            "font-label-md",
+            "text-label-md",
+            "flex",
+            "items-center",
+            "gap-2",
+            "hover:bg-primary",
+            "transition-colors"
+          ],
+          "icon": "add",
+          "action": "create",
+          "expectedBehavior": "open create flow or add a new item/state"
+        },
+        {
+          "kind": "button",
+          "label": "EcoGrowth Ops Precision Monitoring",
+          "classes": [],
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        }
+      ],
+      "inputs": [
+        {
+          "kind": "input",
+          "type": "text",
+          "label": "Search...",
+          "placeholder": "Search...",
+          "name": "",
+          "classes": [
+            "pl-10",
+            "pr-4",
+            "py-2",
+            "bg-surface-container-high",
+            "border-none",
+            "rounded-lg",
+            "font-body-sm",
+            "text-body-sm",
+            "text-on-surface",
+            "placeholder:text-on-surface-variant",
+            "focus:ring-0"
+          ],
+          "expectedBehavior": "controlled value with onChange; validation if required by PRD"
+        }
+      ],
+      "navLinks": [
+        {
+          "kind": "link",
+          "label": "Leads",
+          "href": "#",
+          "classes": [
+            "material-symbols-outlined"
+          ],
+          "icon": "person_search",
+          "action": "navigate",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "Pipeline",
+          "href": "#",
+          "classes": [
+            "material-symbols-outlined"
+          ],
+          "icon": "view_kanban",
+          "action": "navigate",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "Insights",
+          "href": "#",
+          "classes": [
+            "material-symbols-outlined"
+          ],
+          "icon": "monitoring",
+          "action": "navigate",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "settings",
+          "href": "#",
+          "classes": [
+            "material-symbols-outlined"
+          ],
+          "icon": "settings",
+          "action": "navigate",
+          "expectedBehavior": "navigate:#"
+        }
+      ],
+      "cards": [],
+      "icons": [
+        "person_search",
+        "view_kanban",
+        "monitoring",
+        "settings",
+        "search",
+        "notifications",
+        "help_outline",
+        "add",
+        "more_horiz",
+        "add_circle"
+      ],
+      "images": [
+        {
+          "src": "https://lh3.googleusercontent.com/aida-public/AB6AXuD5EOjYjntCOZETj8T5j7VXVxE56Q7jCh8Gz2LfAgEJ9EoVds0_94gJQbumsh-tU65s7mA6_GpTRIiPi45J-7penaqcn04rZimbdz2ay1Ol6Qt9OtyDhHbMqnsExCNUW9qfaKQfGonJ5OJr7BgqkY",
+          "alt": "Manager Profile"
+        },
+        {
+          "src": "https://lh3.googleusercontent.com/aida-public/AB6AXuDVvDR-O28cMU2ub1FiEuBgePeiUl71NYpKye0NEVn9Itdi_e0hXKMgxQ64yuDffu2NAhdZU2fAves1Wa8CmQnSmFrfhxTaQbeVxL4S0WyPC3g8TcDo0Ww-pFFFmtSDiDOn09cgr6gv2GTwM_8Jag",
+          "alt": "Lead Avatar"
+        },
+        {
+          "src": "https://lh3.googleusercontent.com/aida-public/AB6AXuAd3tOfU0HxCrF7PY5EVbgJ9I1Tv1FfUrO43mswZT4en9TVmSBLEBcxPRjT4M6oL_g0WM9RVgzyB6Bg2j7X3ecn80Sjz_WhRrCJuqg3oMYTQGqV8jD-wZ8aXvQQaG4fQUGfK_uWaFfSkmJ-mx0xhN",
+          "alt": "Lead Avatar"
+        },
+        {
+          "src": "https://lh3.googleusercontent.com/aida-public/AB6AXuDGgffK_uHlJibjgA_Odrr__WulSHSDJaJaA0kqNSpf_O_XJcQonlisecAHGKjtWVxrBWvxIQ3wlLcQ0Wf9l5X98E3tN-J_BCGX_4awVw8qdeVF897TbsguLpXp6dDz4q0BLFWkzTWLqsrKs9d7AH",
+          "alt": "Lead Avatar"
+        }
+      ],
+      "cssVars": {},
+      "colorPalette": {
+        "primary-fixed-dim": "#b4c5ff",
+        "error-container": "#ffdad6",
+        "secondary-container": "#d5e3fc",
+        "surface-container-lowest": "#ffffff",
+        "on-primary-fixed": "#00174b",
+        "error": "#ba1a1a",
+        "inverse-on-surface": "#f0f0fb",
+        "surface-container-low": "#f3f3fe",
+        "on-surface-variant": "#434655",
+        "surface-container-highest": "#e1e2ed",
+        "surface-variant": "#e1e2ed",
+        "secondary-fixed-dim": "#b9c7df",
+        "surface-dim": "#d9d9e5",
+        "outline-variant": "#c3c6d7",
+        "surface-bright": "#faf8ff",
+        "surface-container": "#ededf9",
+        "on-error": "#ffffff",
+        "on-primary-container": "#eeefff",
+        "tertiary-container": "#bc4800",
+        "on-secondary": "#ffffff",
+        "on-secondary-container": "#57657a",
+        "tertiary-fixed-dim": "#ffb596",
+        "outline": "#737686",
+        "tertiary-fixed": "#ffdbcd",
+        "on-tertiary-fixed-variant": "#7d2d00",
+        "on-primary-fixed-variant": "#003ea8",
+        "on-error-container": "#93000a",
+        "inverse-primary": "#b4c5ff",
+        "tertiary": "#943700",
+        "on-tertiary-fixed": "#360f00",
+        "on-secondary-fixed-variant": "#3a485b",
+        "on-primary": "#ffffff",
+        "surface-tint": "#0053db",
+        "on-tertiary-container": "#ffede6",
+        "on-background": "#191b23",
+        "surface": "#faf8ff",
+        "inverse-surface": "#2e3039",
+        "surface-container-high": "#e7e7f3",
+        "on-secondary-fixed": "#0d1c2e",
+        "background": "#faf8ff",
+        "on-tertiary": "#ffffff",
+        "on-surface": "#191b23",
+        "primary-fixed": "#dbe1ff",
+        "primary-container": "#2563eb",
+        "primary": "#004ac6",
+        "secondary": "#515f74",
+        "secondary-fixed": "#d5e3fc"
+      },
+      "fonts": [
+        "Inter",
+        "Material Symbols Outlined"
+      ],
+      "layoutHints": {
+        "flexDirection": "col",
+        "gap": "3"
+      },
+      "behaviorContract": [
+        {
+          "kind": "link",
+          "label": "Leads",
+          "icon": "person_search",
+          "route": "#",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "Pipeline",
+          "icon": "view_kanban",
+          "route": "#",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "Insights",
+          "icon": "monitoring",
+          "route": "#",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "settings",
+          "icon": "settings",
+          "route": "#",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "button",
+          "label": "notifications",
+          "icon": "notifications",
+          "action": "navigate",
+          "route": "/notifications",
+          "expectedBehavior": "navigate:/notifications"
+        },
+        {
+          "kind": "button",
+          "label": "help_outline",
+          "icon": "help_outline",
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "New Lead",
+          "icon": "add",
+          "action": "create",
+          "expectedBehavior": "open create flow or add a new item/state"
+        },
+        {
+          "kind": "button",
+          "label": "EcoGrowth Ops Precision Monitoring",
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "input",
+          "label": "Search...",
+          "type": "text",
+          "placeholder": "Search...",
+          "expectedBehavior": "controlled value with onChange; validation if required by PRD"
+        }
+      ],
+      "tabBar": [
+        {
+          "kind": "button",
+          "label": "EcoGrowth Ops Precision Monitoring",
+          "icon": null,
+          "active": true
+        },
+        {
+          "kind": "link",
+          "label": "Leads",
+          "icon": "person_search",
+          "route": "#",
+          "active": false
+        },
+        {
+          "kind": "link",
+          "label": "Pipeline",
+          "icon": "view_kanban",
+          "route": "#",
+          "active": true
+        },
+        {
+          "kind": "link",
+          "label": "Insights",
+          "icon": "monitoring",
+          "route": "#",
+          "active": false
+        },
+        {
+          "kind": "link",
+          "label": "settings",
+          "icon": "settings",
+          "route": "#",
+          "active": false
+        }
+      ],
+      "title": "Pipeline Board"
+    },
+    "be9f6db9115e40aab8bfbcae92a1aac2": {
+      "screenId": "be9f6db9115e40aab8bfbcae92a1aac2",
+      "materialSymbolsRequired": true,
+      "sections": [
+        {
+          "tag": "nav",
+          "layout": "flex-col",
+          "classes": [
+            "bg-surface",
+            "dark:bg-surface-dim",
+            "border-r",
+            "border-outline-variant",
+            "dark:border-outline",
+            "h-screen",
+            "w-64",
+            "flex",
+            "flex-col",
+            "fixed"
+          ],
+          "childCount": 2
+        },
+        {
+          "tag": "header",
+          "layout": "flex-row",
+          "classes": [
+            "bg-surface",
+            "dark:bg-surface-dim",
+            "flex",
+            "justify-between",
+            "items-center",
+            "h-[64px]",
+            "px-lg",
+            "w-[calc(100%-16rem)]",
+            "ml-64",
+            "fixed"
+          ],
+          "childCount": 3
+        },
+        {
+          "tag": "main",
+          "layout": "block",
+          "classes": [
+            "pt-[88px]",
+            "pl-[280px]",
+            "pr-lg",
+            "pb-lg",
+            "min-h-screen"
+          ],
+          "childCount": 30
+        }
+      ],
+      "buttons": [
+        {
+          "kind": "button",
+          "label": "notifications",
+          "classes": [
+            "text-on-surface-variant",
+            "dark:text-outline-variant",
+            "hover:text-primary",
+            "dark:hover:text-primary-fixed-dim",
+            "transition-opacity",
+            "w-touch-target",
+            "h-touch-target",
+            "flex",
+            "items-center",
+            "justify-center",
+            "rounded-full"
+          ],
+          "icon": "notifications",
+          "action": "navigate",
+          "expectedBehavior": "navigate:/notifications",
+          "expectedRoute": "/notifications",
+          "routeInferred": true
+        },
+        {
+          "kind": "button",
+          "label": "help_outline",
+          "classes": [
+            "text-on-surface-variant",
+            "dark:text-outline-variant",
+            "hover:text-primary",
+            "dark:hover:text-primary-fixed-dim",
+            "transition-opacity",
+            "w-touch-target",
+            "h-touch-target",
+            "flex",
+            "items-center",
+            "justify-center",
+            "rounded-full"
+          ],
+          "icon": "help_outline",
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "New Lead",
+          "classes": [
+            "bg-primary-container",
+            "text-on-primary",
+            "h-touch-target",
+            "px-md",
+            "rounded-DEFAULT",
+            "font-label-md",
+            "text-label-md",
+            "flex",
+            "items-center",
+            "gap-sm",
+            "hover:bg-primary",
+            "transition-colors"
+          ],
+          "icon": "add",
+          "action": "create",
+          "expectedBehavior": "open create flow or add a new item/state"
+        },
+        {
+          "kind": "button",
+          "label": "filter_list",
+          "classes": [
+            "w-touch-target",
+            "h-touch-target",
+            "flex",
+            "items-center",
+            "justify-center",
+            "border",
+            "border-outline-variant",
+            "rounded-DEFAULT",
+            "text-on-surface",
+            "hover:bg-surface-container",
+            "transition-colors"
+          ],
+          "icon": "filter_list",
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "download",
+          "classes": [
+            "w-touch-target",
+            "h-touch-target",
+            "flex",
+            "items-center",
+            "justify-center",
+            "border",
+            "border-outline-variant",
+            "rounded-DEFAULT",
+            "text-on-surface",
+            "hover:bg-surface-container",
+            "transition-colors"
+          ],
+          "icon": "download",
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "more_vert",
+          "classes": [
+            "text-outline",
+            "hover:text-primary",
+            "transition-colors",
+            "opacity-0",
+            "group-hover:opacity-100",
+            "w-touch-target",
+            "h-touch-target",
+            "flex",
+            "items-center",
+            "justify-center",
+            "ml-auto"
+          ],
+          "icon": "more_vert",
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "chevron_left",
+          "classes": [
+            "w-touch-target",
+            "h-touch-target",
+            "flex",
+            "items-center",
+            "justify-center",
+            "text-outline",
+            "disabled:opacity-50"
+          ],
+          "icon": "chevron_left",
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "1",
+          "classes": [
+            "w-touch-target",
+            "h-touch-target",
+            "flex",
+            "items-center",
+            "justify-center",
+            "text-on-surface",
+            "hover:bg-surface-container",
+            "rounded-DEFAULT"
+          ],
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "2",
+          "classes": [
+            "w-touch-target",
+            "h-touch-target",
+            "flex",
+            "items-center",
+            "justify-center",
+            "text-on-surface",
+            "hover:bg-surface-container",
+            "rounded-DEFAULT"
+          ],
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "3",
+          "classes": [
+            "w-touch-target",
+            "h-touch-target",
+            "flex",
+            "items-center",
+            "justify-center",
+            "text-on-surface",
+            "hover:bg-surface-container",
+            "rounded-DEFAULT"
+          ],
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "chevron_right",
+          "classes": [
+            "w-touch-target",
+            "h-touch-target",
+            "flex",
+            "items-center",
+            "justify-center",
+            "text-on-surface",
+            "hover:bg-surface-container",
+            "rounded-DEFAULT"
+          ],
+          "icon": "chevron_right",
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "EcoGrowth Ops Precision Monitoring",
+          "classes": [],
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        }
+      ],
+      "inputs": [
+        {
+          "kind": "input",
+          "type": "text",
+          "label": "Search...",
+          "placeholder": "Search...",
+          "name": "",
+          "classes": [
+            "pl-xl",
+            "pr-sm",
+            "py-sm",
+            "rounded-DEFAULT",
+            "border",
+            "border-outline-variant",
+            "bg-surface-container-lowest",
+            "text-on-surface",
+            "focus:outline-none",
+            "font-body-sm",
+            "text-body-sm",
+            "h-touch-target"
+          ],
+          "expectedBehavior": "controlled value with onChange; validation if required by PRD"
+        },
+        {
+          "kind": "input",
+          "type": "select",
+          "label": "select",
+          "placeholder": "",
+          "name": "",
+          "classes": [
+            "appearance-none",
+            "bg-surface",
+            "border",
+            "border-outline-variant",
+            "rounded-DEFAULT",
+            "h-touch-target",
+            "pl-md",
+            "pr-xl",
+            "font-body-sm",
+            "text-body-sm",
+            "text-on-surface",
+            "focus:ring-2",
+            "focus:ring-primary",
+            "focus:outline-none"
+          ],
+          "expectedBehavior": "controlled value with onChange; validation if required by PRD"
+        }
+      ],
+      "navLinks": [
+        {
+          "kind": "link",
+          "label": "Leads",
+          "href": "#",
+          "classes": [
+            "material-symbols-outlined"
+          ],
+          "icon": "person_search",
+          "action": "navigate",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "Pipeline",
+          "href": "#",
+          "classes": [
+            "material-symbols-outlined"
+          ],
+          "icon": "view_kanban",
+          "action": "navigate",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "Insights",
+          "href": "#",
+          "classes": [
+            "material-symbols-outlined"
+          ],
+          "icon": "monitoring",
+          "action": "navigate",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "settings",
+          "href": "#",
+          "classes": [
+            "material-symbols-outlined"
+          ],
+          "icon": "settings",
+          "action": "navigate",
+          "expectedBehavior": "navigate:#"
+        }
+      ],
+      "cards": [],
+      "icons": [
+        "person_search",
+        "view_kanban",
+        "monitoring",
+        "settings",
+        "search",
+        "notifications",
+        "help_outline",
+        "add",
+        "expand_more",
+        "filter_list",
+        "download",
+        "more_vert",
+        "chevron_left",
+        "chevron_right"
+      ],
+      "images": [
+        {
+          "src": "https://lh3.googleusercontent.com/aida-public/AB6AXuBDqYcB4WUuOBNVYkjLu2igRUJ56wtdFvZ7cHb8Igv1HgixMSgyKcfhhbRcTrzTCUK0zw5NLI91f2D1XEmgy7P8gnvqBPjqgkvqIQtqzSfkVo2Fae0jiSxxM4hkS1FadGXjbsG7tD0hGdzyoZ3S77",
+          "alt": "Manager Profile"
+        }
+      ],
+      "cssVars": {},
+      "colorPalette": {
+        "primary-fixed-dim": "#b4c5ff",
+        "error-container": "#ffdad6",
+        "secondary-container": "#d5e3fc",
+        "surface-container-lowest": "#ffffff",
+        "on-primary-fixed": "#00174b",
+        "error": "#ba1a1a",
+        "inverse-on-surface": "#f0f0fb",
+        "surface-container-low": "#f3f3fe",
+        "on-surface-variant": "#434655",
+        "surface-container-highest": "#e1e2ed",
+        "surface-variant": "#e1e2ed",
+        "secondary-fixed-dim": "#b9c7df",
+        "surface-dim": "#d9d9e5",
+        "outline-variant": "#c3c6d7",
+        "surface-bright": "#faf8ff",
+        "surface-container": "#ededf9",
+        "on-error": "#ffffff",
+        "on-primary-container": "#eeefff",
+        "tertiary-container": "#bc4800",
+        "on-secondary": "#ffffff",
+        "on-secondary-container": "#57657a",
+        "tertiary-fixed-dim": "#ffb596",
+        "outline": "#737686",
+        "tertiary-fixed": "#ffdbcd",
+        "on-tertiary-fixed-variant": "#7d2d00",
+        "on-primary-fixed-variant": "#003ea8",
+        "on-error-container": "#93000a",
+        "inverse-primary": "#b4c5ff",
+        "tertiary": "#943700",
+        "on-tertiary-fixed": "#360f00",
+        "on-secondary-fixed-variant": "#3a485b",
+        "on-primary": "#ffffff",
+        "surface-tint": "#0053db",
+        "on-tertiary-container": "#ffede6",
+        "on-background": "#191b23",
+        "surface": "#faf8ff",
+        "inverse-surface": "#2e3039",
+        "surface-container-high": "#e7e7f3",
+        "on-secondary-fixed": "#0d1c2e",
+        "background": "#faf8ff",
+        "on-tertiary": "#ffffff",
+        "on-surface": "#191b23",
+        "primary-fixed": "#dbe1ff",
+        "primary-container": "#2563eb",
+        "primary": "#004ac6",
+        "secondary": "#515f74",
+        "secondary-fixed": "#d5e3fc"
+      },
+      "fonts": [
+        "Material Symbols Outlined",
+        "Inter"
+      ],
+      "layoutHints": {
+        "flexDirection": "col",
+        "gap": "3"
+      },
+      "behaviorContract": [
+        {
+          "kind": "link",
+          "label": "Leads",
+          "icon": "person_search",
+          "route": "#",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "Pipeline",
+          "icon": "view_kanban",
+          "route": "#",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "Insights",
+          "icon": "monitoring",
+          "route": "#",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "settings",
+          "icon": "settings",
+          "route": "#",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "button",
+          "label": "notifications",
+          "icon": "notifications",
+          "action": "navigate",
+          "route": "/notifications",
+          "expectedBehavior": "navigate:/notifications"
+        },
+        {
+          "kind": "button",
+          "label": "help_outline",
+          "icon": "help_outline",
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "New Lead",
+          "icon": "add",
+          "action": "create",
+          "expectedBehavior": "open create flow or add a new item/state"
+        },
+        {
+          "kind": "button",
+          "label": "filter_list",
+          "icon": "filter_list",
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "download",
+          "icon": "download",
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "more_vert",
+          "icon": "more_vert",
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "chevron_left",
+          "icon": "chevron_left",
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "1",
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "2",
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "3",
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "chevron_right",
+          "icon": "chevron_right",
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "EcoGrowth Ops Precision Monitoring",
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "input",
+          "label": "Search...",
+          "type": "text",
+          "placeholder": "Search...",
+          "expectedBehavior": "controlled value with onChange; validation if required by PRD"
+        },
+        {
+          "kind": "input",
+          "label": "select",
+          "type": "select",
+          "placeholder": "",
+          "expectedBehavior": "controlled value with onChange; validation if required by PRD"
+        }
+      ],
+      "tabBar": [
+        {
+          "kind": "button",
+          "label": "EcoGrowth Ops Precision Monitoring",
+          "icon": null,
+          "active": true
+        },
+        {
+          "kind": "link",
+          "label": "Leads",
+          "icon": "person_search",
+          "route": "#",
+          "active": true
+        },
+        {
+          "kind": "link",
+          "label": "Pipeline",
+          "icon": "view_kanban",
+          "route": "#",
+          "active": false
+        },
+        {
+          "kind": "link",
+          "label": "Insights",
+          "icon": "monitoring",
+          "route": "#",
+          "active": false
+        },
+        {
+          "kind": "link",
+          "label": "settings",
+          "icon": "settings",
+          "route": "#",
+          "active": false
+        }
+      ],
+      "title": "Leads Dashboard"
+    },
+    "c5f6cb4b803d4520a34685fbc6902e9b": {
+      "screenId": "c5f6cb4b803d4520a34685fbc6902e9b",
+      "materialSymbolsRequired": true,
+      "sections": [
+        {
+          "tag": "nav",
+          "layout": "flex-col",
+          "classes": [
+            "hidden",
+            "md:flex",
+            "flex-col",
+            "h-screen",
+            "w-64",
+            "bg-surface",
+            "dark:bg-surface-dim",
+            "border-r",
+            "border-outline-variant",
+            "dark:border-outline"
+          ],
+          "childCount": 4
+        },
+        {
+          "tag": "header",
+          "layout": "flex-row",
+          "classes": [
+            "flex",
+            "justify-between",
+            "items-center",
+            "h-[64px]",
+            "px-lg",
+            "w-full",
+            "bg-surface",
+            "dark:bg-surface-dim",
+            "border-b",
+            "border-outline-variant"
+          ],
+          "childCount": 4
+        },
+        {
+          "tag": "main",
+          "layout": "flex-row",
+          "classes": [
+            "flex-1",
+            "p-lg",
+            "bg-surface-container-lowest",
+            "overflow-y-auto"
+          ],
+          "childCount": 26
+        }
+      ],
+      "buttons": [
+        {
+          "kind": "button",
+          "label": "menu",
+          "classes": [
+            "md:hidden",
+            "text-on-surface",
+            "p-sm"
+          ],
+          "icon": "menu",
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "notifications",
+          "classes": [
+            "text-on-surface-variant",
+            "hover:text-primary",
+            "dark:hover:text-primary-fixed-dim",
+            "transition-opacity",
+            "p-sm",
+            "w-[44px]",
+            "h-[44px]",
+            "flex",
+            "items-center",
+            "justify-center",
+            "rounded-full",
+            "hover:bg-surface-container-high"
+          ],
+          "icon": "notifications",
+          "action": "navigate",
+          "expectedBehavior": "navigate:/notifications",
+          "expectedRoute": "/notifications",
+          "routeInferred": true
+        },
+        {
+          "kind": "button",
+          "label": "help_outline",
+          "classes": [
+            "text-on-surface-variant",
+            "hover:text-primary",
+            "dark:hover:text-primary-fixed-dim",
+            "transition-opacity",
+            "p-sm",
+            "w-[44px]",
+            "h-[44px]",
+            "flex",
+            "items-center",
+            "justify-center",
+            "rounded-full",
+            "hover:bg-surface-container-high"
+          ],
+          "icon": "help_outline",
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "Clear Data",
+          "classes": [
+            "h-[44px]",
+            "px-md",
+            "bg-surface",
+            "border",
+            "border-error",
+            "text-error",
+            "font-label-md",
+            "text-label-md",
+            "rounded-lg",
+            "hover:bg-error",
+            "hover:text-on-error",
+            "transition-colors",
+            "whitespace-nowrap"
+          ],
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "Cancel",
+          "classes": [
+            "h-[44px]",
+            "px-lg",
+            "border",
+            "border-outline-variant",
+            "text-on-surface",
+            "font-label-md",
+            "text-label-md",
+            "rounded-lg",
+            "hover:bg-surface-container-low",
+            "transition-colors"
+          ],
+          "icon": null,
+          "action": "dismiss",
+          "expectedBehavior": "close dialog/panel or return to previous state"
+        },
+        {
+          "kind": "button",
+          "label": "Save Changes",
+          "classes": [
+            "h-[44px]",
+            "px-lg",
+            "bg-primary",
+            "text-on-primary",
+            "font-label-md",
+            "text-label-md",
+            "rounded-lg",
+            "hover:bg-on-primary-fixed",
+            "transition-colors"
+          ],
+          "icon": null,
+          "action": "form-submit",
+          "expectedBehavior": "validate inputs and submit/apply changes"
+        },
+        {
+          "kind": "button",
+          "label": "EG",
+          "classes": [],
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "EcoGrowth Ops Precision Monitoring",
+          "classes": [],
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        }
+      ],
+      "inputs": [
+        {
+          "kind": "input",
+          "type": "text",
+          "label": "Search settings...",
+          "placeholder": "Search settings...",
+          "name": "",
+          "classes": [
+            "pl-10",
+            "pr-4",
+            "py-2",
+            "bg-surface-container-low",
+            "border",
+            "border-outline-variant",
+            "rounded-lg",
+            "font-body-sm",
+            "text-body-sm",
+            "text-on-surface",
+            "focus:outline-none",
+            "w-64",
+            "h-[44px]"
+          ],
+          "expectedBehavior": "controlled value with onChange; validation if required by PRD"
+        },
+        {
+          "kind": "input",
+          "type": "radio",
+          "label": "density",
+          "placeholder": "",
+          "name": "density",
+          "classes": [
+            "text-primary",
+            "focus:ring-primary",
+            "w-5",
+            "h-5"
+          ],
+          "expectedBehavior": "controlled value with onChange; validation if required by PRD"
+        },
+        {
+          "kind": "input",
+          "type": "select",
+          "label": "currency",
+          "placeholder": "",
+          "name": "currency",
+          "classes": [
+            "w-full",
+            "h-[44px]",
+            "px-3",
+            "border",
+            "border-outline-variant",
+            "rounded-lg",
+            "bg-surface",
+            "font-body-md",
+            "text-body-md",
+            "text-on-surface",
+            "focus:outline-none",
+            "focus:ring-2",
+            "focus:ring-primary",
+            "focus:border-primary"
+          ],
+          "expectedBehavior": "controlled value with onChange; validation if required by PRD"
+        },
+        {
+          "kind": "input",
+          "type": "checkbox",
+          "label": "checkbox",
+          "placeholder": "",
+          "name": "",
+          "classes": [
+            "sr-only",
+            "peer"
+          ],
+          "expectedBehavior": "controlled value with onChange; validation if required by PRD"
+        }
+      ],
+      "navLinks": [
+        {
+          "kind": "link",
+          "label": "Leads",
+          "href": "#",
+          "classes": [
+            "material-symbols-outlined"
+          ],
+          "icon": "person_search",
+          "action": "navigate",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "Pipeline",
+          "href": "#",
+          "classes": [
+            "material-symbols-outlined"
+          ],
+          "icon": "view_kanban",
+          "action": "navigate",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "Insights",
+          "href": "#",
+          "classes": [
+            "material-symbols-outlined"
+          ],
+          "icon": "monitoring",
+          "action": "navigate",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "settings",
+          "href": "#",
+          "classes": [
+            "material-symbols-outlined"
+          ],
+          "icon": "settings",
+          "action": "navigate",
+          "expectedBehavior": "navigate:#"
+        }
+      ],
+      "cards": [],
+      "icons": [
+        "person_search",
+        "view_kanban",
+        "monitoring",
+        "settings",
+        "menu",
+        "search",
+        "notifications",
+        "help_outline",
+        "palette",
+        "language",
+        "notifications_active",
+        "database"
+      ],
+      "images": [
+        {
+          "src": "https://lh3.googleusercontent.com/aida-public/AB6AXuBHxqyZdmzr0E1FATbVoBDmMlrJbsm2cY0Q5sZDc3RtNpszkHpSLqBEy6MIJ-ZthBw5TLjC4dTyKd8quuQ9fEEzGU0YoDR_SF3sECS03qQmwDHa5wzBDSbjz9-C8MQUVp7IAg2mtTg9uEHtYCSR0K",
+          "alt": "Manager Profile"
+        }
+      ],
+      "cssVars": {},
+      "colorPalette": {
+        "primary-fixed-dim": "#b4c5ff",
+        "error-container": "#ffdad6",
+        "secondary-container": "#d5e3fc",
+        "surface-container-lowest": "#ffffff",
+        "on-primary-fixed": "#00174b",
+        "error": "#ba1a1a",
+        "inverse-on-surface": "#f0f0fb",
+        "surface-container-low": "#f3f3fe",
+        "on-surface-variant": "#434655",
+        "surface-container-highest": "#e1e2ed",
+        "surface-variant": "#e1e2ed",
+        "secondary-fixed-dim": "#b9c7df",
+        "surface-dim": "#d9d9e5",
+        "outline-variant": "#c3c6d7",
+        "surface-bright": "#faf8ff",
+        "surface-container": "#ededf9",
+        "on-error": "#ffffff",
+        "on-primary-container": "#eeefff",
+        "tertiary-container": "#bc4800",
+        "on-secondary": "#ffffff",
+        "on-secondary-container": "#57657a",
+        "tertiary-fixed-dim": "#ffb596",
+        "outline": "#737686",
+        "tertiary-fixed": "#ffdbcd",
+        "on-tertiary-fixed-variant": "#7d2d00",
+        "on-primary-fixed-variant": "#003ea8",
+        "on-error-container": "#93000a",
+        "inverse-primary": "#b4c5ff",
+        "tertiary": "#943700",
+        "on-tertiary-fixed": "#360f00",
+        "on-secondary-fixed-variant": "#3a485b",
+        "on-primary": "#ffffff",
+        "surface-tint": "#0053db",
+        "on-tertiary-container": "#ffede6",
+        "on-background": "#191b23",
+        "surface": "#faf8ff",
+        "inverse-surface": "#2e3039",
+        "surface-container-high": "#e7e7f3",
+        "on-secondary-fixed": "#0d1c2e",
+        "background": "#faf8ff",
+        "on-tertiary": "#ffffff",
+        "on-surface": "#191b23",
+        "primary-fixed": "#dbe1ff",
+        "primary-container": "#2563eb",
+        "primary": "#004ac6",
+        "secondary": "#515f74",
+        "secondary-fixed": "#d5e3fc"
+      },
+      "fonts": [
+        "Material Symbols Outlined",
+        "Inter"
+      ],
+      "layoutHints": {
+        "gridCols": 1,
+        "flexDirection": "col",
+        "gap": "3"
+      },
+      "behaviorContract": [
+        {
+          "kind": "link",
+          "label": "Leads",
+          "icon": "person_search",
+          "route": "#",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "Pipeline",
+          "icon": "view_kanban",
+          "route": "#",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "Insights",
+          "icon": "monitoring",
+          "route": "#",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "settings",
+          "icon": "settings",
+          "route": "#",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "button",
+          "label": "menu",
+          "icon": "menu",
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "notifications",
+          "icon": "notifications",
+          "action": "navigate",
+          "route": "/notifications",
+          "expectedBehavior": "navigate:/notifications"
+        },
+        {
+          "kind": "button",
+          "label": "help_outline",
+          "icon": "help_outline",
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "Clear Data",
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "Cancel",
+          "icon": null,
+          "action": "dismiss",
+          "expectedBehavior": "close dialog/panel or return to previous state"
+        },
+        {
+          "kind": "button",
+          "label": "Save Changes",
+          "icon": null,
+          "action": "form-submit",
+          "expectedBehavior": "validate inputs and submit/apply changes"
+        },
+        {
+          "kind": "button",
+          "label": "EG",
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "EcoGrowth Ops Precision Monitoring",
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "input",
+          "label": "Search settings...",
+          "type": "text",
+          "placeholder": "Search settings...",
+          "expectedBehavior": "controlled value with onChange; validation if required by PRD"
+        },
+        {
+          "kind": "input",
+          "label": "density",
+          "type": "radio",
+          "placeholder": "",
+          "expectedBehavior": "controlled value with onChange; validation if required by PRD"
+        },
+        {
+          "kind": "input",
+          "label": "currency",
+          "type": "select",
+          "placeholder": "",
+          "expectedBehavior": "controlled value with onChange; validation if required by PRD"
+        },
+        {
+          "kind": "input",
+          "label": "checkbox",
+          "type": "checkbox",
+          "placeholder": "",
+          "expectedBehavior": "controlled value with onChange; validation if required by PRD"
+        }
+      ],
+      "tabBar": [
+        {
+          "kind": "button",
+          "label": "EG",
+          "icon": null,
+          "active": true
+        },
+        {
+          "kind": "button",
+          "label": "EcoGrowth Ops Precision Monitoring",
+          "icon": null,
+          "active": true
+        },
+        {
+          "kind": "link",
+          "label": "Leads",
+          "icon": "person_search",
+          "route": "#",
+          "active": false
+        },
+        {
+          "kind": "link",
+          "label": "Pipeline",
+          "icon": "view_kanban",
+          "route": "#",
+          "active": false
+        },
+        {
+          "kind": "link",
+          "label": "Insights",
+          "icon": "monitoring",
+          "route": "#",
+          "active": false
+        },
+        {
+          "kind": "link",
+          "label": "settings",
+          "icon": "settings",
+          "route": "#",
+          "active": true
+        }
+      ],
+      "title": "Settings Screen"
+    },
+    "e152544b1ad346baa4d0e8d5d251e883": {
+      "screenId": "e152544b1ad346baa4d0e8d5d251e883",
+      "materialSymbolsRequired": true,
+      "sections": [
+        {
+          "tag": "header",
+          "layout": "flex-row",
+          "classes": [
+            "flex",
+            "justify-between",
+            "items-center",
+            "h-[64px]",
+            "px-lg",
+            "w-full",
+            "border-b",
+            "border-outline-variant",
+            "bg-surface"
+          ],
+          "childCount": 2
+        },
+        {
+          "tag": "aside",
+          "layout": "absolute",
+          "classes": [
+            "fixed",
+            "right-0",
+            "top-0",
+            "bottom-0",
+            "w-full",
+            "md:w-[400px]",
+            "bg-surface",
+            "border-l",
+            "border-outline-variant",
+            "shadow-[-4px_0_24px_rgba(15,23,42,0.08)]"
+          ],
+          "childCount": 21
+        }
+      ],
+      "buttons": [
+        {
+          "kind": "button",
+          "label": "Close Profile",
+          "classes": [
+            "w-[44px]",
+            "h-[44px]",
+            "flex",
+            "items-center",
+            "justify-center",
+            "rounded-full",
+            "hover:bg-surface-container-high",
+            "transition-colors",
+            "text-on-surface-variant"
+          ],
+          "icon": "close",
+          "action": "dismiss",
+          "expectedBehavior": "close dialog/panel or return to previous state"
+        },
+        {
+          "kind": "button",
+          "label": "Edit",
+          "classes": [
+            "absolute",
+            "bottom-0",
+            "left-0",
+            "right-0",
+            "bg-inverse-surface/80",
+            "text-inverse-on-surface",
+            "py-1",
+            "font-label-sm",
+            "text-label-sm",
+            "hover:bg-inverse-surface",
+            "transition-colors",
+            "cursor-pointer"
+          ],
+          "icon": null,
+          "action": "edit",
+          "expectedBehavior": "open edit flow or update selected item/state"
+        },
+        {
+          "kind": "button",
+          "label": "& Documentation",
+          "classes": [
+            "flex",
+            "items-center",
+            "gap-3",
+            "px-4",
+            "h-[44px]",
+            "rounded-lg",
+            "hover:bg-surface-container-high",
+            "transition-colors",
+            "text-on-surface",
+            "text-left"
+          ],
+          "icon": "help",
+          "action": "navigate",
+          "expectedBehavior": "navigate:/help",
+          "expectedRoute": "/help",
+          "routeInferred": true
+        },
+        {
+          "kind": "button",
+          "label": "Security Settings",
+          "classes": [
+            "flex",
+            "items-center",
+            "gap-3",
+            "px-4",
+            "h-[44px]",
+            "rounded-lg",
+            "hover:bg-surface-container-high",
+            "transition-colors",
+            "text-on-surface",
+            "text-left"
+          ],
+          "icon": "verified_user",
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "Sign Out",
+          "classes": [
+            "w-full",
+            "flex",
+            "items-center",
+            "justify-center",
+            "gap-2",
+            "h-[44px]",
+            "bg-error-container",
+            "text-on-error-container",
+            "rounded-lg",
+            "hover:bg-[#ffcdc9]",
+            "transition-colors",
+            "font-label-md",
+            "text-label-md"
+          ],
+          "icon": "logout",
+          "action": "navigate",
+          "expectedBehavior": "navigate:/logout",
+          "expectedRoute": "/logout",
+          "routeInferred": true
+        }
+      ],
+      "inputs": [
+        {
+          "kind": "input",
+          "type": "select",
+          "label": "select",
+          "placeholder": "",
+          "name": "",
+          "classes": [
+            "w-full",
+            "h-[44px]",
+            "appearance-none",
+            "bg-surface",
+            "border",
+            "border-outline-variant",
+            "rounded-lg",
+            "px-4",
+            "font-body-md",
+            "text-body-md",
+            "text-on-surface",
+            "focus:outline-none",
+            "focus:ring-2",
+            "focus:ring-primary",
+            "focus:border-primary",
+            "cursor-pointer"
+          ],
+          "expectedBehavior": "controlled value with onChange; validation if required by PRD"
+        },
+        {
+          "kind": "input",
+          "type": "checkbox",
+          "label": "checkbox",
+          "placeholder": "",
+          "name": "",
+          "classes": [
+            "sr-only",
+            "peer"
+          ],
+          "expectedBehavior": "controlled value with onChange; validation if required by PRD"
+        }
+      ],
+      "navLinks": [],
+      "cards": [],
+      "icons": [
+        "search",
+        "notifications",
+        "help_outline",
+        "close",
+        "expand_more",
+        "help",
+        "verified_user",
+        "logout"
+      ],
+      "images": [
+        {
+          "src": "https://lh3.googleusercontent.com/aida-public/AB6AXuAb78i2ofgdfnhsqYdRWC6WKGBXcnJfBVBnjOG2GDzqM0AJPmK5fOJTU-CorIotyMby4YbHLFz9ZgpB6ry5e1zpRMfs29LjPzhPA8HMlmG3OlT6pLB2HL_EAnETyuxJLa-KoGlXEJqCpcrIE1otoR",
+          "alt": "Manager Profile"
+        }
+      ],
+      "cssVars": {},
+      "colorPalette": {
+        "primary-fixed-dim": "#b4c5ff",
+        "error-container": "#ffdad6",
+        "secondary-container": "#d5e3fc",
+        "surface-container-lowest": "#ffffff",
+        "on-primary-fixed": "#00174b",
+        "error": "#ba1a1a",
+        "inverse-on-surface": "#f0f0fb",
+        "surface-container-low": "#f3f3fe",
+        "on-surface-variant": "#434655",
+        "surface-container-highest": "#e1e2ed",
+        "surface-variant": "#e1e2ed",
+        "secondary-fixed-dim": "#b9c7df",
+        "surface-dim": "#d9d9e5",
+        "outline-variant": "#c3c6d7",
+        "surface-bright": "#faf8ff",
+        "surface-container": "#ededf9",
+        "on-error": "#ffffff",
+        "on-primary-container": "#eeefff",
+        "tertiary-container": "#bc4800",
+        "on-secondary": "#ffffff",
+        "on-secondary-container": "#57657a",
+        "tertiary-fixed-dim": "#ffb596",
+        "outline": "#737686",
+        "tertiary-fixed": "#ffdbcd",
+        "on-tertiary-fixed-variant": "#7d2d00",
+        "on-primary-fixed-variant": "#003ea8",
+        "on-error-container": "#93000a",
+        "inverse-primary": "#b4c5ff",
+        "tertiary": "#943700",
+        "on-tertiary-fixed": "#360f00",
+        "on-secondary-fixed-variant": "#3a485b",
+        "on-primary": "#ffffff",
+        "surface-tint": "#0053db",
+        "on-tertiary-container": "#ffede6",
+        "on-background": "#191b23",
+        "surface": "#faf8ff",
+        "inverse-surface": "#2e3039",
+        "surface-container-high": "#e7e7f3",
+        "on-secondary-fixed": "#0d1c2e",
+        "background": "#faf8ff",
+        "on-tertiary": "#ffffff",
+        "on-surface": "#191b23",
+        "primary-fixed": "#dbe1ff",
+        "primary-container": "#2563eb",
+        "primary": "#004ac6",
+        "secondary": "#515f74",
+        "secondary-fixed": "#d5e3fc"
+      },
+      "fonts": [
+        "Inter",
+        "Material Symbols Outlined"
+      ],
+      "layoutHints": {
+        "gridCols": 12,
+        "flexDirection": "col",
+        "gap": "3"
+      },
+      "behaviorContract": [
+        {
+          "kind": "button",
+          "label": "Close Profile",
+          "icon": "close",
+          "action": "dismiss",
+          "expectedBehavior": "close dialog/panel or return to previous state"
+        },
+        {
+          "kind": "button",
+          "label": "Edit",
+          "icon": null,
+          "action": "edit",
+          "expectedBehavior": "open edit flow or update selected item/state"
+        },
+        {
+          "kind": "button",
+          "label": "& Documentation",
+          "icon": "help",
+          "action": "navigate",
+          "route": "/help",
+          "expectedBehavior": "navigate:/help"
+        },
+        {
+          "kind": "button",
+          "label": "Security Settings",
+          "icon": "verified_user",
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "Sign Out",
+          "icon": "logout",
+          "action": "navigate",
+          "route": "/logout",
+          "expectedBehavior": "navigate:/logout"
+        },
+        {
+          "kind": "input",
+          "label": "select",
+          "type": "select",
+          "placeholder": "",
+          "expectedBehavior": "controlled value with onChange; validation if required by PRD"
+        },
+        {
+          "kind": "input",
+          "label": "checkbox",
+          "type": "checkbox",
+          "placeholder": "",
+          "expectedBehavior": "controlled value with onChange; validation if required by PRD"
+        }
+      ],
+      "tabBar": [],
+      "title": "Profile Panel"
+    }
+  }
+}

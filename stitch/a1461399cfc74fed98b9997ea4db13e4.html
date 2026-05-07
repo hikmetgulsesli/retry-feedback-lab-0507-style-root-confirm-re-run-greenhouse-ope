@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Storage Error - Greenhouse Console</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary-fixed-dim": "#b4c5ff",
+                    "error-container": "#ffdad6",
+                    "secondary-container": "#d5e3fc",
+                    "surface-container-lowest": "#ffffff",
+                    "on-primary-fixed": "#00174b",
+                    "error": "#ba1a1a",
+                    "inverse-on-surface": "#f0f0fb",
+                    "surface-container-low": "#f3f3fe",
+                    "on-surface-variant": "#434655",
+                    "surface-container-highest": "#e1e2ed",
+                    "surface-variant": "#e1e2ed",
+                    "secondary-fixed-dim": "#b9c7df",
+                    "surface-dim": "#d9d9e5",
+                    "outline-variant": "#c3c6d7",
+                    "surface-bright": "#faf8ff",
+                    "surface-container": "#ededf9",
+                    "on-error": "#ffffff",
+                    "on-primary-container": "#eeefff",
+                    "tertiary-container": "#bc4800",
+                    "on-secondary": "#ffffff",
+                    "on-secondary-container": "#57657a",
+                    "tertiary-fixed-dim": "#ffb596",
+                    "outline": "#737686",
+                    "tertiary-fixed": "#ffdbcd",
+                    "on-tertiary-fixed-variant": "#7d2d00",
+                    "on-primary-fixed-variant": "#003ea8",
+                    "on-error-container": "#93000a",
+                    "inverse-primary": "#b4c5ff",
+                    "tertiary": "#943700",
+                    "on-tertiary-fixed": "#360f00",
+                    "on-secondary-fixed-variant": "#3a485b",
+                    "on-primary": "#ffffff",
+                    "surface-tint": "#0053db",
+                    "on-tertiary-container": "#ffede6",
+                    "on-background": "#191b23",
+                    "surface": "#faf8ff",
+                    "inverse-surface": "#2e3039",
+                    "surface-container-high": "#e7e7f3",
+                    "on-secondary-fixed": "#0d1c2e",
+                    "background": "#faf8ff",
+                    "on-tertiary": "#ffffff",
+                    "on-surface": "#191b23",
+                    "primary-fixed": "#dbe1ff",
+                    "primary-container": "#2563eb",
+                    "primary": "#004ac6",
+                    "secondary": "#515f74",
+                    "secondary-fixed": "#d5e3fc"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "lg": "24px",
+                    "md": "16px",
+                    "unit": "4px",
+                    "touch-target": "44px",
+                    "sm": "8px",
+                    "xs": "4px",
+                    "xl": "32px",
+                    "margin": "32px",
+                    "gutter": "24px"
+            },
+            "fontFamily": {
+                    "body-sm": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "h2": ["Inter"],
+                    "h3": ["Inter"],
+                    "body-md": ["Inter"],
+                    "h1": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "label-md": ["Inter"]
+            },
+            "fontSize": {
+                    "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "h2": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "h3": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "h1": ["30px", {"lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "fontWeight": "500"}]
+            }
+    },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-surface dark:bg-surface-dim text-on-surface font-body-md h-screen w-full flex items-center justify-center p-md">
+<!-- Error Container -->
+<main class="w-full max-w-md bg-surface-container-lowest dark:bg-inverse-surface border border-error/20 dark:border-error/30 rounded-xl p-xl shadow-[0px_4px_12px_rgba(15,23,42,0.08)] flex flex-col items-center text-center">
+<!-- Error Icon -->
+<div class="w-16 h-16 rounded-full bg-error-container/50 dark:bg-error-container/10 flex items-center justify-center mb-lg">
+<span class="material-symbols-outlined text-error text-4xl" data-icon="storage" data-weight="fill">storage</span>
+</div>
+<!-- Typography -->
+<h1 class="font-h2 text-h2 text-on-surface dark:text-surface-container-lowest mb-sm">Local Storage Error</h1>
+<p class="font-body-md text-body-md text-on-surface-variant dark:text-outline-variant mb-xl">
+            We encountered a critical failure attempting to read local cache data. Zone configurations and recent sensor logs may be temporarily unavailable.
+        </p>
+<!-- Technical Details Accordion (Simulated) -->
+<div class="w-full bg-surface-container-low dark:bg-surface-container/5 rounded-lg border border-outline-variant dark:border-outline/30 p-md mb-xl text-left">
+<div class="flex items-center justify-between mb-sm">
+<span class="font-label-sm text-label-sm text-on-surface dark:text-surface-container-highest uppercase">Error Details</span>
+<span class="material-symbols-outlined text-outline text-sm" data-icon="expand_more">expand_more</span>
+</div>
+<code class="font-body-sm text-body-sm text-error block bg-surface dark:bg-on-surface/5 p-sm rounded border border-error/10">ERR_QUOTA_EXCEEDED (Code: 1042)</code>
+</div>
+<!-- Actions -->
+<div class="w-full flex flex-col gap-sm">
+<button class="w-full h-touch-target flex items-center justify-center bg-primary-container text-on-primary rounded-lg font-label-md text-label-md hover:bg-primary transition-colors focus:ring-2 focus:ring-primary focus:outline-none">
+<span class="material-symbols-outlined mr-sm text-xl" data-icon="refresh">refresh</span>
+                Retry Connection
+            </button>
+<button class="w-full h-touch-target flex items-center justify-center bg-transparent text-secondary dark:text-secondary-fixed-dim border border-outline-variant dark:border-outline/50 rounded-lg font-label-md text-label-md hover:bg-surface-container-high dark:hover:bg-surface-container transition-colors focus:ring-2 focus:ring-outline focus:outline-none">
+<span class="material-symbols-outlined mr-sm text-xl" data-icon="delete_sweep">delete_sweep</span>
+                Reset Local Data
+            </button>
+</div>
+<div class="mt-lg">
+<a class="font-label-sm text-label-sm text-primary dark:text-primary-fixed-dim hover:underline flex items-center justify-center gap-xs" href="#">
+<span class="material-symbols-outlined text-sm" data-icon="help">help</span>
+                 Contact IT Support
+             </a>
+</div>
+</main>
+</body></html>

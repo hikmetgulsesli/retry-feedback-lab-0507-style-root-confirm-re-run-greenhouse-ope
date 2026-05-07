@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Greenhouse Console - Pipeline Board</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed-dim": "#b4c5ff",
+                        "error-container": "#ffdad6",
+                        "secondary-container": "#d5e3fc",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-fixed": "#00174b",
+                        "error": "#ba1a1a",
+                        "inverse-on-surface": "#f0f0fb",
+                        "surface-container-low": "#f3f3fe",
+                        "on-surface-variant": "#434655",
+                        "surface-container-highest": "#e1e2ed",
+                        "surface-variant": "#e1e2ed",
+                        "secondary-fixed-dim": "#b9c7df",
+                        "surface-dim": "#d9d9e5",
+                        "outline-variant": "#c3c6d7",
+                        "surface-bright": "#faf8ff",
+                        "surface-container": "#ededf9",
+                        "on-error": "#ffffff",
+                        "on-primary-container": "#eeefff",
+                        "tertiary-container": "#bc4800",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-container": "#57657a",
+                        "tertiary-fixed-dim": "#ffb596",
+                        "outline": "#737686",
+                        "tertiary-fixed": "#ffdbcd",
+                        "on-tertiary-fixed-variant": "#7d2d00",
+                        "on-primary-fixed-variant": "#003ea8",
+                        "on-error-container": "#93000a",
+                        "inverse-primary": "#b4c5ff",
+                        "tertiary": "#943700",
+                        "on-tertiary-fixed": "#360f00",
+                        "on-secondary-fixed-variant": "#3a485b",
+                        "on-primary": "#ffffff",
+                        "surface-tint": "#0053db",
+                        "on-tertiary-container": "#ffede6",
+                        "on-background": "#191b23",
+                        "surface": "#faf8ff",
+                        "inverse-surface": "#2e3039",
+                        "surface-container-high": "#e7e7f3",
+                        "on-secondary-fixed": "#0d1c2e",
+                        "background": "#faf8ff",
+                        "on-tertiary": "#ffffff",
+                        "on-surface": "#191b23",
+                        "primary-fixed": "#dbe1ff",
+                        "primary-container": "#2563eb",
+                        "primary": "#004ac6",
+                        "secondary": "#515f74",
+                        "secondary-fixed": "#d5e3fc"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "lg": "24px",
+                        "md": "16px",
+                        "unit": "4px",
+                        "touch-target": "44px",
+                        "sm": "8px",
+                        "xs": "4px",
+                        "xl": "32px",
+                        "margin": "32px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "body-sm": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "h2": ["Inter"],
+                        "h3": ["Inter"],
+                        "body-md": ["Inter"],
+                        "h1": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "label-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "h2": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "h3": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "h1": ["30px", { "lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "fontWeight": "500" }]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased min-h-screen flex flex-col md:flex-row">
+<!-- SideNavBar (Web) -->
+<nav class="hidden md:flex flex-col h-screen w-64 bg-surface border-r border-outline-variant fixed left-0 top-0">
+<div class="px-lg py-xl">
+<h1 class="font-h3 text-h3 text-primary mb-1">EcoGrowth Ops</h1>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Precision Monitoring</p>
+</div>
+<div class="flex-1 flex flex-col gap-sm px-4">
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-high transition-colors rounded-lg font-body-md text-body-md" href="#">
+<span class="material-symbols-outlined" data-icon="person_search">person_search</span>
+                Leads
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-primary bg-secondary-container rounded-lg font-body-md text-body-md scale-[0.98] duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="view_kanban">view_kanban</span>
+                Pipeline
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-high transition-colors rounded-lg font-body-md text-body-md" href="#">
+<span class="material-symbols-outlined" data-icon="monitoring">monitoring</span>
+                Insights
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-high transition-colors rounded-lg font-body-md text-body-md" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+                Settings
+            </a>
+</div>
+</nav>
+<!-- Main Content Area -->
+<div class="flex-1 md:ml-64 flex flex-col min-h-screen">
+<!-- TopNavBar -->
+<header class="flex justify-between items-center h-[64px] px-lg w-full bg-surface border-b border-outline-variant sticky top-0 z-10">
+<div class="font-h2 text-h2 text-primary font-bold">Greenhouse Console</div>
+<div class="flex items-center gap-lg">
+<div class="relative focus-within:ring-2 focus-within:ring-primary rounded-lg">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant" data-icon="search">search</span>
+<input class="pl-10 pr-4 py-2 bg-surface-container-high border-none rounded-lg font-body-sm text-body-sm text-on-surface placeholder:text-on-surface-variant focus:ring-0" placeholder="Search..." type="text"/>
+</div>
+<div class="flex items-center gap-md text-on-surface-variant">
+<button class="hover:text-primary transition-opacity p-2 min-h-touch-target min-w-touch-target flex items-center justify-center rounded-full">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="hover:text-primary transition-opacity p-2 min-h-touch-target min-w-touch-target flex items-center justify-center rounded-full">
+<span class="material-symbols-outlined" data-icon="help_outline">help_outline</span>
+</button>
+<img alt="Manager Profile" class="w-10 h-10 rounded-full border border-outline-variant" data-alt="A professional headshot of a smiling manager with short brown hair, wearing a dark blue suit jacket over a light blue collared shirt. The background is a softly out-of-focus modern office space with bright natural light coming from the left. The overall tone is approachable, confident, and professional, perfectly suited for a high-end corporate dashboard profile avatar." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5EOjYjntCOZETj8T5j7VXVxE56Q7jCh8Gz2LfAgEJ9EoVds0_94gJQbumsh-tU65s7mA6_GpTRIiPi45J-7penaqcn04rZimbdz2ay1Ol6Qt9OtyDhHbMqnsExCNUW9qfaKQfGonJ5OJr7BgqkYx4cxNE9iAiyHleuS5U5RzbM6OKjXi5GHUpDrdroyLJMMbAfYuk6S6Td81KS9RRnkA_hpzuIrHFMqYcrKSmMS0z-w-dH-W8RQQMT4WEu6kVo8LCBntjeNV9kynD"/>
+</div>
+</div>
+</header>
+<!-- Kanban Canvas -->
+<main class="flex-1 p-gutter overflow-x-auto bg-background">
+<!-- Page Header -->
+<div class="mb-lg flex justify-between items-end">
+<div>
+<h2 class="font-h1 text-h1 text-on-surface">Pipeline Overview</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">Track and manage prospective zone integrations.</p>
+</div>
+<button class="bg-primary-container text-on-primary min-h-touch-target px-md rounded-lg font-label-md text-label-md flex items-center gap-2 hover:bg-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]" data-icon="add">add</span>
+                    New Lead
+                </button>
+</div>
+<!-- Kanban Board -->
+<div class="flex gap-gutter h-[calc(100vh-200px)] min-w-max pb-lg">
+<!-- Column: New -->
+<div class="w-80 flex flex-col bg-surface-container-low rounded-xl border border-surface-variant overflow-hidden">
+<div class="p-4 border-b border-surface-variant bg-surface">
+<div class="flex justify-between items-center mb-2">
+<h3 class="font-h3 text-h3 text-on-surface">New</h3>
+<span class="bg-primary-fixed text-on-primary-fixed px-2 py-1 rounded-full font-label-sm text-label-sm">3</span>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Est. $145,000</p>
+</div>
+<div class="flex-1 p-4 overflow-y-auto flex flex-col gap-sm">
+<!-- Card 1 -->
+<div class="bg-surface border border-outline-variant rounded-lg p-4 cursor-pointer hover:border-primary transition-colors">
+<div class="flex justify-between items-start mb-3">
+<h4 class="font-label-md text-label-md text-on-surface">Apex AgriTech</h4>
+<span class="material-symbols-outlined text-outline text-[20px]" data-icon="more_horiz">more_horiz</span>
+</div>
+<div class="font-h3 text-h3 text-on-surface mb-3">$45,000</div>
+<div class="flex items-center gap-2">
+<img alt="Lead Avatar" class="w-6 h-6 rounded-full" data-alt="Headshot of a confident man with a short beard, wearing a casual grey shirt. The background is a soft, warm outdoor light, suggesting a dynamic, approachable professional environment. The image is cropped close to the face, ideal for a small UI avatar." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDVvDR-O28cMU2ub1FiEuBgePeiUl71NYpKye0NEVn9Itdi_e0hXKMgxQ64yuDffu2NAhdZU2fAves1Wa8CmQnSmFrfhxTaQbeVxL4S0WyPC3g8TcDo0Ww-pFFFmtSDiDOn09cgr6gv2GTwM_8Jag7UWPFFqHf0RYoRt-e73yIXIk8abEqCbXJWFcDs8QAImlc5JVIZhxRGZoUWu9gGWIts5cEIalPBHvOB6_KMVmBaJ_RiyMuq-GTLgzBMNWpmloFfa8j6HptWSlax"/>
+<span class="font-body-sm text-body-sm text-on-surface-variant">David C.</span>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface border border-outline-variant rounded-lg p-4 cursor-pointer hover:border-primary transition-colors">
+<div class="flex justify-between items-start mb-3">
+<h4 class="font-label-md text-label-md text-on-surface">Verdant Systems</h4>
+<span class="material-symbols-outlined text-outline text-[20px]" data-icon="more_horiz">more_horiz</span>
+</div>
+<div class="font-h3 text-h3 text-on-surface mb-3">$100,000</div>
+<div class="flex items-center gap-2">
+<img alt="Lead Avatar" class="w-6 h-6 rounded-full" data-alt="Portrait of a young professional woman smiling warmly. She has dark hair and is wearing a dark, elegant top. The background is a neutral, soft grey, keeping the focus entirely on her expression. This serves as a clean, corporate avatar for a dashboard interface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAd3tOfU0HxCrF7PY5EVbgJ9I1Tv1FfUrO43mswZT4en9TVmSBLEBcxPRjT4M6oL_g0WM9RVgzyB6Bg2j7X3ecn80Sjz_WhRrCJuqg3oMYTQGqV8jD-wZ8aXvQQaG4fQUGfK_uWaFfSkmJ-mx0xhN3Qw5aA0CIE8Yw-KsJ1gHqw8metO4j1QRWrL1wvRQGBKwqsMgiVVT-ICm_TKBKLtWHYu4uD1OLODj3mPMVXx5O-siuNy0Ea2P09GV6NAmNEK8tmQ212t5vI128C"/>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Sarah L.</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Column: Contacted -->
+<div class="w-80 flex flex-col bg-surface-container-low rounded-xl border border-surface-variant overflow-hidden">
+<div class="p-4 border-b border-surface-variant bg-surface">
+<div class="flex justify-between items-center mb-2">
+<h3 class="font-h3 text-h3 text-on-surface">Contacted</h3>
+<span class="bg-secondary-fixed text-on-secondary-fixed px-2 py-1 rounded-full font-label-sm text-label-sm">2</span>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Est. $82,500</p>
+</div>
+<div class="flex-1 p-4 overflow-y-auto flex flex-col gap-sm">
+<!-- Card 3 -->
+<div class="bg-surface border border-outline-variant rounded-lg p-4 cursor-pointer hover:border-primary transition-colors">
+<div class="flex justify-between items-start mb-3">
+<h4 class="font-label-md text-label-md text-on-surface">SunLight Farms</h4>
+<span class="material-symbols-outlined text-outline text-[20px]" data-icon="more_horiz">more_horiz</span>
+</div>
+<div class="font-h3 text-h3 text-on-surface mb-3">$55,000</div>
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-surface-container-highest flex items-center justify-center font-label-sm text-label-sm text-on-surface-variant">MK</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Michael K.</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Column: Negotiating -->
+<div class="w-80 flex flex-col bg-surface-container-low rounded-xl border border-surface-variant overflow-hidden">
+<div class="p-4 border-b border-surface-variant bg-surface">
+<div class="flex justify-between items-center mb-2">
+<h3 class="font-h3 text-h3 text-on-surface">Negotiating</h3>
+<span class="bg-tertiary-fixed text-on-tertiary-fixed px-2 py-1 rounded-full font-label-sm text-label-sm">1</span>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Est. $210,000</p>
+</div>
+<div class="flex-1 p-4 overflow-y-auto flex flex-col gap-sm">
+<!-- Card 4 -->
+<div class="bg-surface border border-outline-variant rounded-lg p-4 cursor-pointer hover:border-primary transition-colors border-l-4 border-l-tertiary-container">
+<div class="flex justify-between items-start mb-3">
+<h4 class="font-label-md text-label-md text-on-surface">Global Botanics</h4>
+<span class="material-symbols-outlined text-outline text-[20px]" data-icon="more_horiz">more_horiz</span>
+</div>
+<div class="font-h3 text-h3 text-on-surface mb-3">$210,000</div>
+<div class="flex items-center gap-2">
+<img alt="Lead Avatar" class="w-6 h-6 rounded-full" data-alt="A professional headshot of a mature woman with glasses and styled grey hair, wearing a tailored navy blazer. The background is a bright, modern office interior with subtle glass partitions. The lighting is crisp and even, conveying authority and competence suitable for a high-level corporate profile." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGgffK_uHlJibjgA_Odrr__WulSHSDJaJaA0kqNSpf_O_XJcQonlisecAHGKjtWVxrBWvxIQ3wlLcQ0Wf9l5X98E3tN-J_BCGX_4awVw8qdeVF897TbsguLpXp6dDz4q0BLFWkzTWLqsrKs9d7AHO2XEIsjB9zuGhwbcTWEzytTe13aBYZAlNk7dQsoKQuubcuipkKZfIo1wATQo-WmcUL1Tgr81zsdHgmpk4bsSkam0Ij_UmMpJEGW3asLAsD4bNAxlPcYjOf7pM7"/>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Elena R.</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Add Column Button -->
+<div class="w-80 flex flex-col bg-surface-container-lowest border border-dashed border-outline-variant rounded-xl items-center justify-center cursor-pointer hover:bg-surface-container-low transition-colors text-on-surface-variant">
+<span class="material-symbols-outlined mb-2 text-[32px]" data-icon="add_circle">add_circle</span>
+<span class="font-label-md text-label-md">Add Status</span>
+</div>
+</div>
+</main>
+</div>
+</body></html>
