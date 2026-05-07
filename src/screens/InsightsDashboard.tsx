@@ -7,39 +7,67 @@
 // 3. Add onClick/onChange handlers to interactive elements
 // 4. Replace placeholder data with props/state
 
-import { useState } from "react";
+import { useMemo, useState } from "react";
+import { useAppContext } from "../contexts/AppContext";
 
 interface InsightsDashboardProps {}
 
 export function InsightsDashboard(props: InsightsDashboardProps) {
+  const { state, actions } = useAppContext();
+  const [period, setPeriod] = useState("30d");
+
+  const metrics = useMemo(() => {
+    const total = state.leads.length;
+    const won = state.leads.filter((l) => l.status === "won").length;
+    const lost = state.leads.filter((l) => l.status === "lost").length;
+    const conversionRate = total > 0 ? ((won / total) * 100).toFixed(1) : "0.0";
+    const followUps = state.leads.filter((l) => ["contacted", "qualified", "proposal", "negotiating"].includes(l.status)).length;
+    return { total, won, lost, conversionRate, followUps };
+  }, [state.leads]);
+
+  const wonValue = useMemo(() => state.leads.filter((l) => l.status === "won").reduce((sum, l) => sum + l.estimatedValue, 0), [state.leads]);
+  const pipelineValue = useMemo(() => state.leads.filter((l) => !["won", "lost"].includes(l.status)).reduce((sum, l) => sum + l.estimatedValue, 0), [state.leads]);
+
   return (
     <>
       {/* SideNavBar */}
       <nav className="bg-surface border-r border-outline-variant h-screen w-64 flex flex-col fixed left-0 top-0 z-20">
       <div className="p-lg flex items-center gap-sm">
-      <img alt="Greenhouse Operations Logo" className="w-10 h-10 rounded-full object-cover border border-outline-variant" data-alt="A macro shot of a single vivid green leaf with intricate veins, illuminated by soft natural light. High contrast against a pure white background, professional studio photography style, symbolizing growth and precision." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBN4K1V7N9Rppgla7jpao0H6RKgdhGJiv1z40dPYmPuKDgKW9STMfvQO0b_w_4k-kXytYnrX4WoxOBVImMPD_DY9Ka8AdppxT_m4LptbNs0k8RYbLkIsX3UhfLh1if_qc5vNHh7dje3qga-6cmYzM_2kti8DKvVfd5YmndgjpKWGfwCri1bjU_sihyJu8ZYRuWDyHP9IUJ3Cjs9ORwWPXj3j8w7BqUcJTjXKnUsx5ODoxLIHpXxdrycncOFmJW0sJMsRoPUoIoKcmsA" />
+      <img alt="Greenhouse Operations Logo" className="w-10 h-10 rounded-full object-cover border border-outline-variant" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBN4K1V7N9Rppgla7jpao0H6RKgdhGJiv1z40dPYmPuKDgKW9STMfvQO0b_w_4k-kXytYnrX4WoxOBVImMPD_DY9Ka8AdppxT_m4LptbNs0k8RYbLkIsX3UhfLh1if_qc5vNHh7dje3qga-6cmYzM_2kti8DKvVfd5YmndgjpKWGfwCri1bjU_sihyJu8ZYRuWDyHP9IUJ3Cjs9ORwWPXj3j8w7BqUcJTjXKnUsx5ODoxLIHpXxdrycncOFmJW0sJMsRoPUoIoKcmsA" />
       <div>
       <h1 className="font-h3 text-h3 text-primary">EcoGrowth Ops</h1>
       <p className="font-label-sm text-label-sm text-on-surface-variant">Precision Monitoring</p>
       </div>
       </div>
       <div className="flex-1 overflow-y-auto px-md py-sm flex flex-col gap-unit">
-      <a className="flex items-center gap-3 px-4 py-3 text-on-surface-variant font-body-md text-body-md hover:bg-surface-container-high transition-colors rounded-lg" href="#">
+      <button
+        className={`flex items-center gap-3 px-4 py-3 rounded-lg font-body-md text-body-md transition-colors ${state.screen === "leads" || state.screen === "empty" ? "text-primary bg-secondary-container active:scale-[0.98] duration-150" : "text-on-surface-variant hover:bg-surface-container-high"}`}
+        onClick={() => actions.navigateTo("leads")}
+      >
       <span className="material-symbols-outlined">person_search</span>
                       Leads
-                  </a>
-      <a className="flex items-center gap-3 px-4 py-3 text-on-surface-variant font-body-md text-body-md hover:bg-surface-container-high transition-colors rounded-lg" href="#">
+                  </button>
+      <button
+        className={`flex items-center gap-3 px-4 py-3 rounded-lg font-body-md text-body-md transition-colors ${state.screen === "pipeline" ? "text-primary bg-secondary-container active:scale-[0.98] duration-150" : "text-on-surface-variant hover:bg-surface-container-high"}`}
+        onClick={() => actions.navigateTo("pipeline")}
+      >
       <span className="material-symbols-outlined">view_kanban</span>
                       Pipeline
-                  </a>
-      <a className="flex items-center gap-3 px-4 py-3 text-primary bg-secondary-container font-body-md text-body-md rounded-lg active:scale-[0.98] duration-150" href="#">
+                  </button>
+      <button
+        className={`flex items-center gap-3 px-4 py-3 rounded-lg font-body-md text-body-md transition-colors ${state.screen === "insights" ? "text-primary bg-secondary-container active:scale-[0.98] duration-150" : "text-on-surface-variant hover:bg-surface-container-high"}`}
+        onClick={() => actions.navigateTo("insights")}
+      >
       <span className="material-symbols-outlined" style={{fontVariationSettings: "'FILL' 1"}}>monitoring</span>
                       Insights
-                  </a>
-      <a className="flex items-center gap-3 px-4 py-3 text-on-surface-variant font-body-md text-body-md hover:bg-surface-container-high transition-colors rounded-lg" href="#">
+                  </button>
+      <button
+        className={`flex items-center gap-3 px-4 py-3 rounded-lg font-body-md text-body-md transition-colors ${state.screen === "settings" ? "text-primary bg-secondary-container active:scale-[0.98] duration-150" : "text-on-surface-variant hover:bg-surface-container-high"}`}
+        onClick={() => actions.navigateTo("settings")}
+      >
       <span className="material-symbols-outlined">settings</span>
                       Settings
-                  </a>
+                  </button>
       </div>
       </nav>
       {/* Main Content Area */}
@@ -52,16 +80,31 @@ export function InsightsDashboard(props: InsightsDashboardProps) {
       <div className="flex items-center gap-lg">
       <div className="relative focus-within:ring-2 focus-within:ring-primary rounded-full">
       <span className="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
-      <input className="pl-10 pr-4 py-2 bg-surface-container rounded-full border-none font-body-sm text-body-sm w-64 focus:outline-none" placeholder="Search..." type="text" />
+      <input
+        className="pl-10 pr-4 py-2 bg-surface-container rounded-full border-none font-body-sm text-body-sm w-64 focus:outline-none"
+        placeholder="Search..."
+        type="text"
+        value={state.searchQuery}
+        onChange={(e) => actions.setSearchQuery(e.target.value)}
+      />
       </div>
       <div className="flex items-center gap-md">
-      <button className="text-on-surface-variant hover:text-primary transition-opacity w-[44px] h-[44px] flex items-center justify-center rounded-full">
+      <button
+        className="text-on-surface-variant hover:text-primary transition-opacity w-[44px] h-[44px] flex items-center justify-center rounded-full"
+        onClick={() => actions.navigateTo("storage-error")}
+        aria-label="Notifications"
+      >
       <span className="material-symbols-outlined">notifications</span>
       </button>
-      <button className="text-on-surface-variant hover:text-primary transition-opacity w-[44px] h-[44px] flex items-center justify-center rounded-full">
+      <button
+        className="text-on-surface-variant hover:text-primary transition-opacity w-[44px] h-[44px] flex items-center justify-center rounded-full"
+        aria-label="Help"
+      >
       <span className="material-symbols-outlined">help_outline</span>
       </button>
-      <img alt="Manager Profile" className="w-10 h-10 rounded-full border border-outline-variant object-cover cursor-pointer" data-alt="A professional headshot of a confident operations manager. She is wearing a dark navy blazer over a light blue shirt. Soft studio lighting, neutral grey background. The mood is competent and approachable." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJOnLF9AqA2BZ0LpfK9Cnqv-dDSa2Z5BGC3-tb5yvoAi1rlDIBTll-4VHgy9s22mtDDtvBfrNDeXh9ur43oFLHS6rQ7g-wwunlajGtSAZOLeRlH6qAG9LU-pEBCPotCnfdpuvgO9edZL8XbEcgcj5LprGFEZQ75aUSTFlCB9pMhfaEEaoEQzk_QczT726Eli2Xd0rO-Yy8OsYwireIPEmlTnbScuPBRJw6MKzQsCkew7hJ-QR0eLIDgw4GXrBfDkEMlc4cv6BM7eNj" />
+      <button onClick={actions.toggleProfile} className="w-10 h-10 rounded-full border border-outline-variant object-cover overflow-hidden cursor-pointer">
+      <img alt="Manager Profile" className="w-full h-full object-cover" src={state.profile.avatarUrl} />
+      </button>
       </div>
       </div>
       </header>
@@ -73,12 +116,19 @@ export function InsightsDashboard(props: InsightsDashboardProps) {
       <p className="font-body-md text-body-md text-on-surface-variant mt-unit">Real-time overview of lead generation and pipeline health.</p>
       </div>
       <div className="flex gap-md">
-      <select className="h-[44px] px-4 rounded-lg border border-outline-variant bg-surface font-body-sm text-body-sm text-on-surface focus:ring-2 focus:ring-primary focus:border-primary outline-none">
-      <option>Last 30 Days</option>
-      <option>This Quarter</option>
-      <option>Year to Date</option>
+      <select
+        className="h-[44px] px-4 rounded-lg border border-outline-variant bg-surface font-body-sm text-body-sm text-on-surface focus:ring-2 focus:ring-primary focus:border-primary outline-none"
+        value={period}
+        onChange={(e) => setPeriod(e.target.value)}
+      >
+      <option value="30d">Last 30 Days</option>
+      <option value="quarter">This Quarter</option>
+      <option value="ytd">Year to Date</option>
       </select>
-      <button className="h-[44px] px-6 bg-primary-container text-on-primary rounded-lg font-label-md text-label-md flex items-center gap-sm hover:opacity-90 transition-opacity">
+      <button
+        className="h-[44px] px-6 bg-primary-container text-on-primary rounded-lg font-label-md text-label-md flex items-center gap-sm hover:opacity-90 transition-opacity cursor-pointer"
+        onClick={() => alert(`Export report for ${period} — functionality coming soon`)}
+      >
       <span className="material-symbols-outlined">download</span>
                               Export Report
                           </button>
@@ -95,7 +145,7 @@ export function InsightsDashboard(props: InsightsDashboardProps) {
       </div>
       </div>
       <div>
-      <div className="font-h1 text-h1 text-on-surface">1,248</div>
+      <div className="font-h1 text-h1 text-on-surface">{metrics.total}</div>
       <div className="flex items-center gap-xs mt-unit text-[#16a34a]">
       <span className="material-symbols-outlined text-[16px]">trending_up</span>
       <span className="font-body-sm text-body-sm">+12% vs last month</span>
@@ -110,7 +160,7 @@ export function InsightsDashboard(props: InsightsDashboardProps) {
       </div>
       </div>
       <div>
-      <div className="font-h1 text-h1 text-on-surface">342 <span className="text-on-surface-variant text-[20px] font-normal">/ 89</span></div>
+      <div className="font-h1 text-h1 text-on-surface">{metrics.won} <span className="text-on-surface-variant text-[20px] font-normal">/ {metrics.lost}</span></div>
       <div className="flex items-center gap-xs mt-unit text-on-surface-variant">
       <span className="font-body-sm text-body-sm">Solid ratio maintained</span>
       </div>
@@ -124,7 +174,7 @@ export function InsightsDashboard(props: InsightsDashboardProps) {
       </div>
       </div>
       <div>
-      <div className="font-h1 text-h1 text-on-surface">27.4%</div>
+      <div className="font-h1 text-h1 text-on-surface">{metrics.conversionRate}%</div>
       <div className="flex items-center gap-xs mt-unit text-[#16a34a]">
       <span className="material-symbols-outlined text-[16px]">trending_up</span>
       <span className="font-body-sm text-body-sm">+2.1% vs last month</span>
@@ -133,13 +183,13 @@ export function InsightsDashboard(props: InsightsDashboardProps) {
       </div>
       <div className="col-span-12 md:col-span-3 bg-surface border border-outline-variant rounded-xl p-lg flex flex-col justify-between">
       <div className="flex justify-between items-start mb-md">
-      <span className="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Follow-ups (Wk)</span>
+      <span className="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Pipeline Value</span>
       <div className="w-8 h-8 rounded-full bg-secondary-container text-primary flex items-center justify-center">
-      <span className="material-symbols-outlined text-[18px]">calendar_today</span>
+      <span className="material-symbols-outlined text-[18px]">attach_money</span>
       </div>
       </div>
       <div>
-      <div className="font-h1 text-h1 text-on-surface">156</div>
+      <div className="font-h1 text-h1 text-on-surface">${(pipelineValue / 1000).toFixed(0)}k</div>
       <div className="flex items-center gap-xs mt-unit text-error">
       <span className="material-symbols-outlined text-[16px]">trending_down</span>
       <span className="font-body-sm text-body-sm">-5% vs last week</span>
@@ -213,7 +263,6 @@ export function InsightsDashboard(props: InsightsDashboardProps) {
       <div className="col-span-12 lg:col-span-4 bg-surface border border-outline-variant rounded-xl p-lg flex flex-col">
       <h3 className="font-h3 text-h3 text-on-surface mb-md">Recent Key Conversions</h3>
       <div className="flex-1 overflow-y-auto pr-sm space-y-md">
-      {/* Item 1 */}
       <div className="flex items-start gap-md p-md rounded-lg border border-surface-container-high bg-surface-bright">
       <div className="w-10 h-10 rounded-full bg-green-100 text-[#16a34a] flex items-center justify-center shrink-0">
       <span className="material-symbols-outlined">check_circle</span>
@@ -224,7 +273,6 @@ export function InsightsDashboard(props: InsightsDashboardProps) {
       <span className="font-label-sm text-label-sm text-outline mt-unit block">2 hours ago</span>
       </div>
       </div>
-      {/* Item 2 */}
       <div className="flex items-start gap-md p-md rounded-lg border border-surface-container-high bg-surface-bright">
       <div className="w-10 h-10 rounded-full bg-green-100 text-[#16a34a] flex items-center justify-center shrink-0">
       <span className="material-symbols-outlined">check_circle</span>
@@ -235,7 +283,6 @@ export function InsightsDashboard(props: InsightsDashboardProps) {
       <span className="font-label-sm text-label-sm text-outline mt-unit block">Yesterday</span>
       </div>
       </div>
-      {/* Item 3 */}
       <div className="flex items-start gap-md p-md rounded-lg border border-surface-container-high bg-surface-bright">
       <div className="w-10 h-10 rounded-full bg-blue-100 text-primary flex items-center justify-center shrink-0">
       <span className="material-symbols-outlined">handshake</span>
@@ -247,7 +294,10 @@ export function InsightsDashboard(props: InsightsDashboardProps) {
       </div>
       </div>
       </div>
-      <button className="w-full h-[44px] mt-md border border-outline-variant text-on-surface font-label-md text-label-md rounded-lg hover:bg-surface-container transition-colors">
+      <button
+        className="w-full h-[44px] mt-md border border-outline-variant text-on-surface font-label-md text-label-md rounded-lg hover:bg-surface-container transition-colors cursor-pointer"
+        onClick={() => actions.navigateTo("pipeline")}
+      >
                               View All Activity
                           </button>
       </div>
