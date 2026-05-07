@@ -72,7 +72,7 @@ export function LeadsDashboard(props: LeadsDashboardProps) {
       {/* SideNavBar */}
       <nav className="bg-surface dark:bg-surface-dim border-r border-outline-variant dark:border-outline h-screen w-64 flex flex-col fixed left-0 top-0 z-20">
       <div className="p-lg flex flex-col gap-sm">
-      <h2 className="font-h3 text-h3 text-primary dark:text-primary-fixed-dim">EcoGrowth Ops</h2>
+      <div className="font-h3 text-h3 text-primary dark:text-primary-fixed-dim">EcoGrowth Ops</div>
       <p className="font-label-sm text-label-sm text-on-surface-variant">Precision Monitoring</p>
       </div>
       <div className="flex-1 px-sm py-md flex flex-col gap-unit">
@@ -86,6 +86,7 @@ export function LeadsDashboard(props: LeadsDashboardProps) {
       <button
         className={`flex items-center gap-3 px-4 py-3 rounded-lg font-body-md text-body-md transition-colors ${state.screen === "pipeline" ? "text-primary dark:text-primary-fixed-dim bg-secondary-container dark:bg-on-secondary-fixed-variant active:scale-[0.98] duration-150" : "text-on-surface-variant dark:text-outline-variant hover:bg-surface-container-high dark:hover:bg-surface-container"}`}
         onClick={() => actions.navigateTo("pipeline")}
+        disabled={state.screen === "pipeline"}
       >
       <span className="material-symbols-outlined">view_kanban</span>
                       Pipeline
@@ -93,6 +94,7 @@ export function LeadsDashboard(props: LeadsDashboardProps) {
       <button
         className={`flex items-center gap-3 px-4 py-3 rounded-lg font-body-md text-body-md transition-colors ${state.screen === "insights" ? "text-primary dark:text-primary-fixed-dim bg-secondary-container dark:bg-on-secondary-fixed-variant active:scale-[0.98] duration-150" : "text-on-surface-variant dark:text-outline-variant hover:bg-surface-container-high dark:hover:bg-surface-container"}`}
         onClick={() => actions.navigateTo("insights")}
+        disabled={state.screen === "insights"}
       >
       <span className="material-symbols-outlined">monitoring</span>
                       Insights
@@ -100,6 +102,7 @@ export function LeadsDashboard(props: LeadsDashboardProps) {
       <button
         className={`flex items-center gap-3 px-4 py-3 rounded-lg font-body-md text-body-md transition-colors ${state.screen === "settings" ? "text-primary dark:text-primary-fixed-dim bg-secondary-container dark:bg-on-secondary-fixed-variant active:scale-[0.98] duration-150" : "text-on-surface-variant dark:text-outline-variant hover:bg-surface-container-high dark:hover:bg-surface-container"}`}
         onClick={() => actions.navigateTo("settings")}
+        disabled={state.screen === "settings"}
       >
       <span className="material-symbols-outlined">settings</span>
                       Settings
@@ -109,7 +112,7 @@ export function LeadsDashboard(props: LeadsDashboardProps) {
       {/* TopNavBar */}
       <header className="bg-surface dark:bg-surface-dim flex justify-between items-center h-[64px] px-lg w-[calc(100%-16rem)] ml-64 fixed top-0 right-0 z-10 border-b border-outline-variant dark:border-outline">
       <div className="flex items-center gap-md">
-      <h1 className="font-h2 text-h2 text-primary dark:text-primary-fixed-dim">Greenhouse Console</h1>
+      <div className="font-h2 text-h2 text-primary dark:text-primary-fixed-dim">Greenhouse Console</div>
       <div className="relative hidden lg:flex items-center focus-within:ring-2 focus-within:ring-primary rounded-DEFAULT">
       <span className="material-symbols-outlined absolute left-sm text-on-surface-variant">search</span>
       <input
@@ -132,11 +135,13 @@ export function LeadsDashboard(props: LeadsDashboardProps) {
       </button>
       <button
         className="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-opacity w-touch-target h-touch-target flex items-center justify-center rounded-full"
+        type="button"
+        onClick={() => actions.navigateTo("settings")}
         aria-label="Help"
       >
       <span className="material-symbols-outlined">help_outline</span>
       </button>
-      <button onClick={actions.toggleProfile} className="w-[40px] h-[40px] rounded-full object-cover border border-outline-variant overflow-hidden cursor-pointer">
+      <button onClick={actions.toggleProfile} className="w-[40px] h-[40px] rounded-full object-cover border border-outline-variant overflow-hidden cursor-pointer" aria-label="Open profile panel">
       <img alt="Manager Profile" className="w-full h-full object-cover" src={state.profile.avatarUrl} />
       </button>
       </div>
@@ -146,7 +151,7 @@ export function LeadsDashboard(props: LeadsDashboardProps) {
       {/* Page Header */}
       <div className="flex justify-between items-center mb-lg">
       <div>
-      <h2 className="font-h1 text-h1 text-on-background">Leads Dashboard</h2>
+      <h1 className="font-h1 text-h1 text-on-background">Leads Dashboard</h1>
       <p className="font-body-md text-body-md text-on-surface-variant mt-unit">Manage and track potential client integrations.</p>
       </div>
       <button

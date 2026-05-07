@@ -45,7 +45,7 @@ export function ProfilePanel(props: ProfilePanelProps) {
       <aside className="fixed right-0 top-0 bottom-0 w-full md:w-[400px] bg-surface border-l border-outline-variant shadow-[-4px_0_24px_rgba(15,23,42,0.08)] z-50 flex flex-col transform transition-transform duration-300 ease-in-out translate-x-0">
       {/* Header */}
       <div className="flex items-center justify-between p-lg border-b border-outline-variant">
-      <h2 className="font-h3 text-h3 text-on-surface">Profile</h2>
+      <h1 className="font-h3 text-h3 text-on-surface">Profile</h1>
       <button
         aria-label="Close Profile"
         className="w-[44px] h-[44px] flex items-center justify-center rounded-full hover:bg-surface-container-high transition-colors text-on-surface-variant cursor-pointer"
