@@ -57,7 +57,7 @@ export function PipelineBoard(props: PipelineBoardProps) {
       {/* SideNavBar (Web) */}
       <nav className="hidden md:flex flex-col h-screen w-64 bg-surface border-r border-outline-variant fixed left-0 top-0">
       <div className="px-lg py-xl">
-      <h1 className="font-h3 text-h3 text-primary mb-1">EcoGrowth Ops</h1>
+      <div className="font-h3 text-h3 text-primary mb-1">EcoGrowth Ops</div>
       <p className="font-label-sm text-label-sm text-on-surface-variant">Precision Monitoring</p>
       </div>
       <div className="flex-1 flex flex-col gap-sm px-4">
@@ -99,7 +99,7 @@ export function PipelineBoard(props: PipelineBoardProps) {
       <div className="flex-1 md:ml-64 flex flex-col min-h-screen">
       {/* TopNavBar */}
       <header className="flex justify-between items-center h-[64px] px-lg w-full bg-surface border-b border-outline-variant sticky top-0 z-10">
-      <h1 className="font-h2 text-h2 text-primary font-bold">Greenhouse Console</h1>
+      <div className="font-h2 text-h2 text-primary font-bold">Greenhouse Console</div>
       <div className="flex items-center gap-lg">
       <div className="relative focus-within:ring-2 focus-within:ring-primary rounded-lg">
       <span className="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
@@ -121,9 +121,9 @@ export function PipelineBoard(props: PipelineBoardProps) {
       </button>
       <button
         className="hover:text-primary transition-opacity p-2 min-h-touch-target min-w-touch-target flex items-center justify-center rounded-full"
+        type="button"
+        onClick={() => actions.navigateTo("settings")}
         aria-label="Help"
-        disabled
-        aria-disabled="true"
       >
       <span className="material-symbols-outlined">help_outline</span>
       </button>

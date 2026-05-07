@@ -72,14 +72,13 @@ export function LeadsDashboard(props: LeadsDashboardProps) {
       {/* SideNavBar */}
       <nav className="bg-surface dark:bg-surface-dim border-r border-outline-variant dark:border-outline h-screen w-64 flex flex-col fixed left-0 top-0 z-20">
       <div className="p-lg flex flex-col gap-sm">
-      <h1 className="font-h3 text-h3 text-primary dark:text-primary-fixed-dim">EcoGrowth Ops</h1>
+      <div className="font-h3 text-h3 text-primary dark:text-primary-fixed-dim">EcoGrowth Ops</div>
       <p className="font-label-sm text-label-sm text-on-surface-variant">Precision Monitoring</p>
       </div>
       <div className="flex-1 px-sm py-md flex flex-col gap-unit">
       <button
         className={`flex items-center gap-3 px-4 py-3 rounded-lg font-body-md text-body-md transition-colors ${state.screen === "leads" || state.screen === "empty" ? "text-primary dark:text-primary-fixed-dim bg-secondary-container dark:bg-on-secondary-fixed-variant active:scale-[0.98] duration-150" : "text-on-surface-variant dark:text-outline-variant hover:bg-surface-container-high dark:hover:bg-surface-container"}`}
         onClick={() => actions.navigateTo("leads")}
-        disabled={state.screen === "leads" || state.screen === "empty"}
       >
       <span className="material-symbols-outlined" style={{fontVariationSettings: "'FILL' 1"}}>person_search</span>
                       Leads
@@ -113,7 +112,7 @@ export function LeadsDashboard(props: LeadsDashboardProps) {
       {/* TopNavBar */}
       <header className="bg-surface dark:bg-surface-dim flex justify-between items-center h-[64px] px-lg w-[calc(100%-16rem)] ml-64 fixed top-0 right-0 z-10 border-b border-outline-variant dark:border-outline">
       <div className="flex items-center gap-md">
-      <h1 className="font-h2 text-h2 text-primary dark:text-primary-fixed-dim">Greenhouse Console</h1>
+      <div className="font-h2 text-h2 text-primary dark:text-primary-fixed-dim">Greenhouse Console</div>
       <div className="relative hidden lg:flex items-center focus-within:ring-2 focus-within:ring-primary rounded-DEFAULT">
       <span className="material-symbols-outlined absolute left-sm text-on-surface-variant">search</span>
       <input
@@ -136,9 +135,9 @@ export function LeadsDashboard(props: LeadsDashboardProps) {
       </button>
       <button
         className="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-opacity w-touch-target h-touch-target flex items-center justify-center rounded-full"
+        type="button"
+        onClick={() => actions.navigateTo("settings")}
         aria-label="Help"
-        disabled
-        aria-disabled="true"
       >
       <span className="material-symbols-outlined">help_outline</span>
       </button>

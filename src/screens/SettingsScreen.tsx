@@ -41,7 +41,7 @@ export function SettingsScreen(props: SettingsScreenProps) {
                       EG
                   </div>
       <div>
-      <h1 className="font-h3 text-h3 text-primary dark:text-primary-fixed-dim">EcoGrowth Ops</h1>
+      <div className="font-h3 text-h3 text-primary dark:text-primary-fixed-dim">EcoGrowth Ops</div>
       <p className="font-label-sm text-label-sm text-on-surface-variant">Precision Monitoring</p>
       </div>
       </div>
@@ -81,7 +81,7 @@ export function SettingsScreen(props: SettingsScreenProps) {
       {/* TopNavBar */}
       <header className="flex justify-between items-center h-[64px] px-lg w-full bg-surface dark:bg-surface-dim border-b border-outline-variant dark:border-outline">
       <div className="flex items-center gap-md">
-      <h1 className="font-h2 text-h2 text-primary dark:text-primary-fixed-dim hidden md:block">Greenhouse Console</h1>
+      <div className="font-h2 text-h2 text-primary dark:text-primary-fixed-dim hidden md:block">Greenhouse Console</div>
       <button className="md:hidden text-on-surface p-sm" onClick={() => actions.navigateTo("leads")}>
       <span className="material-symbols-outlined">menu</span>
       </button>
@@ -99,9 +99,10 @@ export function SettingsScreen(props: SettingsScreenProps) {
       <span className="material-symbols-outlined">notifications</span>
       </button>
       <button
-        className="text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-opacity p-sm w-[44px] h-[44px] flex items-center justify-center rounded-full hover:bg-surface-container-high disabled:opacity-40 disabled:cursor-not-allowed"
+        className="text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-opacity p-sm w-[44px] h-[44px] flex items-center justify-center rounded-full hover:bg-surface-container-high"
+        type="button"
+        onClick={() => actions.navigateTo("settings")}
         aria-label="Help"
-        disabled
       >
       <span className="material-symbols-outlined">help_outline</span>
       </button>

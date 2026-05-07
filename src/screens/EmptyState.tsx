@@ -21,7 +21,7 @@ export function EmptyState(props: EmptyStateProps) {
       {/* SideNavBar */}
       <nav className="bg-surface border-r border-outline-variant h-screen w-64 flex flex-col fixed left-0 top-0 z-20">
       <div className="p-lg flex flex-col gap-sm">
-      <h1 className="font-h3 text-h3 text-primary">EcoGrowth Ops</h1>
+      <div className="font-h3 text-h3 text-primary">EcoGrowth Ops</div>
       <p className="font-label-sm text-label-sm text-on-surface-variant">Precision Monitoring</p>
       </div>
       <div className="flex-1 overflow-y-auto py-sm px-md flex flex-col gap-unit">
@@ -85,9 +85,9 @@ export function EmptyState(props: EmptyStateProps) {
       </button>
       <button
         className="text-on-surface-variant hover:text-primary transition-opacity h-touch-target w-touch-target flex items-center justify-center rounded-full"
+        type="button"
+        onClick={() => actions.navigateTo("settings")}
         aria-label="Help"
-        disabled
-        aria-disabled="true"
       >
       <span className="material-symbols-outlined">help_outline</span>
       </button>

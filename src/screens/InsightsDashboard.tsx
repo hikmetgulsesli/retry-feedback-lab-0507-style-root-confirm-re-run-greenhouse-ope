@@ -35,7 +35,7 @@ export function InsightsDashboard(props: InsightsDashboardProps) {
       <div className="p-lg flex items-center gap-sm">
       <img alt="Greenhouse Operations Logo" className="w-10 h-10 rounded-full object-cover border border-outline-variant" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBN4K1V7N9Rppgla7jpao0H6RKgdhGJiv1z40dPYmPuKDgKW9STMfvQO0b_w_4k-kXytYnrX4WoxOBVImMPD_DY9Ka8AdppxT_m4LptbNs0k8RYbLkIsX3UhfLh1if_qc5vNHh7dje3qga-6cmYzM_2kti8DKvVfd5YmndgjpKWGfwCri1bjU_sihyJu8ZYRuWDyHP9IUJ3Cjs9ORwWPXj3j8w7BqUcJTjXKnUsx5ODoxLIHpXxdrycncOFmJW0sJMsRoPUoIoKcmsA" />
       <div>
-      <h1 className="font-h3 text-h3 text-primary">EcoGrowth Ops</h1>
+      <div className="font-h3 text-h3 text-primary">EcoGrowth Ops</div>
       <p className="font-label-sm text-label-sm text-on-surface-variant">Precision Monitoring</p>
       </div>
       </div>
@@ -79,7 +79,7 @@ export function InsightsDashboard(props: InsightsDashboardProps) {
       {/* TopNavBar */}
       <header className="bg-surface flex justify-between items-center h-[64px] px-lg w-full border-b border-outline-variant z-10 shrink-0">
       <div className="flex items-center gap-md">
-      <h1 className="font-h2 text-h2 text-primary font-bold">Greenhouse Console</h1>
+      <div className="font-h2 text-h2 text-primary font-bold">Greenhouse Console</div>
       </div>
       <div className="flex items-center gap-lg">
       <div className="relative focus-within:ring-2 focus-within:ring-primary rounded-full">
@@ -102,9 +102,9 @@ export function InsightsDashboard(props: InsightsDashboardProps) {
       </button>
       <button
         className="text-on-surface-variant hover:text-primary transition-opacity w-[44px] h-[44px] flex items-center justify-center rounded-full"
+        type="button"
+        onClick={() => actions.navigateTo("settings")}
         aria-label="Help"
-        disabled
-        aria-disabled="true"
       >
       <span className="material-symbols-outlined">help_outline</span>
       </button>
